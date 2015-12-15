@@ -1,7 +1,8 @@
-application: startstunning
+application: start-stunning
 version: 1
 runtime: php55
 api_version: 1
 
 handlers:
 - url: /.*
+  script: index.php
