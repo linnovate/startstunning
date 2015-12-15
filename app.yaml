@@ -4,5 +4,10 @@ runtime: php55
 api_version: 1
 
 handlers:
-- url: /.*
-  script: index.php
+  - url: /gallery
+    static_files: gallery/index.html
+    upload: gallery/index.html
+
+  - url: /adgen
+    static_files: adgen/index.html
+    upload: adgen/index.html
