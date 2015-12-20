@@ -21,7 +21,7 @@ String.prototype.capitalize = function() {
     var wixAdData = function () {
         var itemsData = {
                 "dog": {
-                "image": baseURL + "img/dog/dog.png",
+                "image": baseURL + "/img/dog/dog.png",
                 "categories": {
                     "sport": {
                         "black": [
@@ -29,25 +29,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/dog/black/1-1_1.png"
+                                "url": baseURL + "/img/dog/black/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/black/2-1_1.png"
+                                "url": baseURL + "/img/dog/black/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/black/2-1_2.png"
+                                "url": baseURL + "/img/dog/black/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/black/2-2_3.png"
+                                "url": baseURL + "/img/dog/black/2-2_3.png"
                             }
                         ],
                         "white": [
@@ -55,25 +55,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/dog/white/1-1_1.png"
+                                "url": baseURL + "/img/dog/white/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/white/2-1_1.png"
+                                "url": baseURL + "/img/dog/white/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/white/2-1_2.png"
+                                "url": baseURL + "/img/dog/white/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/white/2-2_3.png"
+                                "url": baseURL + "/img/dog/white/2-2_3.png"
                             }
                         ],
                         "yellow": [
@@ -81,25 +81,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/dog/yellow/1-1_1.png"
+                                "url": baseURL + "/img/dog/yellow/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/yellow/2-1_1.png"
+                                "url": baseURL + "/img/dog/yellow/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/yellow/2-1_2.png"
+                                "url": baseURL + "/img/dog/yellow/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/yellow/2-2_3.png"
+                                "url": baseURL + "/img/dog/yellow/2-2_3.png"
                             }
                         ]
                     },
@@ -109,25 +109,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/dog/misc/1-1_1.png"
+                                "url": baseURL + "/img/dog/misc/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/misc/2-1_1.png"
+                                "url": baseURL + "/img/dog/misc/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/misc/2-1_2.png"
+                                "url": baseURL + "/img/dog/misc/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/dog/misc/2-2_3.png"
+                                "url": baseURL + "/img/dog/misc/2-2_3.png"
                             }
                         ]
                     }
@@ -135,7 +135,7 @@ String.prototype.capitalize = function() {
                 }
             },
                 "cat": {
-                "image": baseURL + "img/cat/cat.png",
+                "image": baseURL + "/img/cat/cat.png",
                 "categories": {
                     "sport": {
                         "black": [
@@ -143,25 +143,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/cat/black/1-1_1.png"
+                                "url": baseURL + "/img/cat/black/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/black/2-1_1.png"
+                                "url": baseURL + "/img/cat/black/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/black/2-1_2.png"
+                                "url": baseURL + "/img/cat/black/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/black/2-2_3.png"
+                                "url": baseURL + "/img/cat/black/2-2_3.png"
                             }
                         ],
                         "white": [
@@ -169,25 +169,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/cat/white/1-1_1.png"
+                                "url": baseURL + "/img/cat/white/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/white/2-1_1.png"
+                                "url": baseURL + "/img/cat/white/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/white/2-1_2.png"
+                                "url": baseURL + "/img/cat/white/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/white/2-2_3.png"
+                                "url": baseURL + "/img/cat/white/2-2_3.png"
                             }
                         ],
                         "yellow": [
@@ -195,25 +195,25 @@ String.prototype.capitalize = function() {
                                 "column": 1,
                                 "size": 1,
                                 "animated": 1,
-                                "url": baseURL + "img/cat/yellow/1-1_1.png"
+                                "url": baseURL + "/img/cat/yellow/1-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/yellow/2-1_1.png"
+                                "url": baseURL + "/img/cat/yellow/2-1_1.png"
                             },
                             {
                                 "column": 2,
                                 "size": 1,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/yellow/2-1_2.png"
+                                "url": baseURL + "/img/cat/yellow/2-1_2.png"
                             },
                             {
                                 "column": 2,
                                 "size": 2,
                                 "animated": 0,
-                                "url": baseURL + "img/cat/yellow/2-2_3.png"
+                                "url": baseURL + "/img/cat/yellow/2-2_3.png"
                             }
                         ]
                     }
@@ -340,7 +340,7 @@ String.prototype.capitalize = function() {
                 }
             });
 
-            adData.getItemsData();
+            //adData.getItemsData();
         };
 
         plugin.init();
