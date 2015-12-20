@@ -1,5 +1,195 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wix Ad Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+    <script src="js/underscore-min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/kinetic.min.js"></script>
+    <script src="js/meme-ad.js"></script>
+</head>
 <body>
-<h2>AdGen</h2>
+
+<style>
+    canvas:hover {
+        cursor: pointer;
+    }
+    .pull-left.meme-ad {
+        margin-right: 10px;
+    }
+
+    .col-1 {
+        width: 340px;
+    }
+
+    .meme-group {
+        margin-bottom: 40px;
+    }
+
+    .row {
+        margin-bottom: 20px;
+    }
+
+    .wix-ad-form {
+        padding: 50px 20px;
+        background-color: #f2f2f2;
+    }
+
+    .wix-ad-form input[type="text"], .wix-ad-form select {
+        width: 100%;
+        padding: 2px 5px;
+        height: 30px;
+    }
+
+    button {
+        width: 80px;
+        height: 30px;
+    }
+
+    button[disabled] {
+        color: #ccc;
+    }
+
+    body {
+        background-color: #ccc;
+    }
+
+    .entity-type-item:hover {
+        cursor: pointer;
+    }
+
+    .entity-type-item.selected {
+        border: 2px solid #8a2ce2;
+        box-sizing: border-box;
+    }
+
+    .entity-pick-container img {
+        width: 200px;
+    }
+</style>
+
+
+<div class="container entity-pick-container"></div>
+<div class="container form-container"></div>
+<div class="container meme-container"></div>
+<div id="heightStage" style="display: none;"></div>
+
+<script>
+    var wixSelTypes = [],
+            wixSelBusinessName = '',
+            wixSelCategory = '';
+
+    $(document).ready(function () {
+        $('.entity-pick-container').wixAdPicker();
+    });
+
+    function wixAdShowForm() {
+        var selectedItems = $('.entity-type-item.selected');
+
+        selectedItems.each(function () {
+            wixSelTypes.push($(this).data('wix-ad-pick'));
+        });
+
+        $('.form-container').wixAdForm({
+            types: wixSelTypes
+        });
+
+        $('.entity-pick-container').hide();
+        $('#business-name').focus();
+    }
+
+    function wixAdShowAds() {
+        wixSelBusinessName = $('#business-name').val();
+        wixSelCategory = $('#ad-category').val();
+
+        $('.form-container').hide();
+
+        var sets = [];
+        _.each(wixSelTypes, function (enType) {
+            sets.push({
+                type: enType,
+                category: wixSelCategory
+            })
+        });
+
+        $('.meme-container').wixAdLayout({
+            layout: 'col2',
+            caption: wixSelBusinessName,
+            subSetsIfOneSet: 2,
+            sets: sets
+        });
+
+        $('.meme-ad').wixAdMeme();
+
+    }
+</script>
+
+<!--templates-->
+<script type="text/template" class="tpl-entity-pick">
+    <% _.each(data, function(chuncked) { %>
+
+    <div class="row">
+        <% _.each(chuncked, function(item) { %>
+        <div class="col-md-3">
+            <img class="entity-type-item" src="<%- item.url %>" data-wix-ad-pick="<%- item.name %>"
+                 alt="<%- item.name %>">
+        </div>
+        <% }); %>
+    </div>
+
+    <div class="center-block">
+        <button id="btn-goto-form" onclick="wixAdShowForm()" disabled>Next</button>
+    </div>
+
+    <% }); %>
+</script>
+
+
+<script type="text/template" class="tpl-form">
+    <div class="wix-ad-form">
+        <div class=" center-block" style="width: 600px;">
+            <input type="text" placeholder="Your Business Name" name="business-name" id="business-name">
+            <br>
+            <br>
+            <select id="ad-category">
+                <% _.each(data, function(catName) { %>
+                <option value="<%- catName %>"><%- catName.capitalize() %></option>
+                <% }); %>
+            </select>
+            <br>
+            <br>
+            <button id="btn-goto-ads" onclick="wixAdShowAds()" disabled>Next</button>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/template" class="tpl-col2">
+    <% _.each(groupItems, function(groupItem, groupKey) { %>
+    <div class="row meme-group meme-group-<%- groupKey %>">
+        <% _.each(groupItem, function(colItems, colIndex) { %>
+
+        <% if (colIndex == 1) { %>
+        <div class="col-<%- colIndex %> col-md-4">
+            <% _.each(colItems, function(item) { %>
+            <div class="meme-ad" data-wix-ad-src="<%- item.url %>" data-wix-ad-text="<%- caption %>"></div>
+            <% }); %>
+        </div>
+        <% } %>
+
+        <% if (colIndex == 2) { %>
+        <div class="col-<%- colIndex %> col-md-8">
+            <% _.each(colItems, function(item) { %>
+            <div class="pull-left meme-ad" data-wix-ad-src="<%- item.url %>" data-wix-ad-text="<%- caption %>"></div>
+            <% }); %>
+        </div>
+        <% } %>
+
+        <% }); %>
+    </div>
+    <% }); %>
+</script>
+
 </body>
 </html>
