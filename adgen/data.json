@@ -1,6 +1,6 @@
 {
   "dog": {
-    "image": "img/dog/dog.png",
+    "image": "/adgen/img/dog/dog.png",
     "categories": {
       "sport": {
         "black": [
@@ -8,25 +8,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/dog/black/1-1_1.png"
+            "url": "/adgen/img/dog/black/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/black/2-1_1.png"
+            "url": "/adgen/img/dog/black/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/black/2-1_2.png"
+            "url": "/adgen/img/dog/black/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/dog/black/2-2_3.png"
+            "url": "/adgen/img/dog/black/2-2_3.png"
           }
         ],
         "white": [
@@ -34,25 +34,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/dog/white/1-1_1.png"
+            "url": "/adgen/img/dog/white/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/white/2-1_1.png"
+            "url": "/adgen/img/dog/white/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/white/2-1_2.png"
+            "url": "/adgen/img/dog/white/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/dog/white/2-2_3.png"
+            "url": "/adgen/img/dog/white/2-2_3.png"
           }
         ],
         "yellow": [
@@ -60,25 +60,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/dog/yellow/1-1_1.png"
+            "url": "/adgen/img/dog/yellow/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/yellow/2-1_1.png"
+            "url": "/adgen/img/dog/yellow/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/yellow/2-1_2.png"
+            "url": "/adgen/img/dog/yellow/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/dog/yellow/2-2_3.png"
+            "url": "/adgen/img/dog/yellow/2-2_3.png"
           }
         ]
       },
@@ -88,25 +88,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/dog/misc/1-1_1.png"
+            "url": "/adgen/img/dog/misc/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/misc/2-1_1.png"
+            "url": "/adgen/img/dog/misc/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/dog/misc/2-1_2.png"
+            "url": "/adgen/img/dog/misc/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/dog/misc/2-2_3.png"
+            "url": "/adgen/img/dog/misc/2-2_3.png"
           }
         ]
       }
@@ -114,7 +114,7 @@
     }
   },
   "cat": {
-    "image": "img/cat/cat.png",
+    "image": "/adgen/img/cat/cat.png",
     "categories": {
       "sport": {
         "black": [
@@ -122,25 +122,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/cat/black/1-1_1.png"
+            "url": "/adgen/img/cat/black/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/cat/black/2-1_1.png"
+            "url": "/adgen/img/cat/black/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/cat/black/2-1_2.png"
+            "url": "/adgen/img/cat/black/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/cat/black/2-2_3.png"
+            "url": "/adgen/img/cat/black/2-2_3.png"
           }
         ],
         "white": [
@@ -148,25 +148,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/cat/white/1-1_1.png"
+            "url": "/adgen/img/cat/white/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/cat/white/2-1_1.png"
+            "url": "/adgen/img/cat/white/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/cat/white/2-1_2.png"
+            "url": "/adgen/img/cat/white/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/cat/white/2-2_3.png"
+            "url": "/adgen/img/cat/white/2-2_3.png"
           }
         ],
         "yellow": [
@@ -174,25 +174,25 @@
             "column": 1,
             "size": 1,
             "animated": 1,
-            "url": "img/cat/yellow/1-1_1.png"
+            "url": "/adgen/img/cat/yellow/1-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/cat/yellow/2-1_1.png"
+            "url": "/adgen/img/cat/yellow/2-1_1.png"
           },
           {
             "column": 2,
             "size": 1,
             "animated": 0,
-            "url": "img/cat/yellow/2-1_2.png"
+            "url": "/adgen/img/cat/yellow/2-1_2.png"
           },
           {
             "column": 2,
             "size": 2,
             "animated": 0,
-            "url": "img/cat/yellow/2-2_3.png"
+            "url": "/adgen/img/cat/yellow/2-2_3.png"
           }
         ]
       }
