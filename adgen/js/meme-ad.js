@@ -18,210 +18,12 @@ String.prototype.capitalize = function() {
     //var baseURL = 'http://server/wix/startstunning/adgen';
     var baseURL = location.href;
 
-    var wixAdData = function () {
-        var itemsData = {
-                "dog": {
-                "image": baseURL + "/img/dog/dog.png",
-                "categories": {
-                    "sport": {
-                        "black": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/dog/black/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/black/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/black/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/black/2-2_3.png"
-                            }
-                        ],
-                        "white": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/dog/white/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/white/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/white/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/white/2-2_3.png"
-                            }
-                        ],
-                        "yellow": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/dog/yellow/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/yellow/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/yellow/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/yellow/2-2_3.png"
-                            }
-                        ]
-                    },
-                    "community": {
-                        "misc": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/dog/misc/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/misc/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/misc/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/dog/misc/2-2_3.png"
-                            }
-                        ]
-                    }
+    $.wixAdData = function () {
+        var component = this;
 
-                }
-            },
-                "cat": {
-                "image": baseURL + "/img/cat/cat.png",
-                "categories": {
-                    "sport": {
-                        "black": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/cat/black/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/black/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/black/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/black/2-2_3.png"
-                            }
-                        ],
-                        "white": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/cat/white/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/white/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/white/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/white/2-2_3.png"
-                            }
-                        ],
-                        "yellow": [
-                            {
-                                "column": 1,
-                                "size": 1,
-                                "animated": 1,
-                                "url": baseURL + "/img/cat/yellow/1-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/yellow/2-1_1.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 1,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/yellow/2-1_2.png"
-                            },
-                            {
-                                "column": 2,
-                                "size": 2,
-                                "animated": 0,
-                                "url": baseURL + "/img/cat/yellow/2-2_3.png"
-                            }
-                        ]
-                    }
-                }
-            }
-            };
+        component.itemsData = {};
 
-        this.sortByColumns = function(raw) {
+        component.sortByColumns = function(raw) {
             var res = {};
             _.each(raw, function (grEl, key) {
                 res[key] = {};
@@ -234,11 +36,11 @@ String.prototype.capitalize = function() {
             return res;
         };
 
-        this.getEntityTypes = function() {
+        component.getEntityTypes = function() {
             var res = [],
                 obj = {};
 
-            _.each(itemsData, function(el, enName) {
+            _.each(component.itemsData, function(el, enName) {
                 obj = {};
                 obj.name = enName;
                 obj.url = el.image;
@@ -248,25 +50,23 @@ String.prototype.capitalize = function() {
             return res;
         };
 
-        this.getCategories = function(types) {
+        component.getCategories = function(types) {
             var res = {};
 
             _.each(types, function (el) {
-                _.each(itemsData[el].categories, function (category, catName) {
+                _.each(component.itemsData[el].categories, function (category, catName) {
                     if (_.isUndefined(res[catName])) res[catName] = catName;
                 })
             });
 
-            console.log('categories: ', res);
-
             return res;
         };
 
-        this.queryEl = function(type, category, setsCount) {
+        component.queryEl = function(type, category, setsCount) {
             var result = {},
                 holder = [], holderLength,
                 randomKey,
-                data = itemsData;
+                data = component.itemsData;
 
             if (_.isUndefined(setsCount)) setsCount = 1;
 
@@ -280,7 +80,7 @@ String.prototype.capitalize = function() {
                 if (setsCount > holderLength) setsCount = holderLength;
 
                 for(var i = setsCount; i > 0; i--) {
-                    randomKey = this.getObjectRandomKey(holder);
+                    randomKey = component.getObjectRandomKey(holder);
                     result[randomKey] = holder[randomKey];
                     delete holder[randomKey];
                 }
@@ -289,20 +89,21 @@ String.prototype.capitalize = function() {
             return result;
         };
 
-        this.getObjectRandomKey = function (obj) {
+        component.getObjectRandomKey = function (obj) {
             var keys = Object.keys(obj);
             return keys[keys.length * Math.random() << 0];
         };
 
-        this.getItemsData = function () {
+        component.init = function (success) {
             $.getJSON(baseURL+'data.json').done(function (data) {
-                itemsData = data;
+                component.itemsData = data;
+                success.call(component);
             });
         };
     };
 
     // wixAdPicker
-    $.wixAdPicker = function(element, options) {
+    $.wixAdPicker = function(element, options, adData) {
         var defaults = {
                 elementsInRow: 4,
                 maxSelection: 2
@@ -311,14 +112,12 @@ String.prototype.capitalize = function() {
             element = element,
             render,
             generatedHTML = '',
-            adData,
             plugin = this;
 
         plugin.settings = {};
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
-            adData = new wixAdData();
             render = _.template($('script.tpl-entity-pick').html());
             generatedHTML = render({data: adData.getEntityTypes().chunk(plugin.settings.elementsInRow)});
 
@@ -340,25 +139,25 @@ String.prototype.capitalize = function() {
                 }
             });
 
-            //adData.getItemsData();
+
         };
 
         plugin.init();
 
     };
 
-    $.fn.wixAdPicker = function(options) {
+    $.fn.wixAdPicker = function(options, adData) {
         if (!this.length){
             console.error('Can not find a container "%s"', this.selector);
         } else {
-            var plugin = new $.wixAdPicker(this[0], options);
+            var plugin = new $.wixAdPicker(this[0], options, adData);
         }
 
         return this;
     };
 
     // wixAdForm
-    $.wixAdForm = function(element, options) {
+    $.wixAdForm = function(element, options, adData) {
         var defaults = {
 
             },
@@ -366,14 +165,12 @@ String.prototype.capitalize = function() {
             element = element,
             render,
             generatedHTML = '',
-            adData,
             plugin = this;
 
         plugin.settings = {};
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
-            adData = new wixAdData();
             render = _.template($('script.tpl-form').html());
             generatedHTML = render({data: adData.getCategories(plugin.settings.types)});
 
@@ -403,18 +200,18 @@ String.prototype.capitalize = function() {
 
     };
 
-    $.fn.wixAdForm = function(options) {
+    $.fn.wixAdForm = function(options, adData) {
         if (!this.length){
             console.error('Can not find a container "%s"', this.selector);
         } else {
-            var plugin = new $.wixAdForm(this[0], options);
+            var plugin = new $.wixAdForm(this[0], options, adData);
         }
 
         return this;
     };
 
     // wixAdLayout
-    $.wixAdLayout = function(element, options) {
+    $.wixAdLayout = function(element, options, adData) {
         var defaults = {
                 layout: 'col2'
             },
@@ -422,14 +219,12 @@ String.prototype.capitalize = function() {
             element = element,
             render,
             generatedHTML = '',
-            adData,
             plugin = this;
 
         plugin.settings = {};
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
-            adData = new wixAdData();
             render = _.template($('script.tpl-'+plugin.settings.layout).html());
 
             _.each(plugin.settings.sets, function (el) {
@@ -452,11 +247,11 @@ String.prototype.capitalize = function() {
 
     };
 
-    $.fn.wixAdLayout = function(options) {
+    $.fn.wixAdLayout = function(options, adData) {
         if (!this.length){
             console.error('Can not find a container "%s"', this.selector);
         } else {
-            var plugin = new $.wixAdLayout(this[0], options);
+            var plugin = new $.wixAdLayout(this[0], options, adData);
         }
 
         return this;

@@ -15,6 +15,7 @@
     canvas:hover {
         cursor: pointer;
     }
+
     .pull-left.meme-ad {
         margin-right: 10px;
     }
@@ -78,10 +79,13 @@
 <script>
     var wixSelTypes = [],
             wixSelBusinessName = '',
-            wixSelCategory = '';
+            wixSelCategory = '',
+            adData = new $.wixAdData();
 
     $(document).ready(function () {
-        $('.entity-pick-container').wixAdPicker();
+        adData.init(function () {
+            $('.entity-pick-container').wixAdPicker({}, this);
+        });
     });
 
     function wixAdShowForm() {
@@ -91,9 +95,7 @@
             wixSelTypes.push($(this).data('wix-ad-pick'));
         });
 
-        $('.form-container').wixAdForm({
-            types: wixSelTypes
-        });
+        $('.form-container').wixAdForm({ types: wixSelTypes }, adData);
 
         $('.entity-pick-container').hide();
         $('#business-name').focus();
@@ -118,7 +120,7 @@
             caption: wixSelBusinessName,
             subSetsIfOneSet: 2,
             sets: sets
-        });
+        }, adData);
 
         $('.meme-ad').wixAdMeme();
     }
