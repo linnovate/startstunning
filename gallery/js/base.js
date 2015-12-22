@@ -94,9 +94,7 @@ function select_carousel_item(a, b, c) {
     } else if ("prev" === c) {
       u = $thumbnails.find('li[data-index="' + q.data("index") + '"]').index();
       $main_stage_carousel.carousel(u);
-    }
-
-  }
+    }  }
 }
 
 function thumbnails_bind() {
@@ -119,7 +117,7 @@ var $main_stage, $main_stage_carousel, $carousel_inner, $thumbnails, num_carouse
   timerId = 0,
   data_next, data_prev, data_this, fandango, movietickets;
 
-$(function() {
+var swiper_init = function() {
   $main_stage = $("#main-stage");
   $main_stage_carousel = $("#main_stage_carousel");
   $main_stage_carousel.on("slid.bs.carousel", function() {
@@ -130,19 +128,19 @@ $(function() {
   num_carousel_items = $thumbnails.find("li").length;
   thumbnails_bind();
   $main_stage.find(".carousel-control").on("click", function() {
-      var a = $(this).data("direction");
-      if ("next" === a) {
-        next_index = $thumbnails.find("li.active").next().index();
-        next_data_index = $thumbnails.find("li.active").next().data("index");
-        data_next = $("#main_stage_carousel").find(".active").next().attr("data-filmname");
-      } else {
-        next_index = $thumbnails.find("li.active").prev().index();
-        next_data_index = $thumbnails.find("li.active").prev().data("index");
-        data_prev = $("#main_stage_carousel").find(".active").prev().attr("data-filmname");
-      };
+    var a = $(this).data("direction");
+    if ("next" === a) {
+      next_index = $thumbnails.find("li.active").next().index();
+      next_data_index = $thumbnails.find("li.active").next().data("index");
+      data_next = $("#main_stage_carousel").find(".active").next().attr("data-filmname");
+    } else {
+      next_index = $thumbnails.find("li.active").prev().index();
+      next_data_index = $thumbnails.find("li.active").prev().data("index");
+      data_prev = $("#main_stage_carousel").find(".active").prev().attr("data-filmname");
+    };
 
-      select_carousel_item(next_index, next_data_index, a)
-    });
+    select_carousel_item(next_index, next_data_index, a)
+  });
 
   var a = $("#initial_main_stage_feature_image"),
     b = a.parent().data("image");
@@ -186,21 +184,78 @@ $(function() {
   }), $(window).blur(function() {
     pause_auto = 1, clearInterval(timerId)
   })
+  adjust_carousel_size();
+};
+
+$(function() {
+  //$main_stage = $("#main-stage");
+  //$main_stage_carousel = $("#main_stage_carousel");
+  //$main_stage_carousel.on("slid.bs.carousel", function() {
+  //  is_animating_carousel = !1
+  //});
+  //$carousel_inner = $("#carousel_inner");
+  //$thumbnails = $("#thumbnails");
+  //num_carousel_items = $thumbnails.find("li").length;
+  //thumbnails_bind();
+  //$main_stage.find(".carousel-control").on("click", function() {
+  //    var a = $(this).data("direction");
+  //    if ("next" === a) {
+  //      next_index = $thumbnails.find("li.active").next().index();
+  //      next_data_index = $thumbnails.find("li.active").next().data("index");
+  //      data_next = $("#main_stage_carousel").find(".active").next().attr("data-filmname");
+  //    } else {
+  //      next_index = $thumbnails.find("li.active").prev().index();
+  //      next_data_index = $thumbnails.find("li.active").prev().data("index");
+  //      data_prev = $("#main_stage_carousel").find(".active").prev().attr("data-filmname");
+  //    };
+  //
+  //    select_carousel_item(next_index, next_data_index, a)
+  //  });
+  //
+  //var a = $("#initial_main_stage_feature_image"),
+  //  b = a.parent().data("image");
+  //a.attr("src", b);
+  //a.parent().attr("data-image", b);
+  //a.on("load", function() {
+  //  $("#main-stage .carousel-inner, .carousel-control").addClass("show"), load_hidden_carousel_images()
+  //});
+  //
+  ////$("#main-stage, #main-stage-menu").swiperight(function() {
+  ////  pause_auto = 1;
+  ////  clearInterval(timerId);
+  ////  $("#carousel_inner .active.item").addClass("right");
+  ////  console.log( $("#carousel_inner .active.item").hasClass("right") );
+  ////  $("#carousel_inner .active.item").next().addClass("left");
+  ////  $("#carousel_inner .item").removeClass("left");
+  ////  $("#carousel_inner .item").removeClass("right");
+  ////  var a = "prev";
+  ////  next_index = $thumbnails.find("li.active").prev().index();
+  ////  next_data_index = $thumbnails.find("li.active").prev().data("index");
+  ////  data_prev = $("#main_stage_carousel .active").prev().attr("data-filmname");
+  ////  select_carousel_item(next_index, next_data_index, a)
+  ////});
+  ////$("#main-stage, #main-stage-menu").swipeleft(function() {
+  ////  pause_auto = 1;
+  ////  clearInterval(timerId);
+  ////  $("#carousel_inner .active.item").addClass("left");
+  ////  $("#carousel_inner .active.item").next().addClass("right");
+  ////  $("#carousel_inner .item").removeClass("right");
+  ////  $("#carousel_inner .item").removeClass("left");
+  ////  var a = "next";
+  ////  next_index = $thumbnails.find("li.active").next().index();
+  ////  next_data_index = $thumbnails.find("li.active").next().data("index");
+  ////  data_next = $("#main_stage_carousel .active").next().attr("data-filmname");
+  ////  select_carousel_item(next_index, next_data_index, a)
+  ////});
+  //timerId = setInterval(function() {
+  //  0 === pause_auto && (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
+  //}, 7e3), $("#main-stage, #main-stage-menu").click(function() {
+  //  pause_auto = 1, clearInterval(timerId)
+  //}), $(window).blur(function() {
+  //  pause_auto = 1, clearInterval(timerId)
+  //})
 }), $(window).load(function() {
-  adjust_carousel_size()
+  //adjust_carousel_size()
 }), $(window).resize(function() {
   adjust_carousel_size()
-}), $(".select-provider").on("click", "a", function() {
-  var a = $(this),
-    b = $(".zip-finder input").val(),
-    c = "",
-    d = a.attr("data-provider");
-  switch (d) {
-    case "fandango":
-      c = "http://www.fandango.com/" + fandango + "/movietimes?location=" + b;
-      break;
-    case "movietickets":
-      c = "http://www.movietickets.com/movie/mid/" + movietickets + "/SearchZip/" + b + "/SearchRadius/15/tstate/0"
-  }
-  window.open(c, "_blank")
 });

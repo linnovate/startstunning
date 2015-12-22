@@ -49,8 +49,6 @@ String.prototype.capitalize = function() {
                 res.push(obj);
                 res.push(obj);
                 res.push(obj);
-                res.push(obj);
-                res.push(obj);
             });
 
             return res;

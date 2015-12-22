@@ -10,9 +10,12 @@
     <script src="/adgen/js/kinetic.min.js"></script>
     <script src="/adgen/js/meme-ad.js"></script>
 </head>
-<body class="back-01">
+<body>
 
 <style>
+    body {
+        background-color: transparent;
+    }
     canvas:hover {
         cursor: pointer;
     }
@@ -193,7 +196,6 @@
         $('.form-container').wixAdForm({types: wixSelTypes}, adData);
 
         $('.entity-pick-container').hide();
-        $('body').removeClass('back-01').addClass('back-02');
         $('#business-name').focus();
     }
 
@@ -202,7 +204,6 @@
         wixSelCategory = $('#ad-category').val();
 
         $('.form-container').hide();
-        $('body').removeClass('back-02').addClass('back-03');
 
         var sets = [];
         _.each(wixSelTypes, function (enType) {
