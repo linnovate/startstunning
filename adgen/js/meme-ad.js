@@ -45,6 +45,12 @@ String.prototype.capitalize = function() {
                 obj.name = enName;
                 obj.url = el.image;
                 res.push(obj);
+                // TODO: remove the rest for production!
+                res.push(obj);
+                res.push(obj);
+                res.push(obj);
+                res.push(obj);
+                res.push(obj);
             });
 
             return res;

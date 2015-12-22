@@ -10,7 +10,7 @@
     <script src="/adgen/js/kinetic.min.js"></script>
     <script src="/adgen/js/meme-ad.js"></script>
 </head>
-<body>
+<body class="back-01">
 
 <style>
     canvas:hover {
@@ -33,28 +33,34 @@
         margin-bottom: 20px;
     }
 
+    .mb20 {
+        margin-bottom: 20px;
+    }
+
+    .mb40 {
+        margin-bottom: 40px;
+    }
+
     .wix-ad-form {
-        padding: 50px 20px;
-        background-color: #f2f2f2;
+        padding: 50px 20%;
+        background-color: #fff;
     }
 
-    .wix-ad-form input[type="text"], .wix-ad-form select {
+    .wix-ad-form input, .wix-ad-form select {
         width: 100%;
-        padding: 2px 5px;
-        height: 30px;
+        padding: 2px 15px;
+        height: 35px;
+        border-radius: 15px;
+        border: 1px solid #03B7BE;
     }
 
-    button {
-        width: 80px;
-        height: 30px;
+    .wix-ad-form input[type="text"] {
+        color: #03B7BE;
     }
 
-    button[disabled] {
-        color: #ccc;
-    }
-
-    body {
-        background-color: #ccc;
+    .wix-ad-form select {
+        color: #fff;
+        background-color: #03B7BE;
     }
 
     .entity-type-item:hover {
@@ -69,12 +75,100 @@
     .entity-pick-container img {
         width: 200px;
     }
+
+    .btn-blue-white:hover {
+        background-color: #fff;
+    }
+
+    .btn-blue-white {
+        background-color: transparent;
+        border-color: #fff;
+        color: #fff;
+    }
+
+    .btn {
+        padding: 5px 27px;
+        border-radius: 15px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .entity-pick-container {
+        padding: 0 0 20px 0;
+    }
+
+    h3 {
+        color: #03B7BE;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"]::-webkit-input-placeholder {
+        color: #03B7BE;
+    }
+
+    input[type="text"]::-moz-placeholder {
+        color: #03B7BE;
+    }
+
+    input[type="text"]:-moz-placeholder {
+        color: #03B7BE;
+    }
+
+    input[type="text"]:-ms-input-placeholder {
+        color: #03B7BE;
+    }
+
+    input[placeholder] {
+        text-overflow: ellipsis;
+    }
+
+    input::-moz-placeholder {
+        text-overflow: ellipsis;
+    }
+
+    input:-moz-placeholder {
+        text-overflow: ellipsis;
+    }
+
+    input:-ms-input-placeholder {
+        text-overflow: ellipsis;
+    }
+
+    .back-01 {
+        background-color: #3888CF;
+    }
+
+    .back-02 {
+        background-color: #04B6BF;
+    }
+
+    .back-03 {
+        background-color: #FF815B;
+    }
+
+    .wix-ad-form {
+        height: 450px;
+    }
+
+    .entity-pick-container ul li {
+        margin-right: 4px;
+        margin-bottom: 4px;
+    }
+
+    .entity-pick-container ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
 </style>
 
 
-<div class="container entity-pick-container"></div>
-<div class="container form-container"></div>
-<div class="container meme-container"></div>
+<div class="entity-pick-container"></div>
+<div class="form-container"></div>
+<div class="meme-container"></div>
 <div id="heightStage" style="display: none;"></div>
 
 <script>
@@ -96,9 +190,10 @@
             wixSelTypes.push($(this).data('wix-ad-pick'));
         });
 
-        $('.form-container').wixAdForm({ types: wixSelTypes }, adData);
+        $('.form-container').wixAdForm({types: wixSelTypes}, adData);
 
         $('.entity-pick-container').hide();
+        $('body').removeClass('back-01').addClass('back-02');
         $('#business-name').focus();
     }
 
@@ -107,6 +202,7 @@
         wixSelCategory = $('#ad-category').val();
 
         $('.form-container').hide();
+        $('body').removeClass('back-02').addClass('back-03');
 
         var sets = [];
         _.each(wixSelTypes, function (enType) {
@@ -129,40 +225,47 @@
 
 <!--templates-->
 <script type="text/template" class="tpl-entity-pick">
-    <% _.each(data, function(chuncked) { %>
-
-    <div class="row">
-        <% _.each(chuncked, function(item) { %>
-        <div class="col-md-3">
-            <img class="entity-type-item" src="<%- item.url %>" data-wix-ad-pick="<%- item.name %>"
-                 alt="<%- item.name %>">
-        </div>
+    <div class="mb40 row">
+        <% _.each(data, function(chuncked) { %>
+        <ul>
+            <% _.each(chuncked, function(item) { %>
+            <li class="pull-left">
+                <img class="entity-type-item" src="<%- item.url %>" data-wix-ad-pick="<%- item.name %>"
+                     alt="<%- item.name %>">
+            </li>
+            <% }); %>
+        </ul>
         <% }); %>
     </div>
 
-    <div class="center-block">
-        <button id="btn-goto-form" onclick="wixAdShowForm()" disabled>Next</button>
+    <div class="text-center">
+        <button class="btn btn-blue-white" id="btn-goto-form" onclick="wixAdShowForm()" disabled>Next</button>
     </div>
 
-    <% }); %>
 </script>
 
 
 <script type="text/template" class="tpl-form">
-    <div class="wix-ad-form">
-        <div class=" center-block" style="width: 600px;">
-            <input type="text" placeholder="Your Business Name" name="business-name" id="business-name">
-            <br>
-            <br>
-            <select id="ad-category">
-                <% _.each(data, function(catName) { %>
-                <option value="<%- catName %>"><%- catName.capitalize() %></option>
-                <% }); %>
-            </select>
-            <br>
-            <br>
-            <button id="btn-goto-ads" onclick="wixAdShowAds()" disabled>Next</button>
-        </div>
+    <div class="wix-ad-form mb40">
+        <h3 class="text-center">All right! What's your business's name?</h3>
+        <input class="form-control" type="text" placeholder="For example: Mike's Swimming Lessons" name="business-name"
+               id="business-name">
+        <br>
+        <br>
+
+        <h3 class="text-center">Which category does your business fit into?</h3>
+        <select id="ad-category">
+            <% _.each(data, function(catName) { %>
+            <option value="<%- catName %>"><%- catName.capitalize() %></option>
+            <% }); %>
+        </select>
+        <br>
+        <br>
+
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-blue-white" id="btn-goto-ads" onclick="wixAdShowAds()" disabled>Next</button>
     </div>
 </script>
 
