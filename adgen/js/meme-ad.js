@@ -311,7 +311,7 @@ String.prototype.capitalize = function() {
                 stage.on('click', function () {
                     stage.toDataURL({
                         callback: function (base64) {
-                            console.log(base64);
+                            showImage(base64);
                         }
                     });
                 });
