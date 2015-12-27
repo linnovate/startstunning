@@ -309,7 +309,16 @@ String.prototype.capitalize = function() {
                 stage.on('click', function () {
                     stage.toDataURL({
                         callback: function (base64) {
-                            showImage(base64);
+                            //showImage(base64);
+                            $.ajax({
+                                type: "POST",
+                                url: "wixBase64Save.php",
+                                dataType: 'json',
+                                data: { base64: base64 }
+                            })
+                            .done(function( msg ) {
+                                console.log(msg);
+                            });
                         }
                     });
                 });
