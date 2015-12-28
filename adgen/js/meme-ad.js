@@ -285,7 +285,7 @@ String.prototype.capitalize = function() {
             heightStage;
 
         plugin.settings = {};
-
+6656
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
 
