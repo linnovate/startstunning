@@ -20,158 +20,92 @@
         cursor: pointer;
     }
 
-    .pull-left.meme-ad {
-        margin-right: 10px;
-    }
-
-    .col-1 {
-        width: 340px;
-    }
-
-    .meme-group {
-        margin-bottom: 40px;
-    }
-
-    .row {
-        margin-bottom: 20px;
-    }
-
-    .mb20 {
-        margin-bottom: 20px;
-    }
-
-    .mb40 {
-        margin-bottom: 40px;
-    }
-
-    .wix-ad-form {
-        padding: 50px 20%;
-        background-color: #fff;
-    }
-
-    .wix-ad-form input, .wix-ad-form select {
+    html, body {
+        height: 100%;
         width: 100%;
-        padding: 2px 15px;
-        height: 35px;
-        border-radius: 15px;
-        border: 1px solid #03B7BE;
-    }
-
-    .wix-ad-form input[type="text"] {
-        color: #03B7BE;
-    }
-
-    .wix-ad-form select {
-        color: #fff;
-        background-color: #03B7BE;
-    }
-
-    .entity-type-item:hover {
-        cursor: pointer;
-    }
-
-    .entity-type-item.selected {
-        border: 2px solid #8a2ce2;
-        box-sizing: border-box;
-    }
-
-    .entity-pick-container img {
-        width: 200px;
-    }
-
-    .btn-blue-white:hover {
-        background-color: #fff;
-    }
-
-    .btn-blue-white {
-        background-color: transparent;
-        border-color: #fff;
-        color: #fff;
-    }
-
-    .btn {
-        padding: 5px 27px;
-        border-radius: 15px;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    .entity-pick-container {
-        padding: 0 0 20px 0;
-    }
-
-    h3 {
-        color: #03B7BE;
-        margin-bottom: 20px;
-    }
-
-    input[type="text"]::-webkit-input-placeholder {
-        color: #03B7BE;
-    }
-
-    input[type="text"]::-moz-placeholder {
-        color: #03B7BE;
-    }
-
-    input[type="text"]:-moz-placeholder {
-        color: #03B7BE;
-    }
-
-    input[type="text"]:-ms-input-placeholder {
-        color: #03B7BE;
-    }
-
-    input[placeholder] {
-        text-overflow: ellipsis;
-    }
-
-    input::-moz-placeholder {
-        text-overflow: ellipsis;
-    }
-
-    input:-moz-placeholder {
-        text-overflow: ellipsis;
-    }
-
-    input:-ms-input-placeholder {
-        text-overflow: ellipsis;
-    }
-
-    .back-01 {
-        background-color: #3888CF;
-    }
-
-    .back-02 {
-        background-color: #04B6BF;
-    }
-
-    .back-03 {
-        background-color: #FF815B;
-    }
-
-    .wix-ad-form {
-        height: 450px;
-    }
-
-    .entity-pick-container ul li {
-        margin-right: 4px;
-        margin-bottom: 4px;
-    }
-
-    .entity-pick-container ul {
-        list-style: none;
         margin: 0;
         padding: 0;
+    }
+
+    .col {
+        float: left;
+        margin-right: 14px;
+    }
+
+    .last {
+        margin-right: 0;
+    }
+
+    .col-center {
+        width: 726px;
+        height: 100%;
+        background-color: yellow;
+    }
+
+    .col-right {
+        width: 1640px;
+        margin-top: -5px;
+    }
+
+    .col-left {
+        width: 1090px;
+        margin-top: -5px;
+    }
+
+    .flex {
+        display: flex;
+        overflow: hidden;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+    }
+
+    .square {
+        width: 265px;
+        height: 265px;
+        background: blue;
+        margin: 5px 0;
+        opacity: 0.4;
+        transition: opacity .5s ease-out;
+    }
+
+    .square:hover {
+        opacity: 1;
+    }
+
+    .overflow {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .wrap {
+        width: 3484px;
+        height: 1090px;
+        position: absolute;
+        left: 50%;
+        margin-left: -1587px;
     }
 
 </style>
 
 
-<div class="entity-pick-container"></div>
-<div class="form-container"></div>
-<div class="meme-container"></div>
+<div class="overflow">
+    <div class="wrap">
+        <div class="col-left flex col">
+        </div>
+
+        <div class="col-center col">
+            center
+        </div>
+
+        <div class="col-right flex col last">
+        </div>
+    </div>
+
+</div>
 <div id="heightStage" style="display: none;"></div>
 
 <script>
@@ -182,16 +116,12 @@
 
     $(document).ready(function () {
         adData.init(function () {
-            $('.entity-pick-container').wixAdPicker({}, this);
+            this.popEl();
+//            $('.entity-pick-container').wixAdPicker({}, this);
         });
 
-        wixUploadBase64File();
     });
 
-    function wixUploadBase64File() {
-//        console.log('I started my journey!');
-
-    }
 
     function wixAdShowForm() {
         var selectedItems = $('.entity-type-item.selected');

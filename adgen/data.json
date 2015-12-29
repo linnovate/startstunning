@@ -1,201 +1,136 @@
 {
-  "dog": {
-    "image": "/adgen/img/dog/dog.png",
-    "categories": {
-      "sport": {
-        "black": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/dog/black/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/black/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/black/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/dog/black/2-2_3.png"
-          }
-        ],
-        "white": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/dog/white/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/white/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/white/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/dog/white/2-2_3.png"
-          }
-        ],
-        "yellow": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/dog/yellow/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/yellow/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/yellow/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/dog/yellow/2-2_3.png"
-          }
-        ]
-      },
-      "community": {
-        "misc": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/dog/misc/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/misc/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/dog/misc/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/dog/misc/2-2_3.png"
-          }
-        ]
-      }
-
+  "sport": [
+    {
+      "url": "/adgen/img/gif/1s.jpg",
+      "gif": "/adgen/img/gif/1.gif"
+    },
+    {
+      "url": "/adgen/img/gif/3s.jpg",
+      "gif": "/adgen/img/gif/3.gif"
+    },
+    {
+      "url": "/adgen/img/gif/4s.jpg",
+      "gif": "/adgen/img/gif/4.gif"
+    },
+    {
+      "url": "/adgen/img/gif/5s.jpg",
+      "gif": "/adgen/img/gif/5.gif"
+    },
+    {
+      "url": "/adgen/img/gif/6s.jpg",
+      "gif": "/adgen/img/gif/6.gif"
+    },
+    {
+      "url": "/adgen/img/gif/7s.jpg",
+      "gif": "/adgen/img/gif/7.gif"
+    },
+    {
+      "url": "/adgen/img/gif/8s.jpg",
+      "gif": "/adgen/img/gif/8.gif"
+    },
+    {
+      "url": "/adgen/img/gif/9s.jpg",
+      "gif": "/adgen/img/gif/9.gif"
+    },
+    {
+      "url": "/adgen/img/gif/10s.jpg",
+      "gif": "/adgen/img/gif/10.gif"
+    },
+    {
+      "url": "/adgen/img/1.jpg"
+    },
+    {
+      "url": "/adgen/img/2.jpg"
+    },
+    {
+      "url": "/adgen/img/3.jpg"
+    },
+    {
+      "url": "/adgen/img/4.jpg"
+    },
+    {
+      "url": "/adgen/img/5.jpg"
+    },
+    {
+      "url": "/adgen/img/6.jpg"
+    },
+    {
+      "url": "/adgen/img/7.jpg"
+    },
+    {
+      "url": "/adgen/img/8.jpg"
+    },
+    {
+      "url": "/adgen/img/9.jpg"
+    },
+    {
+      "url": "/adgen/img/10.jpg"
+    },
+    {
+      "url": "/adgen/img/11.jpg"
+    },
+    {
+      "url": "/adgen/img/12.jpg"
+    },
+    {
+      "url": "/adgen/img/13.jpg"
+    },
+    {
+      "url": "/adgen/img/14.jpg"
+    },
+    {
+      "url": "/adgen/img/15.jpg"
+    },
+    {
+      "url": "/adgen/img/16.jpg"
+    },
+    {
+      "url": "/adgen/img/17.jpg"
+    },
+    {
+      "url": "/adgen/img/18.jpg"
+    },
+    {
+      "url": "/adgen/img/19.jpg"
+    },
+    {
+      "url": "/adgen/img/20.jpg"
+    },
+    {
+      "url": "/adgen/img/21.jpg"
+    },
+    {
+      "url": "/adgen/img/22.jpg"
+    },
+    {
+      "url": "/adgen/img/23.jpg"
+    },
+    {
+      "url": "/adgen/img/24.jpg"
+    },
+    {
+      "url": "/adgen/img/25.jpg"
+    },
+    {
+      "url": "/adgen/img/26.jpg"
+    },
+    {
+      "url": "/adgen/img/27.jpg"
+    },
+    {
+      "url": "/adgen/img/28.jpg"
+    },
+    {
+      "url": "/adgen/img/29.jpg"
+    },
+    {
+      "url": "/adgen/img/30.jpg"
     }
-  },
-  "cat": {
-    "image": "/adgen/img/cat/cat.png",
-    "categories": {
-      "sport": {
-        "black": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/cat/black/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/cat/black/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/cat/black/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/cat/black/2-2_3.png"
-          }
-        ],
-        "white": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/cat/white/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/cat/white/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/cat/white/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/cat/white/2-2_3.png"
-          }
-        ],
-        "yellow": [
-          {
-            "column": 1,
-            "size": 1,
-            "animated": 1,
-            "url": "/adgen/img/cat/yellow/1-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/cat/yellow/2-1_1.png"
-          },
-          {
-            "column": 2,
-            "size": 1,
-            "animated": 0,
-            "url": "/adgen/img/cat/yellow/2-1_2.png"
-          },
-          {
-            "column": 2,
-            "size": 2,
-            "animated": 0,
-            "url": "/adgen/img/cat/yellow/2-2_3.png"
-          }
-        ]
-      }
+  ],
+  "community": [
+    {
+      "url": "/adgen/img/gif/2s.jpg",
+      "gif": "/adgen/img/gif/2.gif"
     }
-  }
+  ]
 }

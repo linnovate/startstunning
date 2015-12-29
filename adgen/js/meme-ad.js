@@ -22,75 +22,42 @@ String.prototype.capitalize = function() {
         var component = this;
 
         component.itemsData = {};
+        component.popData;
 
-        component.sortByColumns = function(raw) {
+        component.getCategories = function() {
             var res = {};
-            _.each(raw, function (grEl, key) {
-                res[key] = {};
-                _.each(grEl, function(el) {
-                    if (_.isUndefined(res[key][el.column])) res[key][el.column] = [];
-                    res[key][el.column].push(el);
+
+            _.each(component.itemsData, function (set, category) {
+                res[category] = category;
+            });
+
+            return res;
+        };
+
+        component.popEl = function(count) {
+            if (_.isUndefined(count)) count = 1;
+
+            if (_.isUndefined(component.popData)) {
+                component.popData = [];
+
+                _.each(component.itemsData, function(set, category) {
+                    component.popData = component.popData.concat(set);
                 });
-            });
-
-            return res;
-        };
-
-        component.getEntityTypes = function() {
-            var res = [],
-                obj = {};
-
-            _.each(component.itemsData, function(el, enName) {
-                obj = {};
-                obj.name = enName;
-                obj.url = el.image;
-                res.push(obj);
-                // TODO: remove the rest for production!
-                res.push(obj);
-                res.push(obj);
-                res.push(obj);
-            });
-
-            return res;
-        };
-
-        component.getCategories = function(types) {
-            var res = {};
-
-            _.each(types, function (el) {
-                _.each(component.itemsData[el].categories, function (category, catName) {
-                    if (_.isUndefined(res[catName])) res[catName] = catName;
-                })
-            });
-
-            return res;
-        };
-
-        component.queryEl = function(type, category, setsCount) {
-            var result = {},
-                holder = [], holderLength,
-                randomKey,
-                data = component.itemsData;
-
-            if (_.isUndefined(setsCount)) setsCount = 1;
-
-            if (_.has(data, type) &&
-                !_.isEmpty(data[type]) &&
-                _.has(data[type], 'categories') &&
-                !_.isEmpty(data[type]['categories'][category])
-            ) {
-                holder = jQuery.extend(true, {}, data[type]['categories'][category]);
-                holderLength = Object.keys(holder).length;
-                if (setsCount > holderLength) setsCount = holderLength;
-
-                for(var i = setsCount; i > 0; i--) {
-                    randomKey = component.getObjectRandomKey(holder);
-                    result[randomKey] = holder[randomKey];
-                    delete holder[randomKey];
-                }
+                component.popData = _.shuffle(component.popData);
             }
 
-            return result;
+            while (count > 0) {
+
+                count--;
+            }
+            _.each(component.itemsData, function(set, category) {
+                component.popData = component.popData.concat(set);
+            });
+            console.log(component.popData);
+
+        };
+
+        component.queryEl = function(category, count) {
         };
 
         component.getObjectRandomKey = function (obj) {
