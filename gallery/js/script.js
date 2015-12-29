@@ -17,7 +17,7 @@
       '</div>' +
       '<ul class="buttons">' +
       '<li>' +
-      '<a href="' + c.first_button_href + '" class="btn"><span class="left">' + c.first_button + '</span><span class="right"><span></span></span></a>' +
+      '<a href="' + c.first_button_href + '" class="btn fancybox"><span class="left">' + c.first_button + '</span><span class="right"><span></span></span></a>' +
       '</li>' +
       '<li>' +
       '<a href="' + c.second_button_href + '" class="btn"><span class="left">' + c.second_button + '</span><span class="right"><span class="arrow"></span></span></a>' +
@@ -83,7 +83,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/rev.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "Lorem ipsum dolor dfr",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first button",
     "second_button_href": "http://www.google.com",
     "second_button": "second button",
@@ -96,7 +96,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/hom.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "sum id, posuere n",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first button123",
     "second_button_href": "http://www.google.com",
     "second_button": "second b1",
@@ -109,7 +109,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/hom4.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "sum id, posuere ndd",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first button15",
     "second_button_href": "http://www.google.com",
     "second_button": "second buttn 1",
@@ -122,7 +122,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/rev.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "sum id, posuere ndvdws",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first button11",
     "second_button_href": "http://www.google.com",
     "second_button": "second button n",
@@ -135,7 +135,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/hom.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "sum id, posuere ndww",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first button12",
     "second_button_href": "http://www.google.com",
     "second_button": "second button3",
@@ -148,7 +148,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/rev.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "sum id, posuere nedded",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first buttonx",
     "second_button_href": "http://www.google.com",
     "second_button": "second button5",
@@ -161,7 +161,7 @@ var slides = [
     "src_big_img": "/gallery/img/full/rev.jpg",
     "title_href": "http://www.google.com",
     "sub_title": "sum id, posuere n",
-    "first_button_href": "http://www.google.com",
+    "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
     "first_button": "first button1",
     "second_button_href": "http://www.google.com",
     "second_button": "second button9",
@@ -179,5 +179,15 @@ var slides = [
 
   $(document).ready(function() {
     start(slides);
+
+      $(".fancybox").fancybox({
+          helpers: {
+              media: true
+          },
+          youtube: {
+              autoplay: 1
+          }
+      });
+
   });
 })(jQuery);
