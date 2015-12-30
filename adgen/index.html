@@ -16,6 +16,7 @@
     body {
         background-color: transparent;
     }
+
     canvas:hover {
         cursor: pointer;
     }
@@ -67,6 +68,9 @@
         margin: 5px 0;
         opacity: 0.4;
         transition: opacity .5s ease-out;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .square:hover {
@@ -116,8 +120,13 @@
 
     $(document).ready(function () {
         adData.init(function () {
-            this.popEl();
-//            $('.entity-pick-container').wixAdPicker({}, this);
+            $('.col-left').wixFillPictures({
+                count: 16
+            }, this);
+
+            $('.col-right').wixFillPictures({
+                count: 24
+            }, this);
         });
 
     });
@@ -166,24 +175,12 @@
 </script>
 
 <!--templates-->
-<script type="text/template" class="tpl-entity-pick">
-    <div class="mb40 row">
-        <% _.each(data, function(chuncked) { %>
-        <ul>
-            <% _.each(chuncked, function(item) { %>
-            <li class="pull-left">
-                <img class="entity-type-item" src="<%- item.url %>" data-wix-ad-pick="<%- item.name %>"
-                     alt="<%- item.name %>">
-            </li>
-            <% }); %>
-        </ul>
-        <% }); %>
+<script type="text/template" class="tpl-picture-grid">
+    <% _.each(data, function(item) { %>
+    <div class="square" style="background-image: url(<%- item.url %>);"
+            data-wix-gif="<%- item.gif %>" data-wix-url="<%- item.url %>">
     </div>
-
-    <div class="text-center">
-        <button class="btn btn-blue-white" id="btn-goto-form" onclick="wixAdShowForm()" disabled>Next</button>
-    </div>
-
+    <% }); %>
 </script>
 
 

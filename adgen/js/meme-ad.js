@@ -46,15 +46,8 @@ String.prototype.capitalize = function() {
                 component.popData = _.shuffle(component.popData);
             }
 
-            while (count > 0) {
-
-                count--;
-            }
-            _.each(component.itemsData, function(set, category) {
-                component.popData = component.popData.concat(set);
-            });
-            console.log(component.popData);
-
+            if (component.popData.length >= count)
+                return component.popData.splice(0, count);
         };
 
         component.queryEl = function(category, count) {
@@ -74,10 +67,9 @@ String.prototype.capitalize = function() {
     };
 
     // wixAdPicker
-    $.wixAdPicker = function(element, options, adData) {
+    $.wixFillPictures = function(element, options, adData) {
         var defaults = {
-                elementsInRow: 4,
-                maxSelection: 2
+                count: 16
             },
             $element = $(element),
             element = element,
@@ -89,39 +81,33 @@ String.prototype.capitalize = function() {
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
-            render = _.template($('script.tpl-entity-pick').html());
-            generatedHTML = render({data: adData.getEntityTypes().chunk(plugin.settings.elementsInRow)});
+            render = _.template($('script.tpl-picture-grid').html());
+            var myData = adData.popEl(plugin.settings.count);
+            console.log(myData);
+            generatedHTML = render({ data: myData });
 
             $(element).html(generatedHTML);
 
-            $element.find('img').on('click', function () {
-                var curSelected = $element.find('img.selected').length;
-                if (curSelected >= plugin.settings.maxSelection && !$(this).hasClass('selected')) {
-                    alert('You can select only '+plugin.settings.maxSelection +' items, unselect previous');
-                } else {
-                    $(this).toggleClass('selected');
-                }
+            $element.find('div').hover(function () {
+                var img = $(this).data('wix-gif');
+                if (!img) return;
 
-                curSelected = $element.find('img.selected').length;
-                if (curSelected > 0) {
-                    $('#btn-goto-form').removeAttr('disabled');
-                } else {
-                    $('#btn-goto-form').attr('disabled', 'disabled');
-                }
+                $(this).css('background-image', 'url('+img+')');
+            }, function () {
+                var img = $(this).data('wix-url');
+                $(this).css('background-image', 'url('+img+')');
             });
-
-
         };
 
         plugin.init();
 
     };
 
-    $.fn.wixAdPicker = function(options, adData) {
+    $.fn.wixFillPictures = function(options, adData) {
         if (!this.length){
             console.error('Can not find a container "%s"', this.selector);
         } else {
-            var plugin = new $.wixAdPicker(this[0], options, adData);
+            var plugin = new $.wixFillPictures(this[0], options, adData);
         }
 
         return this;
