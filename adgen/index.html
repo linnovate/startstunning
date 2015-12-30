@@ -40,7 +40,8 @@
     .col-center {
         width: 726px;
         height: 100%;
-        background-color: yellow;
+        background-color: #f6f6f6;
+        border: 1px solid #c0c0c0;
     }
 
     .col-right {
@@ -71,6 +72,8 @@
         background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
+        border: 1px solid #c0c0c0;
+        border-radius: 4px;
     }
 
     .square:hover {
@@ -92,6 +95,60 @@
         left: 50%;
         margin-left: -1587px;
     }
+    
+    .header h1 {
+        color: #fff;
+        margin-top: -6px;
+    }
+
+    .header {
+        height: 195px;
+        background-color: #4b67a0;
+        padding: 77px 70px 0 232px;
+        position: relative;
+    }
+    .head-frame {
+        height: 139px;
+        width: 137px;
+        border: 1px solid #c0c0c0;
+        background-color: #fff;
+        padding: 6px;
+        position: absolute;
+        top: 77px;
+        left: 70px;
+    }
+    .content {
+        padding: 55px 70px 0 70px;
+    }
+    .content p {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .row {
+        margin-bottom: 10px;
+    }
+    .image-frame img {
+        border-radius: 5px;
+        max-width: 100%;
+        text-align: center;
+    }
+    .form {
+        margin-bottom: 35px;
+    }
+
+    input[type="text"], select {
+        border: 1px solid #c0c0c0;
+        width: 100%;
+        padding: 13px 10px;
+    }
+
+    #btn-goto-ads {
+        padding: 12px 25px;
+        background-color: #ed9845;
+        color: #fff;
+        margin-left: -20px;
+    }
+
 
 </style>
 
@@ -102,7 +159,23 @@
         </div>
 
         <div class="col-center col">
-            center
+            <div class="header">
+                <div class="head-frame">
+                    <img src="/adgen/i/panda.png" alt="">
+                </div>
+                <h1>Get Your Own Star & Promote Your Business!</h1>
+            </div>
+            <div class="content">
+                <p>
+                    Just in time for the Big Game! Create your own ad using cute puppies and kittens, majestic horses, cheeky lizards & more.
+                    When they're the star, the world pays attention.
+                </p>
+
+                <div class="form"></div>
+                <div class="image-frame">
+                    <img src="/adgen/img/10.jpg" alt=""/>
+                </div>
+            </div>
         </div>
 
         <div class="col-right flex col last">
@@ -126,6 +199,9 @@
 
             $('.col-right').wixFillPictures({
                 count: 24
+            }, this);
+
+            $('.form').wixAdForm({
             }, this);
         });
 
@@ -185,26 +261,19 @@
 
 
 <script type="text/template" class="tpl-form">
-    <div class="wix-ad-form mb40">
-        <h3 class="text-center">All right! What's your business's name?</h3>
-        <input class="form-control" type="text" placeholder="For example: Mike's Swimming Lessons" name="business-name"
-               id="business-name">
-        <br>
-        <br>
-
-        <h3 class="text-center">Which category does your business fit into?</h3>
-        <select id="ad-category">
-            <% _.each(data, function(catName) { %>
-            <option value="<%- catName %>"><%- catName.capitalize() %></option>
-            <% }); %>
-        </select>
-        <br>
-        <br>
-
+    <div class="row">
+        <div class="col-md-6"><input type="text" id="business-name" placeholder="Your Business Name"></div>
+        <div class="col-md-6"></div>
     </div>
-
-    <div class="text-center">
-        <button class="btn btn-blue-white" id="btn-goto-ads" onclick="wixAdShowAds()" disabled>Next</button>
+    <div class="row">
+        <div class="col-md-6">
+            <select id="ad-category">
+                <% _.each(data, function(catName) { %>
+                <option value="<%- catName %>"><%- catName.capitalize() %></option>
+                <% }); %>
+            </select>
+        </div>
+        <div class="col-md-6"><button class="btn btn-flat-orange" id="btn-goto-ads" onclick="wixAdShowAds()" disabled>GO</button></div>
     </div>
 </script>
 
