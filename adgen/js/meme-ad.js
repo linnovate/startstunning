@@ -23,6 +23,7 @@ String.prototype.capitalize = function() {
 
         component.itemsData = {};
         component.popData;
+        component.randomMain;
 
         component.getCategories = function() {
             var res = {};
@@ -44,6 +45,7 @@ String.prototype.capitalize = function() {
                     component.popData = component.popData.concat(set);
                 });
                 component.popData = _.shuffle(component.popData);
+                component.randomMain = _.sample(component.popData);
             }
 
             if (component.popData.length >= count)
@@ -83,7 +85,6 @@ String.prototype.capitalize = function() {
             plugin.settings = $.extend({}, defaults, options);
             render = _.template($('script.tpl-picture-grid').html());
             var myData = adData.popEl(plugin.settings.count);
-            console.log(myData);
             generatedHTML = render({ data: myData });
 
             $(element).html(generatedHTML);
@@ -96,6 +97,11 @@ String.prototype.capitalize = function() {
             }, function () {
                 var img = $(this).data('wix-url');
                 $(this).css('background-image', 'url('+img+')');
+            }).click(function () {
+                var img = $(this).data('wix-gif') ? $(this).data('wix-gif') : $(this).data('wix-url');
+                $('.image-frame img').attr('src', img);
+                $('.square').removeClass('active');
+                $(this).addClass('active');
             });
         };
 
@@ -122,35 +128,93 @@ String.prototype.capitalize = function() {
             element = element,
             render,
             generatedHTML = '',
-            plugin = this;
+            plugin = this,
+            randomImg = '';
 
         plugin.settings = {};
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
             render = _.template($('script.tpl-form').html());
-            generatedHTML = render({data: adData.getCategories(plugin.settings.types)});
+            if (!_.isEmpty(adData.randomMain)) {
+                randomImg = _.isUndefined(adData.randomMain.gif) ? adData.randomMain.url : adData.randomMain.gif;
+            }
+            generatedHTML = render({
+                data: adData.getCategories(plugin.settings.types),
+                img: randomImg
+            });
 
             $(element).html(generatedHTML);
 
-            var $fieldBusinessName = $element.find('#business-name');
-            var $fieldCategory = $element.find('#ad-category');
+            var $fieldBusinessName = $element.find('#business-name'),
+                $fieldCategory = $element.find('#ad-category'),
+                $btnGo = $element.find('#btn-goto-ads');
 
-            $fieldBusinessName.on('keyup', function () {
+            $fieldBusinessName.focus();
+
+            $fieldBusinessName.on('keyup', function (e) {
                 if ($(this).val() && $fieldCategory.val()) {
-                    $('#btn-goto-ads').removeAttr('disabled');
+                    $btnGo.removeAttr('disabled');
                 } else {
-                    $('#btn-goto-ads').attr('disabled', 'disabled');
+                    $btnGo.attr('disabled', 'disabled');
                 }
+
+                var code = e.keyCode || e.which;
+                if(code == 13) { //Enter keycode
+                    $btnGo.click();
+                }
+            });
+
+            $btnGo.on('click', function wixAdShowAds() {
+                var name = $('#business-name').val(),
+                    category = $('#ad-category').val();
+
+                if ($(this).hasClass('step-1')) {
+                    $(this).appendTo('.form-second-step');
+                    $fieldCategory.removeClass('hide');
+                    $(this).removeClass('step-1').addClass('step-2');
+                    $fieldCategory.focus();
+                    plugin.openSelect($fieldCategory);
+                } else if ($(this).hasClass('step-2')) {
+                    console.log('name: %s, category: %s', name, category);
+                }
+
+                /*var sets = [];
+                 _.each(wixSelTypes, function (enType) {
+                 sets.push({
+                 type: enType,
+                 category: wixSelCategory
+                 })
+                 });
+
+                 $('.meme-container').wixAdLayout({
+                 layout: 'col2',
+                 caption: wixSelBusinessName,
+                 subSetsIfOneSet: 2,
+                 sets: sets
+                 }, adData);
+
+                 $('.meme-ad').wixAdMeme();*/
             });
 
             $fieldCategory.on('change', function () {
                 if ($(this).val() && $fieldBusinessName.val()) {
-                    $('#btn-goto-ads').removeAttr('disabled');
+                    $btnGo.removeAttr('disabled');
                 } else {
-                    $('#btn-goto-ads').attr('disabled', 'disabled');
+                    $btnGo.attr('disabled', 'disabled');
                 }
+                console.log('change');
             });
+        };
+
+        plugin.openSelect = function (elem) {
+            if (document.createEvent) {
+                var e = document.createEvent("MouseEvents");
+                e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                elem[0].dispatchEvent(e);
+            } else if (element.fireEvent) {
+                elem[0].fireEvent("onmousedown");
+            }
         };
 
         plugin.init();

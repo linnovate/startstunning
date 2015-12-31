@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Wix Ad Generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+    <link href='//static.parastorage.com/services/wix-public/1.163.0/css/Helvetica/fontFace.css' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
     <script src="/adgen/js/underscore-min.js"></script>
     <script src="/adgen/js/jquery.js"></script>
@@ -13,8 +14,35 @@
 <body>
 
 <style>
+    @font-face {
+        font-family: "Helvetica Neue Thin";
+        font-weight: 200;
+        src: url("Fonts/56be84de-9d60-4089-8df0-0ea6ec786b84.eot?#iefix") format("embedded-opentype"),
+        url("Fonts/50d35bbc-dfd4-48f1-af16-cf058f69421d.woff") format("woff"),
+        url("Fonts/278bef59-6be1-4800-b5ac-1f769ab47430.ttf") format("truetype");
+    }
+
+    @font-face{
+        font-family:"HelveticaNeueW01-Thin";
+        src:url("Fonts/56be84de-9d60-4089-8df0-0ea6ec786b84.eot?#iefix");
+        src:url("Fonts/56be84de-9d60-4089-8df0-0ea6ec786b84.eot?#iefix") format("eot"),
+        url("Fonts/50d35bbc-dfd4-48f1-af16-cf058f69421d.woff") format("woff"),
+        url("Fonts/278bef59-6be1-4800-b5ac-1f769ab47430.ttf") format("truetype"),
+        url("Fonts/2e309b1b-08b8-477f-bc9e-7067cf0af0b3.svg#2e309b1b-08b8-477f-bc9e-7067cf0af0b3") format("svg");
+    }
+
+    @font-face{
+        font-family:"HelveticaNeueW01-45Ligh";
+        src:url("Fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix");
+        src:url("Fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix") format("eot"),
+        url("Fonts/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff") format("woff"),
+        url("Fonts/688ab72b-4deb-4e15-a088-89166978d469.ttf") format("truetype"),
+        url("Fonts/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+    }
+
     body {
         background-color: transparent;
+        font-family: "HelveticaNeueW01-45Ligh";
     }
 
     canvas:hover {
@@ -65,7 +93,6 @@
     .square {
         width: 265px;
         height: 265px;
-        background: blue;
         margin: 5px 0;
         opacity: 0.4;
         transition: opacity .5s ease-out;
@@ -74,6 +101,7 @@
         background-size: cover;
         border: 1px solid #c0c0c0;
         border-radius: 4px;
+        cursor: pointer;
     }
 
     .square:hover {
@@ -99,6 +127,7 @@
     .header h1 {
         color: #fff;
         margin-top: -6px;
+        font: 36px/44px "HelveticaNeueW01-Thin";
     }
 
     .header {
@@ -122,18 +151,22 @@
     }
     .content p {
         font-size: 20px;
+        font-family: "HelveticaNeueW01-45Ligh";
         margin-bottom: 25px;
     }
     .row {
         margin-bottom: 10px;
     }
+    .image-frame {
+        text-align: center;
+    }
     .image-frame img {
         border-radius: 5px;
         max-width: 100%;
-        text-align: center;
+        max-height: 550px;
     }
-    .form {
-        margin-bottom: 35px;
+    .image-frame {
+        margin-top: 35px;
     }
 
     input[type="text"], select {
@@ -147,6 +180,12 @@
         background-color: #ed9845;
         color: #fff;
         margin-left: -20px;
+        border-radius: 0;
+    }
+
+    .active {
+        border: 3px solid #e49a52 !important;
+        opacity: 1 !important;
     }
 
 
@@ -172,9 +211,6 @@
                 </p>
 
                 <div class="form"></div>
-                <div class="image-frame">
-                    <img src="/adgen/img/10.jpg" alt=""/>
-                </div>
             </div>
         </div>
 
@@ -221,30 +257,6 @@
         $('#business-name').focus();
     }
 
-    function wixAdShowAds() {
-        wixSelBusinessName = $('#business-name').val();
-        wixSelCategory = $('#ad-category').val();
-
-        $('.form-container').hide();
-
-        var sets = [];
-        _.each(wixSelTypes, function (enType) {
-            sets.push({
-                type: enType,
-                category: wixSelCategory
-            })
-        });
-
-        $('.meme-container').wixAdLayout({
-            layout: 'col2',
-            caption: wixSelBusinessName,
-            subSetsIfOneSet: 2,
-            sets: sets
-        }, adData);
-
-        $('.meme-ad').wixAdMeme();
-    }
-
     function showImage(src) {
         window.open(src, '_blank', 'toolbar=0,location=0,menubar=0');
     }
@@ -262,18 +274,22 @@
 
 <script type="text/template" class="tpl-form">
     <div class="row">
-        <div class="col-md-6"><input type="text" id="business-name" placeholder="Your Business Name"></div>
-        <div class="col-md-6"></div>
+        <div class="col-xs-6"><input type="text" id="business-name" placeholder="Your Business Name"></div>
+        <div class="col-xs-6 form-first-step"><button class="btn btn-flat-orange step-1" id="btn-goto-ads" disabled>GO</button></div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <select id="ad-category">
+        <div class="col-xs-6">
+            <select id="ad-category" class="hide">
                 <% _.each(data, function(catName) { %>
                 <option value="<%- catName %>"><%- catName.capitalize() %></option>
                 <% }); %>
             </select>
         </div>
-        <div class="col-md-6"><button class="btn btn-flat-orange" id="btn-goto-ads" onclick="wixAdShowAds()" disabled>GO</button></div>
+        <div class="col-xs-6 form-second-step"></div>
+    </div>
+
+    <div class="image-frame">
+        <img src="<%- img %>" alt=""/>
     </div>
 </script>
 
