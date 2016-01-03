@@ -53,6 +53,13 @@ String.prototype.capitalize = function() {
         };
 
         component.queryEl = function(category, count) {
+            var res = [];
+
+            if (!_.isUndefined(component.itemsData[category])) {
+                res = _.shuffle(component.itemsData[category]);
+            }
+
+            return res.slice(0, count);
         };
 
         component.getObjectRandomKey = function (obj) {
@@ -177,24 +184,10 @@ String.prototype.capitalize = function() {
                     plugin.openSelect($fieldCategory);
                 } else if ($(this).hasClass('step-2')) {
                     console.log('name: %s, category: %s', name, category);
+
+
                 }
 
-                /*var sets = [];
-                 _.each(wixSelTypes, function (enType) {
-                 sets.push({
-                 type: enType,
-                 category: wixSelCategory
-                 })
-                 });
-
-                 $('.meme-container').wixAdLayout({
-                 layout: 'col2',
-                 caption: wixSelBusinessName,
-                 subSetsIfOneSet: 2,
-                 sets: sets
-                 }, adData);
-
-                 $('.meme-ad').wixAdMeme();*/
             });
 
             $fieldCategory.on('change', function () {
@@ -232,9 +225,9 @@ String.prototype.capitalize = function() {
     };
 
     // wixAdLayout
-    $.wixAdLayout = function(element, options, adData) {
+    $.wixAdShare = function(element, options, adData) {
         var defaults = {
-                layout: 'col2'
+                count: 9
             },
             $element = $(element),
             element = element,
@@ -246,19 +239,14 @@ String.prototype.capitalize = function() {
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
-            render = _.template($('script.tpl-'+plugin.settings.layout).html());
+            render = _.template($('script.tpl-share-items').html());
 
-            _.each(plugin.settings.sets, function (el) {
-                if (plugin.settings.sets.length == 1) {
-                    var data = adData.sortByColumns(adData.queryEl(el.type, el.category, plugin.settings.subSetsIfOneSet));
-                } else if (plugin.settings.sets.length > 1) {
-                    var data = adData.sortByColumns(adData.queryEl(el.type, el.category));
-                }
-                generatedHTML += render({
-                    groupItems: data,
-                    caption:    plugin.settings.caption
-                });
+            var data = adData.queryEl(plugin.settings.category, plugin.settings.count);
+            console.log(data.chunk(3));
 
+            generatedHTML += render({
+                rows:       data.chunk(3),
+                caption:    plugin.settings.caption
             });
 
             $(element).html(generatedHTML);
@@ -268,11 +256,11 @@ String.prototype.capitalize = function() {
 
     };
 
-    $.fn.wixAdLayout = function(options, adData) {
+    $.fn.wixAdShare = function(options, adData) {
         if (!this.length){
             console.error('Can not find a container "%s"', this.selector);
         } else {
-            var plugin = new $.wixAdLayout(this[0], options, adData);
+            var plugin = new $.wixAdShare(this[0], options, adData);
         }
 
         return this;
@@ -302,7 +290,6 @@ String.prototype.capitalize = function() {
             heightStage;
 
         plugin.settings = {};
-6656
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
 
