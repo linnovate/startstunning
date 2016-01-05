@@ -71,16 +71,18 @@
 
             $('.form').wixAdForm({}, this);
 
-            $('.share .container').wixAdShare({
+            /*$('.share .container').wixAdShare({
                 count: 9,
                 category: 'sport',
                 caption: 'bora bora'
             }, this);
 
-            $('.meme-ad').wixAdMeme();
+            $('.meme-ad').wixAdMeme({
+                width: 334
+            });
 
             $('.start').hide();
-            $('.share').show();
+            $('.share').show();*/
         });
 
     });
@@ -128,8 +130,9 @@
     <% _.each(rows, function(items) { %>
     <div class="row">
         <% _.each(items, function(item) { %>
-        <div class="col-md-4">
-            <div class="meme-ad" data-wix-ad-src="<%- item.url %>" data-wix-ad-text="<%- caption %>">
+        <div class="meme-col col-md-4">
+            <div class="meme-wrap">
+                <div class="meme-ad" data-wix-ad-src="<%- item.url %>" data-wix-ad-text="<%- caption %>"></div>
                 <span class="btn-fb"></span>
                 <span class="btn-tw"></span>
             </div>

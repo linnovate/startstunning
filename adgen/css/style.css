@@ -190,3 +190,49 @@ input[type="text"], select {
     font: 50px/50px "HelveticaNeueW01-Thin";
     margin: 0;
 }
+
+.meme-wrap {
+    width: 334px;
+    height: 399px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+}
+
+.meme-ad {
+    height: 334px;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.btn-fb, .btn-tw {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 69px;
+    background-image: url(/adgen/i/sn_btn.png);
+    cursor: pointer;
+}
+.btn-fb {
+    left: 0;
+    background-position: 0 100%;
+}
+.btn-tw {
+    right: 0;
+    background-position: 100% 0;
+}
+.btn-tw:hover {
+    background-position: 100% 100%;
+}
+.btn-fb:hover {
+    background-position: 0 0;
+}
+
+.meme-col {
+    margin-bottom: 20px;
+}

@@ -183,9 +183,18 @@ String.prototype.capitalize = function() {
                     $fieldCategory.focus();
                     plugin.openSelect($fieldCategory);
                 } else if ($(this).hasClass('step-2')) {
-                    console.log('name: %s, category: %s', name, category);
+                    $('.share .container').wixAdShare({
+                        count: 9,
+                        category: category,
+                        caption: name
+                    }, adData);
 
+                    $('.meme-ad').wixAdMeme({
+                        width: 334
+                    });
 
+                    $('.start').hide();
+                    $('.share').show();
                 }
 
             });
@@ -242,7 +251,6 @@ String.prototype.capitalize = function() {
             render = _.template($('script.tpl-share-items').html());
 
             var data = adData.queryEl(plugin.settings.category, plugin.settings.count);
-            console.log(data.chunk(3));
 
             generatedHTML += render({
                 rows:       data.chunk(3),
@@ -301,10 +309,15 @@ String.prototype.capitalize = function() {
                 // set stage height
                 if (plugin.settings.height == 'auto') stageH = bgImage.height;
                 else stageH = plugin.settings.height;
+                if (plugin.settings.width != 'auto' && plugin.settings.height == 'auto') {
+                    stageW = plugin.settings.width;
+                    var ar = bgImage.width / bgImage.height;
+                    stageH = Math.round(stageW / ar);
+                }
                 // create canvas
                 stage = new Kinetic.Stage({container: element, width: stageW, height: stageH});
                 heightStage = new Kinetic.Stage({container: "heightStage", width: 200, height: 200});
-                var a = new Kinetic.Image({x: 0, y: 0, image: bgImage});
+                var a = new Kinetic.Image({x: 0, y: 0, image: bgImage, width: stageW, height: stageH});
                 shapesLayer = new Kinetic.Layer;
                 shapesLayer.add(a);
                 stage.add(shapesLayer);
