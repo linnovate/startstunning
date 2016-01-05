@@ -329,7 +329,7 @@ String.prototype.capitalize = function() {
                             //showImage(base64);
                             $.ajax({
                                 type: "POST",
-                                url: "wixBase64Save.php",
+                                url: "/adgen/wixBase64Save.php",
                                 dataType: 'json',
                                 data: { base64: base64 }
                             })
