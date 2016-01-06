@@ -2,94 +2,72 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/front-min.css"/>
-    <link rel="stylesheet" href="css/ui-lib.min.css"/>
+    <link rel="stylesheet" href="/gallery/css/front-min.css"/>
+    <link rel="stylesheet" href="/gallery/css/ui-lib.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/gallery/css/settings.css"/>
+
 </head>
 <body wix-ui>
 
 <div class="main-container">
+    <div class="wrapAdmin">
 
-    <span>here you can download new images</span>
-
-    <div wix-ctrl="Accordion">
-        <div class="acc-pane">
-            <h3>Name</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Name'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Title</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Title'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Title Href</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Title Href'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Sub Title</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Sub Title'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Link to Youtube</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Link to Youtube'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>First button name</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'First button name'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Second button href</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Second button href'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Second button name</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Second button name'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Small sub title</h3>
-            <div class="acc-content">
-                <div wix-model="myText" wix-ctrl="Input" wix-options="{placeholder: 'Small sub title'}"></div>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Big img</h3>
-            <div class="acc-content">
-                <button class="images uilib-btn btn-secondary">Choose image</button>
-            </div>
-        </div>
-        <div class="acc-pane">
-            <h3>Small img</h3>
-            <div class="acc-content">
-                <button class="images uilib-btn btn-secondary">Choose image</button>
-            </div>
-        </div>
     </div>
-
-    <button class="uilib-btn btn-btn-green">Save</button>
-
-
-
 </div>
+
+
 
 <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
 <script src="/gallery/js/jquery-1.10.2.js"></script>
 <script src="/gallery/js/ui-lib.min.js"></script>
+
+
+<script type="text/template" class='tplAdminForm'>
+
+    <div class="container">
+<div class="col-md-7 left">
+    <div class="imgs">
+        <% _.each(tpl, function(admin){  %>
+        <div class="col-md-4"><div class="item"><img src="<%= admin.src_big_img %>"/></div></div>
+        <%});%>
+    </div>
+</div>
+<div class="col-md-5 right">
+
+    <div class="top">
+        <button class="newImage uilib-btn btn-btn-green">Add a New Item</button>
+    </div>
+
+    <div class="row">
+        <div class="label col-md-4">Title:</div>
+        <div wix-model="myRow" wix-ctrl="Input" class="col-md-8" wix-options="{placeholder: 'Title'}"></div>
+    </div>
+    <div class="row">
+        <div class="label col-md-4">Description:</div>
+        <div wix-model="myRow" wix-ctrl="Input" class="col-md-8" wix-options="{placeholder: 'Description'}"></div>
+    </div>
+    <div class="row">
+        <div class="label col-md-4">Mini-Description:</div>
+        <div wix-model="myRow" wix-ctrl="Input" class="col-md-8" wix-options="{placeholder: 'Mini-Description'}"></div>
+    </div>
+    <div class="row">
+        <div class="label col-md-4">Video-url:</div>
+        <div wix-model="myRow" wix-ctrl="Input" class="col-md-8" wix-options="{placeholder: 'Video-url'}"></div>
+    </div>
+    <div class="row">
+    <button class="uilib-btn btn-btn-green">Apply</button>
+    </div>
+</div>
+
+    </div>
+</script>
+
+
+<script src="/gallery/js/underscore-min.js"></script>
 <script src="/gallery/js/settings.js"></script>
+
+
 </body>
 </html>
 
