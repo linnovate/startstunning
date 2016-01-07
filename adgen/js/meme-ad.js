@@ -68,7 +68,7 @@ String.prototype.capitalize = function() {
         };
 
         component.init = function (success) {
-            $.getJSON(baseURL+'/data.json').done(function (data) {
+            $.getJSON('/adgen/data.json').done(function (data) {
                 component.itemsData = data;
                 success.call(component);
             });
