@@ -7,6 +7,9 @@
   <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
   <script src="/gallery/js/jquery-2.1.4.min.js"></script>
   <script src="/gallery/js/lodash.min.js"></script>
+  <script src="/gallery/js/angular.min.js"></script>
+  <script src="/gallery/js/simple-collections.js"></script>
+  <script src="/gallery/js/example.js"></script>
   <script src="/gallery/js/jquery.fancybox.pack.js"></script>
   <script src="/gallery/js/jquery.fancybox-media.js"></script>
   <script src="/gallery/js/modernizr-custom.js"></script>
@@ -16,13 +19,27 @@
   <script src="/gallery/js/script.js"></script>
 
 </head>
-<body>
+<body ng-app="Example">
 
 <div class="main-container">
 
     <div id="main_stage_carousel" class="carousel slide">
 
     </div>
+
+    <ul ng-controller="example">
+        <li ng-repeat="collection in collections">
+
+            {{collection.name}} <br />
+
+            Items:
+            <ul>
+                <li ng-repeat="item in items">
+                    {{item.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 
 
