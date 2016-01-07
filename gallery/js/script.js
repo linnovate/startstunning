@@ -1,6 +1,8 @@
 (function($){
 
     var tplBigLi = function(c) {
+      //'<a href="' + c.second_button_href + '" class="btn">c.second_button</a>' +
+
       c.data_ind  == 2 ? act = ' active' : act = '';
       return '' +
       '<li class="item'+ act +'" data-index="' + c.data_ind + '" data-filmname="' + c.data_filmn + '">' +
@@ -10,19 +12,10 @@
       '</div>' +
       '<div class="container">' +
       '<div class="film-info">' +
-      '<a href="' + c.title_href + '">' +
-      '<h1>' + c.title + '<span></span></h1>' +
+      '<h1>' + c.title + '</h1>' +
       '<h2>' + c.sub_title + '</h2>' +
-      '</a>' +
+      '<a href="' + c.first_button_href + '" class="btn fancybox btn-outline">'+c.first_button+'&nbsp;&nbsp;▷ </a>' +
       '</div>' +
-      '<ul class="buttons">' +
-      '<li>' +
-      '<a href="' + c.first_button_href + '" class="btn fancybox"><span class="left">' + c.first_button + '</span><span class="right"><span></span></span></a>' +
-      '</li>' +
-      '<li>' +
-      '<a href="' + c.second_button_href + '" class="btn"><span class="left">' + c.second_button + '</span><span class="right"><span class="arrow"></span></span></a>' +
-      '</li>' +
-      '</ul>' +
       '</div>' +
       '</li>' ;
     };
@@ -50,11 +43,7 @@ var tplMain = function(slides) {
   output += bigLi;
 
   output += '</ul>';
-  output +='<div class="pointer">' +
-  '<div class="left-triangle"></div>' +
-  '<div class="right-triangle"></div>' +
-  '</div>' +
-  '<a href="javascript:" data-direction="prev" class="left carousel-control show">' +
+  output += '<a href="javascript:" data-direction="prev" class="left carousel-control show">' +
   '<span class="chevron"></span>' +
   '</a>' +
   '<a href="javascript:" data-direction="next" class="right carousel-control show">' +
@@ -105,12 +94,12 @@ var slides = [
   },    {
     "data_ind": "2",
     "data_filmn": "Lorem ipsum dol",
-    "title": "slide 2",
+    "title": "#StartStunning",
     "src_big_img": "/gallery/img/full/hom4.jpg",
     "title_href": "http://www.google.com",
-    "sub_title": "sum id, posuere ndd",
+    "sub_title": "Po discovered the POWER OF WIX and now he can't stop making websites",
     "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-    "first_button": "first button15",
+    "first_button": "Watch how it all started",
     "second_button_href": "http://www.google.com",
     "second_button": "second buttn 1",
     "src_small_img": "/gallery/img/small/hom2.jpg",
