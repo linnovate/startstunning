@@ -99,7 +99,6 @@ section {
   -webkit-transition: opacity 2000ms ease;
   -moz-transition: opacity 2000ms ease;
   transition: opacity 2000ms ease;
-  height: 0;
   padding-bottom: 42.5%;
 }
 .carousel-inner {
@@ -172,9 +171,9 @@ img {
 }
 #main-stage .film-info {
   position: absolute;
-  width: 43%;
-  bottom: 210px;
-  left: 175px;
+  width: 480px;
+  left: 16%;
+  top: 25%;
   color: #CFCFCF;
 }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
@@ -208,7 +207,11 @@ h1 {
   z-index: 10;
   width: 270px;
 }
-.btn {
+.btn-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+.btn-outline {
   display: inline-block;
   font-weight: 100;
   text-decoration: none;
@@ -217,8 +220,8 @@ h1 {
   color: rgb(255, 255, 255);
   -webkit-font-smoothing: antialiased;
   border: 1px solid #fff;
-  padding: 11px 25px;
-  border-radius: 23px;
+  padding: 18px 40px;
+  border-radius: 27px;
 }
 #main-stage .buttons li a {
   margin-top: 14px;
@@ -261,7 +264,7 @@ h1 {
   float: left;
 }
 .btn span {
-  padding: 2px 26px;
+  padding: 0 0 0 15px;
 }
 .btn span.left {
   transition: background-position 100ms ease 100ms;
@@ -406,6 +409,7 @@ ol, ul {
   position: relative;
   float: left;
   width: 5000px;
+  margin-bottom: -35px;
 }
 #main-stage-menu #thumbnails li {
   margin-top: 5px;
@@ -415,7 +419,6 @@ ol, ul {
   transition: margin-top 100ms ease;
 }
 #main-stage-menu #thumbnails li:hover {
-  margin-top: 6px;
 }
 #thumbnails li img {
   max-height: 321px;
@@ -425,6 +428,9 @@ ul.videos .details {
   position: absolute;
   bottom: 0;
   color: #CFCFCF;
+  height: 68px;
+  width: 100%;
+  background: url(/gallery/img/thmb_back.png);
 }
 ul.videos .details span {
   font-size: 14px;
@@ -433,6 +439,7 @@ ul.videos .details span {
 }
 #thumbnails li h4 {
   font-size: 20px;
+  line-height: 1;
 }
 #thumbnails li {
   margin-top: 0px;
@@ -442,7 +449,6 @@ ul.videos .details span {
   width: 5%;
   opacity: 0;
   filter: alpha(opacity=0);
-  height: 0;
   -webkit-transition: all 2000ms ease;
   -moz-transition: all 2000ms ease;
   transition: all 2000ms ease;
@@ -869,3 +875,13 @@ only screen and (min-device-pixel-ratio: 1.5){
     height: 100%;
 }
 
+.triangle {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 38px;
+  height: 26px;
+  margin-left: -19px;
+  background: url('/gallery/img/tr_bt.png') 0 0 no-repeat;
+  z-index: 1;
+}
