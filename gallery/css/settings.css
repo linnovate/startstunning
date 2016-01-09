@@ -28,10 +28,25 @@
     padding: 10px;
 }
 .wrapAdmin .left .imgs img{
-    max-width: 130px;
+    /*max-width: 130px;*/
 }
 .wrapAdmin .left .item{
     padding: 5px;
+    position: relative;
+}
+.wrapAdmin .left .item .title{
+    padding: 3px;
+    display: block;
+    font-size: 10px;
+    width: 100px;
+    position: absolute;
+    border-radius: 3px;
+    top: 35%;
+    left: 50%;
+    margin-left: -50px;
+    right: 0;
+    text-align: center;
+    background: rgba(255,255,255,0.5);
 }
 .wrapAdmin .left .item:hover{
     background: pink;

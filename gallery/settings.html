@@ -28,8 +28,8 @@
     <div class="container">
 <div class="col-md-7 col-sm-7 col-xs-7 left">
     <div class="imgs">
-        <% _.each(tpl, function(admin){  %>
-        <div class="col-md-6 col-sm-6 col-xs-6"><div class="item"><img src="<%= admin.src_big_img %>"/></div></div>
+        <% _.each(tpl, function(admin, i){  %>
+        <div class="col-md-6 col-sm-6 col-xs-6"><div class="item" data-ind="<%= i %>"><img src="<%= admin.src_big_img %>"/><div class="title"><%= admin.title %></div></div></div>
         <%});%>
     </div>
 </div>
@@ -41,22 +41,27 @@
 
     <div class="row">
         <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
-        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
+        <div wix-model="title" wix-ctrl="Input" class="inputWrap title col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
     </div>
     <div class="row">
         <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
-        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
+        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap description col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
     </div>
     <div class="row">
         <div class="label col-md-5 col-sm-5 col-xs-5">Mini-Description:</div>
-        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
+        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
     </div>
     <div class="row">
         <div class="label col-md-5 col-sm-5 col-xs-5">Video-url:</div>
-        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
+        <div wix-model="myRow" wix-ctrl="Input" class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
     </div>
     <div class="row">
     <button class="btnApply uilib-btn btn-btn-green">Apply</button>
+    </div>
+    <div class="row bottom">
+        <div class="image">
+
+        </div>
     </div>
 </div>
 
