@@ -216,6 +216,81 @@
         return $scope.selectedItems = [];
       });
     };
+
+    // Alexander's custom code...
+
+    $scope._deleteAll = function () {
+      $cll.getAll().then(function(collections) {
+        _.each(collections, function (col) {
+          col.delete().then(function (result) {
+            console.log('successfully deleted: ', result);
+          }, function (error) {
+            console.log('error while delete: ', error);
+          });
+          //console.log(col);
+        });
+      });
+    };
+
+    $scope._getFooCollection = function () {
+      return new $cll.Collection({
+        title: 'Bora\'s first collection',
+        items: [
+          {
+            title: "slide 0",
+            public_properties: {
+              "data_ind": "0",
+              "data_filmn": "Lorem ipsum dolor",
+              "title_href": "http://www.google.com",
+              "sub_title": "Lorem ipsum dolor dfr",
+              "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
+              "first_button": "first button",
+              "second_button_href": "http://www.google.com",
+              "second_button": "second button",
+              "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/f10c2257e9764e7291b31d0d0003bd5c/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
+              "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/f10c2257e9764e7291b31d0d0003bd5c/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
+              "small_sub_title": "small sub title text"
+            }
+          },
+          {
+            title: "#StartStunning",
+            public_properties: {
+              "data_ind": "2",
+              "data_filmn": "Lorem ipsum dol",
+              "title_href": "http://www.google.com",
+              "sub_title": "Po discovered the POWER OF WIX and now he can't stop making websites",
+              "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
+              "first_button": "Watch how it all started",
+              "second_button_href": "http://www.google.com",
+              "second_button": "second buttn 1",
+              "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/69db060286af4c5cb8c73d086a6a126a/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
+              "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/69db060286af4c5cb8c73d086a6a126a/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
+              "small_sub_title": "small sub title text"
+            }
+          }
+        ]
+      });
+
+    };
+
+    $scope.saveAndPublish = function (collection) {
+      collection.save().then(function (result) {
+        collection.publish();
+        console.log('collection: ', collection);
+      }, function (error) {
+        console.log('collection.save error', error);
+      });
+    };
+
+    //$scope._deleteAll();
+
+    //var fooCol = $scope._getFooCollection();
+    //$scope.saveAndPublish(fooCol);
+    $cll.get('bb133804-47a9-40e8-955f-6c50149467ee').then(function (collection) {
+      console.log('specific collection is loaded: ', collection);
+    });
+
+
     return loadCollections();
   });
 
