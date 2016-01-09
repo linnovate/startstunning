@@ -80,6 +80,7 @@
     padding: 0 5px;
 }
 .wrapAdmin .right .row input{
+    width: 100%;
     max-width: 100%;
 }
 .wrapAdmin .right button.btnApply{

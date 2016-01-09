@@ -103,36 +103,27 @@
         var adminTemplate = adminTpl({tpl: slides});
         $('.wrapAdmin').html(adminTemplate);
 
-
-
-
-        $('.imgs .item').click(function() {
-            var ind = $(this).data('ind');
-            var item = slides[ind];
-            $('.inputWrap.title input').val(item.title);
-            $('.inputWrap.description input').val(item.data_filmn);
-            $('.inputWrap.mDescription input').val(item.small_sub_title);
-            $('.inputWrap.videoUrl input').val(item.first_button_href);
-            $('.wrapAdmin .right .image').html('').html('<img src="'+item.src_big_img+'" />');
-        });
-
-
-
-
-
-
-
         Wix.UI.initialize({});
 
-//        Wix.UI.get('title');
-//        Wix.UI.onChange('title', function(value, key){
+//        Wix.UI.get('tiTle');
+//        Wix.UI.onChange('tiTle', function(value, key){
 //            Wix.UI.toJSON();
 //        });
 
 
 
-
-
+        $('.left .imgs .item').click(function() {
+            var ind = $(this).data('ind');
+            var item = slides[ind];
+            $('.inputWrap.description input').val(item.data_filmn);
+            $('.inputWrap.title input').val(item.title);
+            $('.inputWrap.mDescription input').val(item.small_sub_title);
+            $('.inputWrap.buttonName input').val(item.first_button);
+            $('.inputWrap.videoUrl input').val(item.first_button_href);
+            $('.inputWrap.externalUrl input').val(item.title_href);
+            $('.inputWrap.buttonName input').val(item.first_button);
+            $('.wrapAdmin .right .image').html('').html('<img src="'+item.src_big_img+'" />');
+        });
 
 
         $('.newImage').click(function(){

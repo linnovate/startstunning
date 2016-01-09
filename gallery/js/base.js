@@ -1,7 +1,7 @@
 function load_main_stage_image(a) {
   var b = $main_stage_carousel.find('li.item[data-index="' + a + '"]').find(".main-stage-feature-image-container"),
-    c = b.data("id"),
-    d = b.data("image");
+      c = a,
+      d = b.find('img').attr('src');
   if ("undefined" == typeof $("#main_stage_feature_image_" + c).find("img").attr("src")) {
     var e = new Image;
     e.src = d, $("#main_stage_feature_image_" + c).html('<img src="' + e.src + '" alt="">')
@@ -16,7 +16,7 @@ function load_hidden_carousel_images() {
     var e = $(this).data("id"),
       f = $(this).data("image"),
       g = new Image;
-    g.src = f, $("#main_stage_feature_image_" + e).html('<img src="' + g.src + '" alt="">'), a--, a === c && (pause_auto = 0)
+    g.src = f, $("#main_stage_feature_image_" + e).html('<img src="' + g.src + '" alt="">'), a--, a === c && (pause_auto = 1)
   })
 }
 
@@ -113,7 +113,7 @@ function thumbnails_bind() {
 
 var $main_stage, $main_stage_carousel, $carousel_inner, $thumbnails, num_carousel_items, is_animating_carousel = !1,
   mainstage_loaded = 0,
-  next_index, next_data_index, pause_auto = 1,
+  next_index, next_data_index, pause_auto = 0,
   timerId = 0,
   data_next, data_prev, data_this, fandango, movietickets;
 
@@ -131,11 +131,13 @@ var swiper_init = function() {
     var a = $(this).data("direction");
     if ("next" === a) {
       next_index = $thumbnails.find("li.active").next().index();
-      next_data_index = $thumbnails.find("li.active").next().data("index");
+      next_data_index = $thumbnails.find("li.active").next().index();
+//        next_data_index = $thumbnails.find("li.active").next().data("index");
       data_next = $("#main_stage_carousel").find(".active").next().attr("data-filmname");
     } else {
       next_index = $thumbnails.find("li.active").prev().index();
-      next_data_index = $thumbnails.find("li.active").prev().data("index");
+      next_data_index = $thumbnails.find("li.active").prev().index();
+//        next_data_index = $thumbnails.find("li.active").prev().data("index");
       data_prev = $("#main_stage_carousel").find(".active").prev().attr("data-filmname");
     };
 
@@ -150,35 +152,37 @@ var swiper_init = function() {
     $("#main-stage .carousel-inner, .carousel-control").addClass("show"), load_hidden_carousel_images()
   });
 
-  //$("#main-stage, #main-stage-menu").swiperight(function() {
-  //  pause_auto = 1;
-  //  clearInterval(timerId);
-  //  $("#carousel_inner .active.item").addClass("right");
-  //  console.log( $("#carousel_inner .active.item").hasClass("right") );
-  //  $("#carousel_inner .active.item").next().addClass("left");
-  //  $("#carousel_inner .item").removeClass("left");
-  //  $("#carousel_inner .item").removeClass("right");
-  //  var a = "prev";
-  //  next_index = $thumbnails.find("li.active").prev().index();
-  //  next_data_index = $thumbnails.find("li.active").prev().data("index");
-  //  data_prev = $("#main_stage_carousel .active").prev().attr("data-filmname");
-  //  select_carousel_item(next_index, next_data_index, a)
-  //});
-  //$("#main-stage, #main-stage-menu").swipeleft(function() {
-  //  pause_auto = 1;
-  //  clearInterval(timerId);
-  //  $("#carousel_inner .active.item").addClass("left");
-  //  $("#carousel_inner .active.item").next().addClass("right");
-  //  $("#carousel_inner .item").removeClass("right");
-  //  $("#carousel_inner .item").removeClass("left");
-  //  var a = "next";
-  //  next_index = $thumbnails.find("li.active").next().index();
-  //  next_data_index = $thumbnails.find("li.active").next().data("index");
-  //  data_next = $("#main_stage_carousel .active").next().attr("data-filmname");
-  //  select_carousel_item(next_index, next_data_index, a)
-  //});
+//  $("#main-stage, #main-stage-menu").swiperight(function() {
+//    pause_auto = 1;
+//    clearInterval(timerId);
+//    $("#carousel_inner .active.item").addClass("right");
+//    console.log( $("#carousel_inner .active.item").hasClass("right") );
+//    $("#carousel_inner .active.item").next().addClass("left");
+//    $("#carousel_inner .item").removeClass("left");
+//    $("#carousel_inner .item").removeClass("right");
+//    var a = "prev";
+//    next_index = $thumbnails.find("li.active").prev().index();
+//    next_data_index = $thumbnails.find("li.active").prev().data("index");
+//    data_prev = $("#main_stage_carousel .active").prev().attr("data-filmname");
+//    select_carousel_item(next_index, next_data_index, a)
+//  });
+//  $("#main-stage, #main-stage-menu").swipeleft(function() {
+//    pause_auto = 1;
+//    clearInterval(timerId);
+//    $("#carousel_inner .active.item").addClass("left");
+//    $("#carousel_inner .active.item").next().addClass("right");
+//    $("#carousel_inner .item").removeClass("right");
+//    $("#carousel_inner .item").removeClass("left");
+//    var a = "next";
+//    next_index = $thumbnails.find("li.active").next().index();
+//    next_data_index = $thumbnails.find("li.active").next().data("index");
+//    data_next = $("#main_stage_carousel .active").next().attr("data-filmname");
+//    select_carousel_item(next_index, next_data_index, a)
+//  });
   timerId = setInterval(function() {
-    0 === pause_auto && (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
+//    0 === pause_auto &&
+    (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
+
   }, 7e3), $("#main-stage, #main-stage-menu").click(function() {
     pause_auto = 1, clearInterval(timerId)
   }), $(window).blur(function() {
@@ -188,72 +192,7 @@ var swiper_init = function() {
 };
 
 $(function() {
-  //$main_stage = $("#main-stage");
-  //$main_stage_carousel = $("#main_stage_carousel");
-  //$main_stage_carousel.on("slid.bs.carousel", function() {
-  //  is_animating_carousel = !1
-  //});
-  //$carousel_inner = $("#carousel_inner");
-  //$thumbnails = $("#thumbnails");
-  //num_carousel_items = $thumbnails.find("li").length;
-  //thumbnails_bind();
-  //$main_stage.find(".carousel-control").on("click", function() {
-  //    var a = $(this).data("direction");
-  //    if ("next" === a) {
-  //      next_index = $thumbnails.find("li.active").next().index();
-  //      next_data_index = $thumbnails.find("li.active").next().data("index");
-  //      data_next = $("#main_stage_carousel").find(".active").next().attr("data-filmname");
-  //    } else {
-  //      next_index = $thumbnails.find("li.active").prev().index();
-  //      next_data_index = $thumbnails.find("li.active").prev().data("index");
-  //      data_prev = $("#main_stage_carousel").find(".active").prev().attr("data-filmname");
-  //    };
-  //
-  //    select_carousel_item(next_index, next_data_index, a)
-  //  });
-  //
-  //var a = $("#initial_main_stage_feature_image"),
-  //  b = a.parent().data("image");
-  //a.attr("src", b);
-  //a.parent().attr("data-image", b);
-  //a.on("load", function() {
-  //  $("#main-stage .carousel-inner, .carousel-control").addClass("show"), load_hidden_carousel_images()
-  //});
-  //
-  ////$("#main-stage, #main-stage-menu").swiperight(function() {
-  ////  pause_auto = 1;
-  ////  clearInterval(timerId);
-  ////  $("#carousel_inner .active.item").addClass("right");
-  ////  console.log( $("#carousel_inner .active.item").hasClass("right") );
-  ////  $("#carousel_inner .active.item").next().addClass("left");
-  ////  $("#carousel_inner .item").removeClass("left");
-  ////  $("#carousel_inner .item").removeClass("right");
-  ////  var a = "prev";
-  ////  next_index = $thumbnails.find("li.active").prev().index();
-  ////  next_data_index = $thumbnails.find("li.active").prev().data("index");
-  ////  data_prev = $("#main_stage_carousel .active").prev().attr("data-filmname");
-  ////  select_carousel_item(next_index, next_data_index, a)
-  ////});
-  ////$("#main-stage, #main-stage-menu").swipeleft(function() {
-  ////  pause_auto = 1;
-  ////  clearInterval(timerId);
-  ////  $("#carousel_inner .active.item").addClass("left");
-  ////  $("#carousel_inner .active.item").next().addClass("right");
-  ////  $("#carousel_inner .item").removeClass("right");
-  ////  $("#carousel_inner .item").removeClass("left");
-  ////  var a = "next";
-  ////  next_index = $thumbnails.find("li.active").next().index();
-  ////  next_data_index = $thumbnails.find("li.active").next().data("index");
-  ////  data_next = $("#main_stage_carousel .active").next().attr("data-filmname");
-  ////  select_carousel_item(next_index, next_data_index, a)
-  ////});
-  //timerId = setInterval(function() {
-  //  0 === pause_auto && (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
-  //}, 7e3), $("#main-stage, #main-stage-menu").click(function() {
-  //  pause_auto = 1, clearInterval(timerId)
-  //}), $(window).blur(function() {
-  //  pause_auto = 1, clearInterval(timerId)
-  //})
+
 }), $(window).load(function() {
   //adjust_carousel_size()
 }), $(window).resize(function() {

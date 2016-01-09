@@ -4,7 +4,7 @@
     this.$element = a(b), this.$indicators = this.$element.find(".carousel-indicators"), this.options = c, this.paused = this.sliding = this.interval = this.$active = this.$items = null, "hover" == this.options.pause && this.$element.on("mouseenter", a.proxy(this.pause, this)).on("mouseleave", a.proxy(this.cycle, this))
   };
   b.DEFAULTS = {
-    interval: 5e3,
+//    interval: 5e3,
     pause: "hover",
     wrap: !0
   }, b.prototype.cycle = function(b) {
