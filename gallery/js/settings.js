@@ -128,6 +128,7 @@
 
         $('.newImage').click(function(){
             Wix.Settings.openMediaDialog(Wix.Settings.MediaType.IMAGE, false, function(data) {
+                console.log('image data: ', data);
                 // save image data
             })
         });
