@@ -81,7 +81,7 @@ a{
 #main-stage {
   color: rgb(255, 255, 255);
   position: relative;
-  background: url("../img/film_loader_sq.gif") 50% 50% no-repeat;
+  /*background: url("../img/film_loader_sq.gif") 50% 50% no-repeat;*/
 }
 section {
   width: 100%;
