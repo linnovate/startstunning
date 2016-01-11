@@ -39,7 +39,10 @@ function adjust_carousel_size() {
     var h = a > 768 ? .42555555555556 * a : 327;
     $main_stage.find(".item img, .item").height(h), $main_stage.find(".item").width($(window).width())
   } else $main_stage.find(".item").width(768);
-  mainstage_loaded = 1
+  mainstage_loaded = 1;
+
+//  custom
+  $main_stage.height($(window).height() - $thumbnails.height());
 }
 
 function select_carousel_item(a, b, c) {
@@ -152,33 +155,6 @@ var swiper_init = function() {
     $("#main-stage .carousel-inner, .carousel-control").addClass("show"), load_hidden_carousel_images()
   });
 
-//  $("#main-stage, #main-stage-menu").swiperight(function() {
-//    pause_auto = 1;
-//    clearInterval(timerId);
-//    $("#carousel_inner .active.item").addClass("right");
-//    console.log( $("#carousel_inner .active.item").hasClass("right") );
-//    $("#carousel_inner .active.item").next().addClass("left");
-//    $("#carousel_inner .item").removeClass("left");
-//    $("#carousel_inner .item").removeClass("right");
-//    var a = "prev";
-//    next_index = $thumbnails.find("li.active").prev().index();
-//    next_data_index = $thumbnails.find("li.active").prev().data("index");
-//    data_prev = $("#main_stage_carousel .active").prev().attr("data-filmname");
-//    select_carousel_item(next_index, next_data_index, a)
-//  });
-//  $("#main-stage, #main-stage-menu").swipeleft(function() {
-//    pause_auto = 1;
-//    clearInterval(timerId);
-//    $("#carousel_inner .active.item").addClass("left");
-//    $("#carousel_inner .active.item").next().addClass("right");
-//    $("#carousel_inner .item").removeClass("right");
-//    $("#carousel_inner .item").removeClass("left");
-//    var a = "next";
-//    next_index = $thumbnails.find("li.active").next().index();
-//    next_data_index = $thumbnails.find("li.active").next().data("index");
-//    data_next = $("#main_stage_carousel .active").next().attr("data-filmname");
-//    select_carousel_item(next_index, next_data_index, a)
-//  });
   timerId = setInterval(function() {
 //    0 === pause_auto &&
     (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
@@ -187,14 +163,14 @@ var swiper_init = function() {
     pause_auto = 1, clearInterval(timerId)
   }), $(window).blur(function() {
     pause_auto = 1, clearInterval(timerId)
-  })
+  });
   adjust_carousel_size();
 };
 
 $(function() {
 
 }), $(window).load(function() {
-  //adjust_carousel_size()
+  adjust_carousel_size()
 }), $(window).resize(function() {
   adjust_carousel_size()
 });

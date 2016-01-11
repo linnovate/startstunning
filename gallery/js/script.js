@@ -11,7 +11,7 @@
       c.data_ind  == 2 ? act = ' active' : act = '';
       return '' +
       '<li class="item'+ act +'" data-index="' + c.data_ind + '" data-filmname="' + c.data_filmn + '">' +
-      '<div class="main-stage-feature-image-container semi-initial">' +
+      '<div style="background-image: url('+c.src_big_img+');" class="main-stage-feature-image-container semi-initial">' +
       '<img src="' + c.src_big_img + '" alt="">' +
       '</div>' +
       '<div class="film-info">' +
