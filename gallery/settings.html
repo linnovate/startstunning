@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/gallery/css/settings.css"/>
 
 </head>
+
 <body wix-ui>
 
 <div class="main-container">
@@ -20,61 +21,74 @@
 <script type="text/template" class='tplAdminForm'>
 
     <div class="container">
-<div class="col-md-7 col-sm-7 col-xs-7 left">
-    <div class="imgs">
-        <% _.each(tpl, function(admin, i){  %>
-        <div class="col-md-6 col-sm-6 col-xs-6"><div class="item" data-ind="<%= i %>"><img src="<%= admin.src_big_img %>"/><div class="title"><%= admin.title %></div></div></div>
-        <%});%>
-    </div>
-</div>
-<div class="col-md-5 col-sm-5 col-xs-5 right">
+        <div class="col-md-7 col-sm-7 col-xs-7 left">
+            <div class="imgs">
+                <% _.each(items, function(item){ %>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="item" data-wix-item-id="<%= item.id %>">
+                        <img src="<%= item.src_big_img %>">
 
-    <div class="top">
-        <button class="newImage uilib-btn btn-btn-green">Add a New Item</button>
-    </div>
-
-    <div class="row">
-        <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
-        <div wix-model="tiTle" wix-ctrl="Input" class="inputWrap title col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
-    </div>
-    <div class="row">
-        <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
-        <div wix-model="deScription" wix-ctrl="Input" class="inputWrap description col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
-    </div>
-    <div class="row">
-        <div class="label col-md-5 col-sm-5 col-xs-5">Mini-Description:</div>
-        <div wix-model="mdeScription" wix-ctrl="Input" class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
-    </div>
-    <div class="row">
-        <div class="label col-md-5 col-sm-5 col-xs-5">Button Name:</div>
-        <div wix-model="bName" wix-ctrl="Input" class="inputWrap buttonName col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
-    </div>
-    <div class="row">
-        <div class="label col-md-5 col-sm-5 col-xs-5">Video-url:</div>
-        <div wix-model="vUrl" wix-ctrl="Input" class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
-    </div>
-    <div class="row">
-        <div class="label col-md-5 col-sm-5 col-xs-5">External Link Url:</div>
-        <div wix-model="elUrl" wix-ctrl="Input" class="inputWrap externalUrl col-md-7 col-sm-7 col-xs-7" wix-options="{placeholder: ''}"></div>
-    </div>
-    <div class="row">
-    <button class="btnApply uilib-btn btn-btn-green">Apply</button>
-    </div>
-    <div class="row bottom">
-        <div class="image">
-
+                        <div class="title"><%= item.title %></div>
+                    </div>
+                </div>
+                <%});%>
+            </div>
         </div>
-    </div>
-</div>
+
+        <div class="col-md-5 col-sm-5 col-xs-5 right">
+            <div class="top">
+                <button class="newImage uilib-btn btn-btn-green">Add a New Item</button>
+            </div>
+
+            <div class="row">
+                <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
+                <div wix-model="title" wix-ctrl="Input" class="inputWrap title col-md-7 col-sm-7 col-xs-7"
+                     wix-options="{placeholder: ''}"></div>
+            </div>
+            <div class="row">
+                <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
+                <div wix-model="desc" wix-ctrl="Input" class="inputWrap description col-md-7 col-sm-7 col-xs-7"
+                     wix-options="{placeholder: ''}"></div>
+            </div>
+            <div class="row">
+                <div class="label col-md-5 col-sm-5 col-xs-5">Mini-Description:</div>
+                <div wix-model="mDesc" wix-ctrl="Input" class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7"
+                     wix-options="{placeholder: ''}"></div>
+            </div>
+            <div class="row">
+                <div class="label col-md-5 col-sm-5 col-xs-5">Button Name:</div>
+                <div wix-model="bName" wix-ctrl="Input" class="inputWrap buttonName col-md-7 col-sm-7 col-xs-7"
+                     wix-options="{placeholder: ''}"></div>
+            </div>
+            <div class="row">
+                <div class="label col-md-5 col-sm-5 col-xs-5">Video-url:</div>
+                <div wix-model="vUrl" wix-ctrl="Input" class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7"
+                     wix-options="{placeholder: ''}"></div>
+            </div>
+            <div class="row">
+                <div class="label col-md-5 col-sm-5 col-xs-5">External Link Url:</div>
+                <div wix-model="eUrl" wix-ctrl="Input" class="inputWrap externalUrl col-md-7 col-sm-7 col-xs-7"
+                     wix-options="{placeholder: ''}"></div>
+            </div>
+            <div class="row">
+                <button class="btnApply uilib-btn btn-btn-green">Apply</button>
+            </div>
+            <div class="row bottom">
+                <div class="image">
+
+                </div>
+            </div>
+        </div>
 
     </div>
 </script>
 
 
 <script src="/gallery/js/jquery-2.1.4.min.js"></script>
+<script src="/gallery/js/lodash.min.js"></script>
+<script src="/gallery/js/simple-collections.js"></script>
 <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
 <script src="/gallery/js/ui-lib.min.js"></script>
-<script src="/gallery/js/lodash.min.js"></script>
 <script src="/gallery/js/settings.js"></script>
 
 
