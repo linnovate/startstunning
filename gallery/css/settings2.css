@@ -1,0 +1,11 @@
+.container {
+	height: 50px;
+	border-bottom: 1px solid #ccc;
+}
+.uilib-color-box {
+	display: inline-block;
+}
+
+.uilib-spinner.large {
+	display: inline-block;
+}
