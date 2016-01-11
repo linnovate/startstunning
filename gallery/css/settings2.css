@@ -1,11 +1,11 @@
-.container {
+.app-settings .container {
 	height: 50px;
 	border-bottom: 1px solid #ccc;
 }
-.uilib-color-box {
+.app-settings .uilib-color-box {
 	display: inline-block;
 }
 
-.uilib-spinner.large {
+.app-settings .uilib-spinner.large {
 	display: inline-block;
 }

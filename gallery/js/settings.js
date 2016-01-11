@@ -107,10 +107,10 @@
             gMan.setCollectionId('bb133804-47a9-40e8-955f-6c50149467ee');*/
         });
 
-        gMan.init(function (col) {
+        /*gMan.init(function (col) {
            console.log('wow, here is saved or loaded collection: ', col);
            console.log('wow, here is saved or loaded collection: ', gMan.getCollection());
-        });
+        });*/
 
 
     });

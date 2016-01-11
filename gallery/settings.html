@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/gallery/css/front-min.css"/>
     <link rel="stylesheet" href="/gallery/css/ui-lib.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/gallery/css/settings2.css"/>
     <link rel="stylesheet" href="/gallery/css/settings.css"/>
 
 </head>
@@ -12,8 +13,22 @@
 <body wix-ui>
 
 <div class="main-container">
-    <div class="wrapAdmin">
 
+    <div wix-ctrl="Tabs" wix-options="{value:0}"  style="margin: 0px">
+        <ul>
+            <li data-tab="tab0"><div>Manage items</div></li>
+            <li data-tab="tab1"><div>Settings</div></li>
+        </ul>
+        <div class="tab-content">
+            <div data-tab="tab0" class="tab-pane">
+                <div class="wrapAdmin">
+
+                </div>
+            </div>
+            <div data-tab="tab1" class="tab-pane">
+                <div class="app-settings"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -90,6 +105,7 @@
 <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
 <script src="/gallery/js/ui-lib.min.js"></script>
 <script src="/gallery/js/settings.js"></script>
+<script src="/gallery/js/settings2.js"></script>
 
 
 </body>
