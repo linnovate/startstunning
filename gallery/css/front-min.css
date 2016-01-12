@@ -885,3 +885,42 @@ only screen and (min-device-pixel-ratio: 1.5){
   background: url('/gallery/img/tr_bt.png') 0 0 no-repeat;
   z-index: 1;
 }
+
+
+.main-stage-feature-image-container img {display:none !important;}
+#carousel_inner .item {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute;
+  top: 0;
+}
+
+#carousel_inner .item .main-stage-feature-image-container {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+#main-stage .carousel-inner.show {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+.main-container,
+#main_stage_carousel {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#main-stage {
+  position: relative;
+  height: 75%;
+  width: 100%;
+}
