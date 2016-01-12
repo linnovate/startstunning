@@ -10,92 +10,133 @@
 
 </head>
 
-<body wix-ui>
+<body>
 
 <div class="main-container">
 
-    <div wix-ctrl="Tabs" wix-options="{value:0}"  style="margin: 0px">
+    <div wix-ctrl="Tabs" wix-options="{value:0}" style="margin: 0px">
         <ul>
-            <li data-tab="tab0"><div>Manage items</div></li>
-            <li data-tab="tab1"><div>Settings</div></li>
+            <li data-tab="tab0">
+                <div>Manage items</div>
+            </li>
+            <li data-tab="tab1">
+                <div>Settings</div>
+            </li>
         </ul>
         <div class="tab-content">
             <div data-tab="tab0" class="tab-pane">
-                <div class="wrapAdmin">
+                <div class="gallery-manager wrapAdmin">
+                    <div class="container">
+                        <div class="col-md-7 col-sm-7 col-xs-7 left">
+                            <div class="imgs">
 
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-5 col-xs-5 right">
+                            <div class="top">
+                                <button class="newImage uilib-btn btn-btn-green">Add a New Item</button>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
+                                <div wix-model="title" wix-ctrl="Input"
+                                     class="inputWrap title col-md-7 col-sm-7 col-xs-7"
+                                     wix-options="{placeholder: ''}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
+                                <div wix-model="desc" wix-ctrl="Input"
+                                     class="inputWrap description col-md-7 col-sm-7 col-xs-7"
+                                     wix-options="{placeholder: ''}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-md-5 col-sm-5 col-xs-5">Mini description:</div>
+                                <div wix-model="mDesc" wix-ctrl="Input"
+                                     class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7"
+                                     wix-options="{placeholder: ''}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-md-5 col-sm-5 col-xs-5">Button name:</div>
+                                <div wix-model="bName" wix-ctrl="Input"
+                                     class="inputWrap buttonName col-md-7 col-sm-7 col-xs-7"
+                                     wix-options="{placeholder: ''}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-md-5 col-sm-5 col-xs-5">Video url:</div>
+                                <div wix-model="vUrl" wix-ctrl="Input"
+                                     class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7"
+                                     wix-options="{placeholder: ''}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-md-5 col-sm-5 col-xs-5">External url:</div>
+                                <div wix-model="eUrl" wix-ctrl="Input"
+                                     class="inputWrap externalUrl col-md-7 col-sm-7 col-xs-7"
+                                     wix-options="{placeholder: ''}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6"><button class="btnDelete uilib-btn btn-btn-green">Delete</button></div>
+                                <div class="col-xs-6"><button class="btnApply uilib-btn btn-btn-green">Apply</button></div>
+                            </div>
+                            <div class="row bottom">
+                                <div class="image">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
             <div data-tab="tab1" class="tab-pane">
-                <div class="app-settings"></div>
+                <div class="app-settings">
+                    <ul>
+                        <li wix-label="Gallery Margin:" class="container2">
+                            <div class="margin-control" wix-param="SpinnerMargin" wix-ctrl="Spinner"
+                                 wix-options="{ startWithMargin:5, minValue:0, maxValue:90 }"></div>
+                        </li>
+
+                        <li wix-label="Title Font Size + Color:" class="container2">
+                            <div wix-param="titleTextColor" wix-ctrl="ColorPicker"
+                                 wix-options="{startWithColor:'color-1'}"></div>
+                            <div wix-param="titleFontSize" wix-ctrl="FontStylePicker"
+                                 wix-options="{ Value: 'Heading XL', Value: 'Heading XL', Value: 'Heading XL'}"></div>
+                        </li>
+
+                        <li wix-label="Description Font Size + Color:" class="container2">
+                            <div wix-param="DescriptionTextColor" wix-ctrl="ColorPicker"
+                                 wix-options="{startWithColor:'color-1'}"></div>
+                            <div wix-param="DescriptionFontSize" wix-ctrl="FontStylePicker"></div>
+                        </li>
+
+                        <li wix-label="Text Shadow:" class="container2">
+                            <div wix-param="TextShadowColor" wix-ctrl="ColorPicker"
+                                 wix-options="{startWithColor: 'color-3'}"></div>
+                            <div wix-param="SpinnerShadowRL" wix-ctrl="Spinner"
+                                 wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                            <div wix-param="SpinnerShadowTB" wix-ctrl="Spinner"
+                                 wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                            <div wix-param="SpinnerShadow" wix-ctrl="Spinner"
+                                 wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script type="text/template" class='tplAdminForm'>
+<script type="text/template" class='tpl-admin-slides'>
+    <% _.each(items, function(item){ %>
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="item" data-wix-item-id="<%= item.id %>">
+            <img src="<%= item.src_big_img %>">
 
-    <div class="container">
-        <div class="col-md-7 col-sm-7 col-xs-7 left">
-            <div class="imgs">
-                <% _.each(items, function(item){ %>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="item" data-wix-item-id="<%= item.id %>">
-                        <img src="<%= item.src_big_img %>">
-
-                        <div class="title"><%= item.title %></div>
-                    </div>
-                </div>
-                <%});%>
-            </div>
+            <div class="title"><%= item.title %></div>
         </div>
-
-        <div class="col-md-5 col-sm-5 col-xs-5 right">
-            <div class="top">
-                <button class="newImage uilib-btn btn-btn-green">Add a New Item</button>
-            </div>
-
-            <div class="row">
-                <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
-                <div wix-model="title" wix-ctrl="Input" class="inputWrap title col-md-7 col-sm-7 col-xs-7"
-                     wix-options="{placeholder: ''}"></div>
-            </div>
-            <div class="row">
-                <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
-                <div wix-model="desc" wix-ctrl="Input" class="inputWrap description col-md-7 col-sm-7 col-xs-7"
-                     wix-options="{placeholder: ''}"></div>
-            </div>
-            <div class="row">
-                <div class="label col-md-5 col-sm-5 col-xs-5">Mini description:</div>
-                <div wix-model="mDesc" wix-ctrl="Input" class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7"
-                     wix-options="{placeholder: ''}"></div>
-            </div>
-            <div class="row">
-                <div class="label col-md-5 col-sm-5 col-xs-5">Button name:</div>
-                <div wix-model="bName" wix-ctrl="Input" class="inputWrap buttonName col-md-7 col-sm-7 col-xs-7"
-                     wix-options="{placeholder: ''}"></div>
-            </div>
-            <div class="row">
-                <div class="label col-md-5 col-sm-5 col-xs-5">Video url:</div>
-                <div wix-model="vUrl" wix-ctrl="Input" class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7"
-                     wix-options="{placeholder: ''}"></div>
-            </div>
-            <div class="row">
-                <div class="label col-md-5 col-sm-5 col-xs-5">External url:</div>
-                <div wix-model="eUrl" wix-ctrl="Input" class="inputWrap externalUrl col-md-7 col-sm-7 col-xs-7"
-                     wix-options="{placeholder: ''}"></div>
-            </div>
-            <div class="row">
-                <button class="btnApply uilib-btn btn-btn-green">Apply</button>
-            </div>
-            <div class="row bottom">
-                <div class="image">
-
-                </div>
-            </div>
-        </div>
-
     </div>
+    <%});%>
 </script>
 
 

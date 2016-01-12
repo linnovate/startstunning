@@ -23,9 +23,7 @@
 
 <div class="main-container">
 
-    <div id="main_stage_carousel" class="carousel slide">
-
-    </div>
+    <div id="main_stage_carousel" class="carousel slide"></div>
 
 <!--    <ul ng-controller="example">
         <li ng-repeat="collection in collections">
@@ -55,8 +53,55 @@
         imgGallery[index].style.margin = style.numbers.SpinnerMargin + 'px';
     }
   });
+
+  Wix.getExternalId(function (id) {
+      console.log(id);
+
+      $.get('http://collections.wixstatic.com/collections/'+id+'.json', function (obj) {
+          var collection = obj.collection;
+          console.log('colletion', collection);
+
+          if (!collection || !collection.items.length) return;
+
+          var slides = convertCollectionToSlides(collection);
+          console.log(slides);
+
+          $('#main_stage_carousel').wixVideoGallery(slides, {});
+
+          // next/prev by keyboard arrows
+          $("body").keydown(function (event) {
+              if (event.which == 37 || event.which == 40) {
+                  $('.left.carousel-control').click();
+              }
+              if (event.which == 39 || event.which == 38) {
+                  $('.right.carousel-control').click();
+              }
+          });
+
+          $(".fancybox").fancybox({
+              helpers: {
+                  media: true
+              },
+              youtube: {
+                  autoplay: 1
+              }
+          });
+      });
+  });
+
+  function convertCollectionToSlides (collection) {
+      var slides = [], slide;
+
+      _.each(collection.items, function (item, i) {
+          slide = _.assign({id: item.id}, item.public_properties);
+          slides.push(slide);
+      });
+
+      return slides;
+  }
+
 </script>
-<style wix-style ng-non-bindable>
+<!--<style wix-style ng-non-bindable>
   #main-stage .film-info h1 {
     color: {{style.titleTextColor color-1}};
     {{style.titleFontSize Body-L}};
@@ -65,5 +110,5 @@
     color: {{style.DescriptionTextColor color-1}};
     {{style.DescriptionFontSize Body-L}};
   }
-</style>
+</style>-->
 </html>
