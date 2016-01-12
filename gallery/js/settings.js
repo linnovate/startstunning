@@ -181,6 +181,7 @@
                 console.log('collection item saved: ', result);
                 console.log('collection we got: ', collection);
                 collection.publish();
+                that.renderSlides();
                 Wix.Settings.refreshApp();
 
             }, function (error) {
@@ -210,7 +211,26 @@
             $('.inputWrap.videoUrl input').val(pubProp.first_button_href);
             $('.inputWrap.externalUrl input').val(pubProp.second_button_href);
 
-            $('.wrapAdmin .right .image').html('').html('<img src="' + pubProp.src_small_img + '">');
+            $('.wrapAdmin .right .image').html('').html('<div class="wrap-slide-prev"><span>Click to Replace Image</span><img id="slide-preview" src="' + pubProp.src_small_img + '"></div');
+
+            $('#slide-preview, .wrap-slide-prev span').on('click', function () {
+                Wix.Settings.openMediaDialog(Wix.Settings.MediaType.IMAGE, false, function (data) {
+                    if (!_.isEmpty(data)) {
+                        var BASE_URL, image, proc1, proc2;
+
+                        BASE_URL     = Wix.Utils.Media.getImageUrl(data.relativeUri);
+                        image        = wixmedia.WixImage(BASE_URL, "", "file."+data.relativeUri.split('.')[1]);
+                        proc1 = image.fill().w(1920).h(816);
+                        proc2 = image.fill().w(321).h(200);
+                        selectedItem.publicProperties.src_big_img = proc1.toUrl();
+                        selectedItem.publicProperties.src_small_img = proc2.toUrl();
+                        console.log(selectedItem.publicProperties);
+                        console.log('proc1.toUrl(): ', proc1.toUrl());
+                        console.log('proc2.toUrl(): ', proc2.toUrl());
+                        that.saveSelectedItem();
+                    }
+                });
+            });
         };
     };
 
@@ -230,9 +250,7 @@
         $('.newImage').click(function () {
             gMan.addSlide();
 
-            /*Wix.Settings.openMediaDialog(Wix.Settings.MediaType.IMAGE, false, function (data) {
 
-            });*/
             //console.log('going to getCollectionId: ');
             /*gMan.getCollectionId(function (id) {
              console.log('we got value: ', id);

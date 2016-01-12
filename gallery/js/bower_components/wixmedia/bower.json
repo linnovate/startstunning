@@ -1,0 +1,27 @@
+{
+  "name": "wixmedia",
+  "version": "1.0.4",
+  "homepage": "https://github.com/wix/wixmedia-js",
+  "authors": [
+    "David Zuckerman <davidz@wix.com>"
+  ],
+  "description": "isomorphic library for Wix Media Platform",
+  "main": "dist/wixmedia.min.js",
+  "keywords": [
+    "wix", "wixmedia", "image manipulation", "image hosting", "image storage"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests",
+    "src",
+    "GruntFile.js",
+    "jsdoc.conf.json",
+    "package.json"
+  ]
+}

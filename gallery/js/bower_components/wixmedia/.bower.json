@@ -1,0 +1,41 @@
+{
+  "name": "wixmedia",
+  "version": "2.0.1",
+  "homepage": "https://github.com/wix/wixmedia-js",
+  "authors": [
+    "David Zuckerman <davidz@wix.com>"
+  ],
+  "description": "isomorphic library for Wix Media Platform",
+  "main": "dist/wixmedia.min.js",
+  "keywords": [
+    "wix",
+    "wixmedia",
+    "image manipulation",
+    "image hosting",
+    "image storage"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests",
+    "src",
+    "GruntFile.js",
+    "jsdoc.conf.json",
+    "package.json"
+  ],
+  "_release": "2.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.1",
+    "commit": "46246efc7c61c15d0eb367fa15e4b9ac98d84ef3"
+  },
+  "_source": "git://github.com/wix/wixmedia-js.git",
+  "_target": "~2.0.1",
+  "_originalSource": "wixmedia",
+  "_direct": true
+}

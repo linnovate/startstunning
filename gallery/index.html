@@ -59,17 +59,17 @@
 
       $.get('//collections.wixstatic.com/collections/'+id+'.json', function (obj) {
           var collection = obj.collection;
-          console.log('colletion', collection);
+//          console.log('colletion', collection);
 
           if (!collection || !collection.items.length) return;
 
           var slides = convertCollectionToSlides(collection);
-          console.log(slides);
+//          console.log(slides);
 
           $('#main_stage_carousel').wixVideoGallery(slides, {});
           setTimeout(function () {
               adjust_carousel_size()
-          }, 1000);
+          }, 1500);
 
           // next/prev by keyboard arrows
           $("body").keydown(function (event) {
@@ -104,14 +104,14 @@
   }
 
 </script>
-<!--<style wix-style ng-non-bindable>
-  #main-stage .film-info h1 {
+<style wix-style ng-non-bindable>
+/*  #main-stage .film-info h1 {
     color: {{style.titleTextColor color-1}};
     {{style.titleFontSize Body-L}};
   }
   #main-stage .film-info h2 {
     color: {{style.DescriptionTextColor color-1}};
     {{style.DescriptionFontSize Body-L}};
-  }
-</style>-->
+  }*/
+</style>
 </html>
