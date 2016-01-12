@@ -172,9 +172,13 @@ img {
 #main-stage .film-info {
   position: absolute;
   width: 480px;
-  left: 16%;
-  top: 25%;
+  left: 50%;
+  height: 240px;
+  margin-left: -240px;
+  margin-top: -120px;
+  top: 50%;
   color: #CFCFCF;
+  text-align: center;
 }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   display: block;
@@ -371,7 +375,7 @@ ol, ul {
 }
 #main-stage .carousel-control.left .chevron, #main-stage .carousel-control.right .chevron {
   position: absolute;
-  top: 40%;
+  top: 45%;
   height: 33px;
   width: 23px;
 }
@@ -380,7 +384,7 @@ ol, ul {
 }
 #main-stage .carousel-control.right .chevron {
   position: absolute;
-  top: 40%;
+  top: 45%;
   right: 10%;
   height: 33px;
   width: 23px;
