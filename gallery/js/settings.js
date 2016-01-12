@@ -65,7 +65,10 @@
         };
     };
 
-    $(document).ready(function () {
+    function initSettings() {
+        Wix.UI.initialize({});
+        gallerySettings();
+
         var adminTpl,
             generagedHTML,
             gMan = new galManager;
@@ -73,13 +76,6 @@
         adminTpl = _.template($('.tplAdminForm').html());
         generagedHTML = adminTpl({items: []});
         $('.wrapAdmin').html(generagedHTML);
-
-//        Wix.UI.get('tiTle');
-//        Wix.UI.onChange('tiTle', function(value, key){
-//            Wix.UI.toJSON();
-//        });
-
-        Wix.UI.initialize({});
 
         $('.left .imgs .item').click(function () {
             var ind = $(this).data('wix-item-id');
@@ -100,18 +96,30 @@
 
                 //console.log('going to getCollectionId: ');
                 /*gMan.getCollectionId(function (id) {
-                    console.log('we got value: ', id);
-                });*/
+                 console.log('we got value: ', id);
+                 });*/
             });
             /*console.log('going to setCollectionId');
-            gMan.setCollectionId('bb133804-47a9-40e8-955f-6c50149467ee');*/
+             gMan.setCollectionId('bb133804-47a9-40e8-955f-6c50149467ee');*/
         });
 
         /*gMan.init(function (col) {
-           console.log('wow, here is saved or loaded collection: ', col);
-           console.log('wow, here is saved or loaded collection: ', gMan.getCollection());
-        });*/
+         console.log('wow, here is saved or loaded collection: ', col);
+         console.log('wow, here is saved or loaded collection: ', gMan.getCollection());
+         });*/
+    }
 
+    $(document).ready(function () {
+        // settings page
+        $.get('/gallery/views/setting-tab.html', function(result) {
+            var html = $(result).html();
+            var tpl = _.template(html);
+            $('.app-settings').html(tpl({
+
+            }));
+
+            initSettings();
+        });
 
     });
 
