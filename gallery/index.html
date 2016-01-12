@@ -47,4 +47,27 @@
 
 
 </body>
+<script >
+  Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
+    var imgGallery, index, index1;
+    imgGallery = document.querySelectorAll(".videos .show");
+    // TextShadow = document.querySelectorAll("h1, h2");
+    for (index = 0; index < imgGallery.length; index++) {
+        console.log(imgGallery[index]);
+        imgGallery[index].style.margin = style.numbers.SpinnerMargin + 'px';
+    }
+  });
+</script>
+<style wix-style ng-non-bindable>
+  #main-stage .film-info h1 {
+    color: {{style.titleTextColor color-1}};
+    {{style.titleFontSize Body-L}};
+    text-shadow: 0px 0px 0px {{style.TextShadowColor 0}} !important;
+  }
+  #main-stage .film-info h2 {
+    color: {{style.DescriptionTextColor color-1}};
+    {{style.DescriptionFontSize Body-L}};
+    text-shadow: 0px 0px 0px {{style.TextShadowColor 0}} !important;
+  }
+</style>
 </html>
