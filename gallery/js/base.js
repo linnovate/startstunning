@@ -170,7 +170,7 @@ var swiper_init = function() {
 $(function() {
 
 }), $(window).load(function() {
-  adjust_carousel_size()
+  //adjust_carousel_size();
 }), $(window).resize(function() {
-  adjust_carousel_size()
+  adjust_carousel_size();
 });

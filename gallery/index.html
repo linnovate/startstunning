@@ -57,7 +57,7 @@
   Wix.getExternalId(function (id) {
       console.log(id);
 
-      $.get('http://collections.wixstatic.com/collections/'+id+'.json', function (obj) {
+      $.get('//collections.wixstatic.com/collections/'+id+'.json', function (obj) {
           var collection = obj.collection;
           console.log('colletion', collection);
 
@@ -67,6 +67,9 @@
           console.log(slides);
 
           $('#main_stage_carousel').wixVideoGallery(slides, {});
+          setTimeout(function () {
+              adjust_carousel_size()
+          }, 1000);
 
           // next/prev by keyboard arrows
           $("body").keydown(function (event) {
