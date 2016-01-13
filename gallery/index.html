@@ -7,39 +7,20 @@
     <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
     <script src="/gallery/js/jquery-2.1.4.min.js"></script>
     <script src="/gallery/js/lodash.min.js"></script>
-    <script src="/gallery/js/angular.min.js"></script>
     <script src="/gallery/js/simple-collections.js"></script>
-    <script src="/gallery/js/example.js"></script>
     <script src="/gallery/js/jquery.fancybox.pack.js"></script>
     <script src="/gallery/js/jquery.fancybox-media.js"></script>
     <script src="/gallery/js/modernizr-custom.js"></script>
     <script src="/gallery/js/fox.min.js"></script>
     <script src="/gallery/js/swipe.js"></script>
-    <script src="/gallery/js/base.js"></script>
     <script src="/gallery/js/script.js"></script>
 
 </head>
-<body ng-app="Example">
+<body>
 
 <div class="main-container">
 
     <div id="main_stage_carousel" class="carousel slide"></div>
-
-    <!--    <ul ng-controller="example">
-            <li ng-repeat="collection in collections">
-
-                {{collection.name}} <br />
-
-                Items:
-                <ul>
-                    <li ng-repeat="item in items">
-                        {{item.name}}
-                    </li>
-                </ul>
-            </li>
-        </ul>-->
-
-
 </div>
 
 
@@ -48,11 +29,7 @@
     console.log('Gallery frontend touch');
 
     Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
-        var imgGallery, index, index1;
-        imgGallery = document.querySelectorAll(".videos .show");
-        for (index = 0; index < imgGallery.length; index++) {
-            imgGallery[index].style.margin = style.numbers.SpinnerMargin + 'px';
-        }
+        console.log('STYLE_PARAMS_CHANGE');
     });
 
     Wix.addEventListener(Wix.Events.COMPONENT_DELETED, function(e) {
@@ -122,13 +99,17 @@
 
 </script>
 <style wix-style ng-non-bindable>
-    /*  #main-stage .film-info h1 {
+      #main-stage .film-info h1 {
         color: {{style.titleTextColor color-1}};
-        {{style.titleFontSize Body-L}};
+        {{style.titleFontSize Heading-XL}};
+        text-shadow: 0px 0px 0px #fff;
+        text-shadow: {{style.SpinnerShadowRL}}px {{style.SpinnerShadowTB}}px {{style.SpinnerShadow}}px {{style.startWithColor color-5}} !important;
       }
-      #main-stage .film-info h2 {
+      #thumbnails li h4 {
         color: {{style.DescriptionTextColor color-1}};
-        {{style.DescriptionFontSize Body-L}};
-      }*/
+        {{style.DescriptionFontSize Heading-S}};
+        text-shadow: 0px 0px 0px #fff;
+        text-shadow: {{style.SpinnerShadowRL}}px {{style.SpinnerShadowTB}}px {{style.SpinnerShadow}}px {{style.startWithColor color-5}} !important;
+      }
 </style>
 </html>

@@ -117,3 +117,13 @@
     z-index: 10;
     background: url(/gallery/img/loader.gif) center center no-repeat rgba(0,0,0,0.7);
 }
+body .box-like-drop-content {
+    width: 150px;
+}
+.container2 {
+    display: block;
+    margin-bottom: 20px;
+}
+.uilib-color-box, .uilib-spinner.large, .uilib-spinner.default{
+    display: inline-block;
+}

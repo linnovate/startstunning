@@ -309,8 +309,6 @@
         $('.imgs').html(generagedHTML);
 
         Wix.UI.initialize({});
-        gallerySettings();
-
 
         $('.newImage').click(function () {
             gMan.addSlide();
