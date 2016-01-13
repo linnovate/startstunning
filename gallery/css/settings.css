@@ -48,7 +48,7 @@
     text-align: center;
     background: rgba(255,255,255,0.5);
 }
-.wrapAdmin .left .item:hover{
+.wrapAdmin .left .item:hover, .wrapAdmin .left .item.adm-active-item {
     background: pink;
     outline: 1px solid #222;
 }
@@ -87,4 +87,33 @@
     float: right;
     position: relative;
     right: 5px;
+}
+
+#slide-preview {
+    cursor: pointer;
+}
+.wrap-slide-prev {
+    position: relative;
+}
+.wrap-slide-prev span {
+    position: absolute;
+    top: 50px;
+    color: #000;
+    background-color: rgba(255,255,255,0.5);
+    padding: 5px;
+    display: inline-block;
+    left: 30px;
+    cursor: pointer;
+}
+
+.edit-form {
+    display: none;
+}
+
+.processing .loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: url(/gallery/img/loader.gif) center center no-repeat rgba(0,0,0,0.7);
 }

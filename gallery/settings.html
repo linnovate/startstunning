@@ -24,7 +24,8 @@
             </li>
         </ul>
         <div class="tab-content">
-            <div data-tab="tab0" class="tab-pane">
+            <div class="loader"></div>
+            <div data-tab="tab0" class="tab-pane" id="first-tab">
                 <div class="gallery-manager wrapAdmin">
                     <div class="container">
                         <div class="col-md-7 col-sm-7 col-xs-7 left">
@@ -38,49 +39,51 @@
                                 <button class="newImage uilib-btn btn-btn-green">Add a New Item</button>
                             </div>
 
-                            <div class="row">
-                                <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
-                                <div wix-model="title" wix-ctrl="Input"
-                                     class="inputWrap title col-md-7 col-sm-7 col-xs-7"
-                                     wix-options="{placeholder: ''}"></div>
-                            </div>
-                            <div class="row">
-                                <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
-                                <div wix-model="desc" wix-ctrl="Input"
-                                     class="inputWrap description col-md-7 col-sm-7 col-xs-7"
-                                     wix-options="{placeholder: ''}"></div>
-                            </div>
-                            <div class="row">
-                                <div class="label col-md-5 col-sm-5 col-xs-5">Mini description:</div>
-                                <div wix-model="mDesc" wix-ctrl="Input"
-                                     class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7"
-                                     wix-options="{placeholder: ''}"></div>
-                            </div>
-                            <div class="row">
-                                <div class="label col-md-5 col-sm-5 col-xs-5">Button name:</div>
-                                <div wix-model="bName" wix-ctrl="Input"
-                                     class="inputWrap buttonName col-md-7 col-sm-7 col-xs-7"
-                                     wix-options="{placeholder: ''}"></div>
-                            </div>
-                            <div class="row">
-                                <div class="label col-md-5 col-sm-5 col-xs-5">Video url:</div>
-                                <div wix-model="vUrl" wix-ctrl="Input"
-                                     class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7"
-                                     wix-options="{placeholder: ''}"></div>
-                            </div>
-                            <div class="row">
-                                <div class="label col-md-5 col-sm-5 col-xs-5">External url:</div>
-                                <div wix-model="eUrl" wix-ctrl="Input"
-                                     class="inputWrap externalUrl col-md-7 col-sm-7 col-xs-7"
-                                     wix-options="{placeholder: ''}"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6"><button class="btnDelete uilib-btn btn-btn-green">Delete</button></div>
-                                <div class="col-xs-6"><button class="btnApply uilib-btn btn-btn-green">Apply</button></div>
-                            </div>
-                            <div class="row bottom">
-                                <div class="image">
+                            <div class="edit-form">
+                                <div class="row">
+                                    <div class="label col-md-5 col-sm-5 col-xs-5">Title:</div>
+                                    <div wix-model="title" wix-ctrl="Input"
+                                         class="inputWrap title col-md-7 col-sm-7 col-xs-7"
+                                         wix-options="{placeholder: ''}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="label col-md-5 col-sm-5 col-xs-5">Description:</div>
+                                    <div wix-model="desc" wix-ctrl="Input"
+                                         class="inputWrap description col-md-7 col-sm-7 col-xs-7"
+                                         wix-options="{placeholder: ''}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="label col-md-5 col-sm-5 col-xs-5">Mini description:</div>
+                                    <div wix-model="mDesc" wix-ctrl="Input"
+                                         class="inputWrap mDescription col-md-7 col-sm-7 col-xs-7"
+                                         wix-options="{placeholder: ''}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="label col-md-5 col-sm-5 col-xs-5">Button name:</div>
+                                    <div wix-model="bName" wix-ctrl="Input"
+                                         class="inputWrap buttonName col-md-7 col-sm-7 col-xs-7"
+                                         wix-options="{placeholder: ''}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="label col-md-5 col-sm-5 col-xs-5">Video url:</div>
+                                    <div wix-model="vUrl" wix-ctrl="Input"
+                                         class="inputWrap videoUrl col-md-7 col-sm-7 col-xs-7"
+                                         wix-options="{placeholder: ''}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="label col-md-5 col-sm-5 col-xs-5">External url:</div>
+                                    <div wix-model="eUrl" wix-ctrl="Input"
+                                         class="inputWrap externalUrl col-md-7 col-sm-7 col-xs-7"
+                                         wix-options="{placeholder: ''}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6"><button class="btnDelete uilib-btn btn-btn-green">Delete</button></div>
+                                    <div class="col-xs-6"><button class="btnApply uilib-btn btn-btn-green">Apply</button></div>
+                                </div>
+                                <div class="row bottom">
+                                    <div class="image">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -143,6 +146,7 @@
 <script src="/gallery/js/jquery-2.1.4.min.js"></script>
 <script src="/gallery/js/lodash.min.js"></script>
 <script src="/gallery/js/simple-collections.js"></script>
+<script src="/gallery/js/jquery-ui.js"></script>
 <script src="/gallery/js/bower_components/wixmedia/dist/wixmedia.min.js"></script>
 <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
 <script src="/gallery/js/ui-lib.min.js"></script>

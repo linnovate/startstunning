@@ -57,37 +57,59 @@
         /**
          * Loads saved collection or creates an empty and saves
          */
-        that.editFirstSlide = function () {
-            if (collection.items.length) {
-                that.makeEditable(collection.items[0].id);
-            }
+        that.collectionProcessing = function (promise) {
+            $('.tab-content').addClass('processing');
+            console.log('processing...');
+
+            return promise.always(function() {
+                console.log('finished ...');
+                $('.tab-content').removeClass('processing');
+            });
         };
+
+        that.editFirstSlide = function () {
+            // invoking without parameter means edit first slide
+            that.makeEditable();
+        };
+
+        that.bindInterfaceEvents = function () {
+            $('body').on('click', '.imgs .item', function () {
+                var
+                    id = $(this).data('wix-item-id');
+
+                that.makeEditable(id);
+            });
+
+            console.log('btnApply: ', $('.btnApply'));
+
+            $('.btnApply').on('click', function () {
+                that.saveSelectedItem();
+            });
+
+            $('.btnDelete').on('click', function () {
+                that.removeSlide();
+            });
+
+            $cll.on(['any'], that.collectionProcessing);
+            $cll.Collection.on(['any'], that.collectionProcessing);
+            $cll.ItemsList.on(['any'], that.collectionProcessing);
+            $cll.Item.on(['any'], that.collectionProcessing);
+        };
+
         that.init = function (complete) {
             that.getCollectionId(function (id) {
                 if (_.isEmpty(id)) {
                     that.createEmptyCollection();
-                    that.saveCollection(complete);
+                    that.saveCollection(function () {
+                        that.bindInterfaceEvents();
+                        complete(collection);
+                    });
                 } else {
                     $cll.get(id).then(function (loadedCollection) {
                         console.log('just loaded collection', loadedCollection);
                         collection = loadedCollection;
 
-                        $('body').on('click', '.imgs .item', function () {
-                            var
-                                id = $(this).data('wix-item-id');
-
-                            that.makeEditable(id);
-                        });
-
-                        $('.btnApply').on('click', function () {
-                            that.saveSelectedItem();
-                        });
-
-                        $('.btnDelete').on('click', function () {
-                            that.removeSlide();
-                        });
-
-
+                        that.bindInterfaceEvents();
                         that.renderSlides();
                         that.editFirstSlide();
 
@@ -113,6 +135,31 @@
             return slides;
         };
 
+        that.enumerateCollectionSort = function () {
+            $slideContainer.find('.item').each(function (i) {
+                var
+                    id = $(this).data('wix-item-id'),
+                    //order = Math.round(i * 100) / 1000,
+                    order = i * 10,
+                    foundIndex;
+
+                if (!_.isUndefined(id)) {
+                    console.log('id: %s', id);
+                    console.log('order:', order);
+
+                    foundIndex = that.getItemIndexByID(id);
+                    if (!_.isUndefined(collection.items[foundIndex])) {
+                        collection.items[foundIndex].sortOrder = order;
+                    }
+                }
+            });
+            that.saveCollection(function (success) {
+                console.log('saved after sort', collection);
+            }, function (error) {
+                console.error('error after sort and trying to save', error);
+            });
+        };
+
         that.renderSlides = function () {
             var slides, slideTpl, newSlideHTML = '';
 
@@ -120,7 +167,11 @@
 
             slideTpl = _.template($('.tpl-admin-slides').html());
             newSlideHTML = slideTpl({items: slides});
-            $slideContainer.html(newSlideHTML);
+            $slideContainer.html(newSlideHTML).sortable({
+                update: function( event, ui ) {
+                    that.enumerateCollectionSort();
+                }
+            });
         };
 
         that.removeSlide = function () {
@@ -131,19 +182,18 @@
                     console.log('removed item');
                     that.renderSlides();
                     that.editFirstSlide();
+                    console.log('going to refresh the app');
+                    Wix.Settings.refreshApp();
                 });
             });
         };
 
-        that.addSlide = function (rawImg) {
+        that.addSlide = function () {
             var colItem = {
                 title: 'some title',
                 type: 'videoGallery',
                 publicProperties: defaultSlide
             };
-
-            //console.log('$slideContainer: ', $slideContainer);
-            //console.log('rawImg', rawImg);
 
             // save to storage
             colItem = new $cll.Item(collection, colItem);
@@ -154,6 +204,7 @@
 
                 collection.publish();
                 that.renderSlides();
+                that.makeEditable(colItem.id);
 
             }, function (error) {
                 console.error('item collection save error', error);
@@ -182,6 +233,8 @@
                 console.log('collection we got: ', collection);
                 collection.publish();
                 that.renderSlides();
+                that.makeEditable(selectedItem.id);
+                console.log('going to refresh APP');
                 Wix.Settings.refreshApp();
 
             }, function (error) {
@@ -192,10 +245,22 @@
         };
 
         that.makeEditable = function (id) {
-            var
-                ind = that.getItemIndexByID(id),
+
+            if (collection.items.length) {
+                $('.edit-form').show();
+                console.log('show form');
+            } else {
+                console.log('hide form');
+                $('.edit-form').hide();
+                return;
+            }
+
+            var ind,
                 pubProp;
 
+            if (_.isUndefined(id)) id = collection.items[0].id;
+
+            ind = that.getItemIndexByID(id);
             console.log('found index by ID: ', ind);
 
             if (_.isUndefined(collection.items[ind])) return;
@@ -203,31 +268,31 @@
             selectedItem = collection.items[ind];
             pubProp = selectedItem.publicProperties;
 
-            $('.inputWrap.title input').val(pubProp.title);
+            $('.inputWrap.title input').val(pubProp.title).focus();
             $('.inputWrap.description input').val(pubProp.sub_title);
             $('.inputWrap.mDescription input').val(pubProp.small_sub_title);
 
             $('.inputWrap.buttonName input').val(pubProp.button_caption);
             $('.inputWrap.videoUrl input').val(pubProp.first_button_href);
             $('.inputWrap.externalUrl input').val(pubProp.second_button_href);
-
             $('.wrapAdmin .right .image').html('').html('<div class="wrap-slide-prev"><span>Click to Replace Image</span><img id="slide-preview" src="' + pubProp.src_small_img + '"></div');
+            $slideContainer.find('.item').removeClass('adm-active-item');
+            $slideContainer.find('[data-wix-item-id="'+id+'"]').addClass('adm-active-item');
 
             $('#slide-preview, .wrap-slide-prev span').on('click', function () {
                 Wix.Settings.openMediaDialog(Wix.Settings.MediaType.IMAGE, false, function (data) {
                     if (!_.isEmpty(data)) {
                         var BASE_URL, image, proc1, proc2;
 
-                        BASE_URL     = Wix.Utils.Media.getImageUrl(data.relativeUri);
-                        image        = wixmedia.WixImage(BASE_URL, "", "file."+data.relativeUri.split('.')[1]);
+                        BASE_URL = Wix.Utils.Media.getImageUrl(data.relativeUri);
+                        image = wixmedia.WixImage(BASE_URL, "", "file." + data.relativeUri.split('.')[1]);
                         proc1 = image.fill().w(1920).h(816);
                         proc2 = image.fill().w(321).h(200);
                         selectedItem.publicProperties.src_big_img = proc1.toUrl();
                         selectedItem.publicProperties.src_small_img = proc2.toUrl();
                         console.log(selectedItem.publicProperties);
-                        console.log('proc1.toUrl(): ', proc1.toUrl());
-                        console.log('proc2.toUrl(): ', proc2.toUrl());
                         that.saveSelectedItem();
+                        that.makeEditable(id);
                     }
                 });
             });
@@ -260,6 +325,18 @@
         });
 
         gMan.init(function (col) {
+            /*console.log('goint to refresh APP');
+            Wix.Settings.refreshApp();*/
+
+            /*Wix.Data.Public.set('boraSettings',
+                'wow!!!',
+                { scope: 'APP' },
+                function (success) {
+                    console.log(success);
+                }
+
+            );*/
+
             //console.log('wow, here is saved or loaded collection: ', col);
             //console.log('wow, here is saved or loaded collection: ', gMan.getCollection());
         });

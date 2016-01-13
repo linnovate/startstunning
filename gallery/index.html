@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/gallery/css/front-min.css"/>
     <title></title>
-  <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
-  <script src="/gallery/js/jquery-2.1.4.min.js"></script>
-  <script src="/gallery/js/lodash.min.js"></script>
-  <script src="/gallery/js/angular.min.js"></script>
-  <script src="/gallery/js/simple-collections.js"></script>
-  <script src="/gallery/js/example.js"></script>
-  <script src="/gallery/js/jquery.fancybox.pack.js"></script>
-  <script src="/gallery/js/jquery.fancybox-media.js"></script>
-  <script src="/gallery/js/modernizr-custom.js"></script>
-  <script src="/gallery/js/fox.min.js"></script>
-  <script src="/gallery/js/swipe.js"></script>
-  <script src="/gallery/js/base.js"></script>
-  <script src="/gallery/js/script.js"></script>
+    <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
+    <script src="/gallery/js/jquery-2.1.4.min.js"></script>
+    <script src="/gallery/js/lodash.min.js"></script>
+    <script src="/gallery/js/angular.min.js"></script>
+    <script src="/gallery/js/simple-collections.js"></script>
+    <script src="/gallery/js/example.js"></script>
+    <script src="/gallery/js/jquery.fancybox.pack.js"></script>
+    <script src="/gallery/js/jquery.fancybox-media.js"></script>
+    <script src="/gallery/js/modernizr-custom.js"></script>
+    <script src="/gallery/js/fox.min.js"></script>
+    <script src="/gallery/js/swipe.js"></script>
+    <script src="/gallery/js/base.js"></script>
+    <script src="/gallery/js/script.js"></script>
 
 </head>
 <body ng-app="Example">
@@ -25,93 +25,110 @@
 
     <div id="main_stage_carousel" class="carousel slide"></div>
 
-<!--    <ul ng-controller="example">
-        <li ng-repeat="collection in collections">
+    <!--    <ul ng-controller="example">
+            <li ng-repeat="collection in collections">
 
-            {{collection.name}} <br />
+                {{collection.name}} <br />
 
-            Items:
-            <ul>
-                <li ng-repeat="item in items">
-                    {{item.name}}
-                </li>
-            </ul>
-        </li>
-    </ul>-->
-
+                Items:
+                <ul>
+                    <li ng-repeat="item in items">
+                        {{item.name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>-->
 
 
 </div>
 
 
 </body>
-<script >
-  Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
-    var imgGallery, index, index1;
-    imgGallery = document.querySelectorAll(".videos .show");
-    for (index = 0; index < imgGallery.length; index++) {
-        imgGallery[index].style.margin = style.numbers.SpinnerMargin + 'px';
+<script>
+    console.log('Gallery frontend touch');
+
+    Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
+        var imgGallery, index, index1;
+        imgGallery = document.querySelectorAll(".videos .show");
+        for (index = 0; index < imgGallery.length; index++) {
+            imgGallery[index].style.margin = style.numbers.SpinnerMargin + 'px';
+        }
+    });
+
+    Wix.addEventListener(Wix.Events.COMPONENT_DELETED, function(e) {
+//        console.log("COMPONENT_DELETED! ", e);
+    });
+
+    /*Wix.Data.Public.get('boraSettings', { scope: 'APP' }, function(result){
+        console.log('no way!!!!', result);
+    });*/
+
+
+    Wix.getExternalId(function (id) {
+        console.log('getExternalId: ', id);
+
+        if (_.isEmpty(id)) {
+            $('#main_stage_carousel').wixVideoGallery([], {});
+        } else {
+            $.get('//collections.wixstatic.com/collections/' + id + '.json', function (obj) {
+                var
+                        collection = obj.collection,
+                        slides;
+
+//                console.log('colletion', collection);
+                if (!collection || !collection.items.length) {
+                    $('#main_stage_carousel').wixVideoGallery([], {});
+                    return;
+                }
+
+                slides = convertCollectionToSlides(collection);
+//                console.log(slides);
+
+                $('#main_stage_carousel').wixVideoGallery(slides, {});
+
+                // next/prev by keyboard arrows
+                $("body").keydown(function (event) {
+                    if (event.which == 37 || event.which == 40) {
+                        $('.left.carousel-control').click();
+                    }
+                    if (event.which == 39 || event.which == 38) {
+                        $('.right.carousel-control').click();
+                    }
+                });
+
+                $(".fancybox").fancybox({
+                    helpers: {
+                        media: true
+                    },
+                    youtube: {
+                        autoplay: 1
+                    }
+                });
+            });
+        }
+
+    });
+
+    function convertCollectionToSlides(collection) {
+        var slides = [], slide;
+
+        _.each(collection.items, function (item, i) {
+            slide = _.assign({id: item.id}, item.public_properties);
+            slides.push(slide);
+        });
+
+        return slides;
     }
-  });
-
-  Wix.getExternalId(function (id) {
-      console.log(id);
-
-      $.get('//collections.wixstatic.com/collections/'+id+'.json', function (obj) {
-          var collection = obj.collection;
-//          console.log('colletion', collection);
-
-          if (!collection || !collection.items.length) return;
-
-          var slides = convertCollectionToSlides(collection);
-//          console.log(slides);
-
-          $('#main_stage_carousel').wixVideoGallery(slides, {});
-          setTimeout(function () {
-              adjust_carousel_size()
-          }, 1500);
-
-          // next/prev by keyboard arrows
-          $("body").keydown(function (event) {
-              if (event.which == 37 || event.which == 40) {
-                  $('.left.carousel-control').click();
-              }
-              if (event.which == 39 || event.which == 38) {
-                  $('.right.carousel-control').click();
-              }
-          });
-
-          $(".fancybox").fancybox({
-              helpers: {
-                  media: true
-              },
-              youtube: {
-                  autoplay: 1
-              }
-          });
-      });
-  });
-
-  function convertCollectionToSlides (collection) {
-      var slides = [], slide;
-
-      _.each(collection.items, function (item, i) {
-          slide = _.assign({id: item.id}, item.public_properties);
-          slides.push(slide);
-      });
-
-      return slides;
-  }
 
 </script>
 <style wix-style ng-non-bindable>
-/*  #main-stage .film-info h1 {
-    color: {{style.titleTextColor color-1}};
-    {{style.titleFontSize Body-L}};
-  }
-  #main-stage .film-info h2 {
-    color: {{style.DescriptionTextColor color-1}};
-    {{style.DescriptionFontSize Body-L}};
-  }*/
+    /*  #main-stage .film-info h1 {
+        color: {{style.titleTextColor color-1}};
+        {{style.titleFontSize Body-L}};
+      }
+      #main-stage .film-info h2 {
+        color: {{style.DescriptionTextColor color-1}};
+        {{style.DescriptionFontSize Body-L}};
+      }*/
 </style>
 </html>

@@ -1,129 +1,21 @@
 (function ($) {
 
-    var slides = [
-        {
-            "data_filmn": "Lorem ipsum dolor",
-            "id": 0,
-            "title": "slide 0",
-            "title_href": "http://www.google.com",
-            "sub_title": "Lorem ipsum dolor dfr",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "button_caption": "first button",
-            "second_button_href": "http://www.google.com",
-            "second_button": "second button",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/f10c2257e9764e7291b31d0d0003bd5c/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/f10c2257e9764e7291b31d0d0003bd5c/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "small_sub_title": "small sub title text"
-        }, {
-            "data_filmn": "Lorem ipsum do",
-            "id": 1,
-            "title": "slide 1",
-            "title_href": "http://www.google.com",
-            "sub_title": "sum id, posuere n",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "button_caption": "first button123",
-            "second_button_href": "http://www.google.com",
-            "second_button": "second b1",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/7ca24e8b0e7242c0b9b2f5498ac041af/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/7ca24e8b0e7242c0b9b2f5498ac041af/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "small_sub_title": "small sub title text"
-        }, {
-            "title": "#StartStunning",
-            "id": "37453478568",
-            "sub_title": "Po discovered the POWER OF WIX and now he can't stop making websites",
-            "small_sub_title": "small sub title text",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/69db060286af4c5cb8c73d086a6a126a/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/69db060286af4c5cb8c73d086a6a126a/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "button_caption": "Watch how it all started",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "second_button_href": "http://www.google.com"
-        }, {
-            "data_filmn": "Lorem ipsum d",
-            "id": 3,
-            "title": "slide 3",
-            "title_href": "http://www.google.com",
-            "sub_title": "sum id, posuere ndvdws",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "button_caption": "first button11",
-            "second_button_href": "http://www.google.com",
-            "second_button": "second button n",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/b9a5e5030e9f4055a51503f737134878/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/b9a5e5030e9f4055a51503f737134878/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "small_sub_title": "small sub title text"
-        }, {
-            "data_filmn": "Lorem ipsum",
-            "id": 4,
-            "title": "slide 4",
-            "title_href": "http://www.google.com",
-            "sub_title": "sum id, posuere ndww",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "button_caption": "first button12",
-            "second_button_href": "http://www.google.com",
-            "second_button": "second button3",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/cf247b50ae7b4fd8ad744f28f9e38524/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/cf247b50ae7b4fd8ad744f28f9e38524/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "small_sub_title": "small sub title text"
-        }, {
-            "data_filmn": "Lorem ipsum dolor i",
-            "id": 5,
-            "title": "slide 5",
-            "title_href": "http://www.google.com",
-            "sub_title": "sum id, posuere nedded",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "button_caption": "first buttonx",
-            "second_button_href": "http://www.google.com",
-            "second_button": "second button5",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/1a06e0869a7849b89cc6b573b7b1f3fd/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/1a06e0869a7849b89cc6b573b7b1f3fd/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "small_sub_title": "small sub title text"
-        }, {
-            "id": 6,
-            "data_filmn": "Lorem ips",
-            "title": "slide 6",
-            "title_href": "http://www.google.com",
-            "sub_title": "sum id, posuere n",
-            "first_button_href": "http://www.youtube.com/watch?v=opj24KnzrWo",
-            "button_caption": "first button1",
-            "second_button_href": "http://www.google.com",
-            "second_button": "second button9",
-            "src_big_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/a05dc018564e4b9ab5057f6e1c4693ab/v1/fill/w_1920,h_816,al_c,q_75/file.jpg",
-            "src_small_img": "//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/a05dc018564e4b9ab5057f6e1c4693ab/v1/fill/w_321,h_200,al_c,q_75/file.jpg",
-            "small_sub_title": "small sub title text"
-        }
-    ];
-
-    $(document).ready(function () {
-        /*$('#main_stage_carousel').wixVideoGallery(slides, {});
-
-        // next/prev by keyboard arrows
-        $("body").keydown(function (event) {
-            if (event.which == 37 || event.which == 40) {
-                $('.left.carousel-control').click();
-            }
-            if (event.which == 39 || event.which == 38) {
-                $('.right.carousel-control').click();
-            }
-        });
-
-        $(".fancybox").fancybox({
-            helpers: {
-                media: true
-            },
-            youtube: {
-                autoplay: 1
-            }
-        });*/
-
-    });
-
-
     $.wixVideoGallery = function (element, slides, options) {
-        var defaults = {},
+        var defaults = {
+                minSlidesMsg: 'Very close to start, add {0} more...',
+                noSlidesMsgAdmin: 'Double click to start populating this gallery...',
+                noSlidesMsg: 'You need to add some content...',
+            },
             $element = $(element),
             element = element,
             render,
             generatedHTML = '',
             plugin = this,
+            $main_stage, $main_stage_carousel, $carousel_inner, $thumbnails, num_carousel_items, is_animating_carousel = !1,
+            mainstage_loaded = 0,
+            next_index, next_data_index, pause_auto = 0,
+            timerId = 0,
+            data_next, data_prev, data_this, fandango, movietickets,
 
             tplBigLi = function (c, i) {
                 var btn = '';
@@ -169,7 +61,7 @@
                     '<ul id="carousel_inner" class="carousel-inner show">';
 
                 var bigLi = '';
-                _.each(slides, function(item, i) {
+                _.each(slides, function (item, i) {
                     bigLi += tplBigLi(item, i);
                 });
 
@@ -187,7 +79,7 @@
                     '<ul id="thumbnails" class="videos">';
 
                 var smallLi = '';
-                _.each(slides, function(item, i) {
+                _.each(slides, function (item, i) {
                     smallLi += tplSmallLi(item, i);
                 });
                 slides.forEach(function (arr) {
@@ -200,17 +92,206 @@
                     '</section>';
 
                 return output;
+            },
+
+            swiper_init = function () {
+                $main_stage = $("#main-stage");
+                $main_stage_carousel = $("#main_stage_carousel");
+                $main_stage_carousel.on("slid.bs.carousel", function () {
+                    is_animating_carousel = !1
+                });
+                $carousel_inner = $("#carousel_inner");
+                $thumbnails = $("#thumbnails");
+                num_carousel_items = $thumbnails.find("li").length;
+                thumbnails_bind();
+                $main_stage.find(".carousel-control").on("click", function () {
+                    var a = $(this).data("direction");
+                    if ("next" === a) {
+                        next_index = $thumbnails.find("li.active").next().index();
+                        next_data_index = $thumbnails.find("li.active").next().index();
+//        next_data_index = $thumbnails.find("li.active").next().data("index");
+                        data_next = $("#main_stage_carousel").find(".active").next().attr("data-filmname");
+                    } else {
+                        next_index = $thumbnails.find("li.active").prev().index();
+                        next_data_index = $thumbnails.find("li.active").prev().index();
+//        next_data_index = $thumbnails.find("li.active").prev().data("index");
+                        data_prev = $("#main_stage_carousel").find(".active").prev().attr("data-filmname");
+                    }
+                    ;
+
+                    select_carousel_item(next_index, next_data_index, a)
+                });
+
+                var a = $("#initial_main_stage_feature_image"),
+                    b = a.parent().data("image");
+                a.attr("src", b);
+                a.parent().attr("data-image", b);
+                a.on("load", function () {
+                    $("#main-stage .carousel-inner, .carousel-control").addClass("show"), load_hidden_carousel_images()
+                });
+
+                timerId = setInterval(function () {
+//    0 === pause_auto &&
+                    (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
+
+                }, 7e3), $("#main-stage, #main-stage-menu").click(function () {
+                    pause_auto = 1, clearInterval(timerId)
+                }), $(window).blur(function () {
+                    pause_auto = 1, clearInterval(timerId)
+                });
             };
+
+        function load_main_stage_image(a) {
+            var b = $main_stage_carousel.find('li.item[data-index="' + a + '"]').find(".main-stage-feature-image-container"),
+                c = a,
+                d = b.find('img').attr('src');
+            if ("undefined" == typeof $("#main_stage_feature_image_" + c).find("img").attr("src")) {
+                var e = new Image;
+                e.src = d, $("#main_stage_feature_image_" + c).html('<img src="' + e.src + '" alt="">')
+            }
+        }
+
+        function load_hidden_carousel_images() {
+            var a = $(".main-stage-feature-image-container:not(.semi-initial)").length,
+                b = $("#carousel_inner").find(".main-stage-feature-image-container.semi-initial").length,
+                c = a - b;
+            $("#carousel_inner").find(".main-stage-feature-image-container.semi-initial").each(function (b, d) {
+                var e = $(this).data("id"),
+                    f = $(this).data("image"),
+                    g = new Image;
+                g.src = f, $("#main_stage_feature_image_" + e).html('<img src="' + g.src + '" alt="">'), a--, a === c && (pause_auto = 1)
+            })
+        }
+
+        function adjust_carousel_size() {
+            var a = $(window).width(),
+                b = a / 5;
+            $thumbnails.find("li").width(b).queue(function () {
+                $("#main-stage-menu").css({
+                    paddingBottom: "30px",
+                    backgroundImage: "none"
+                }), $("#thumbnails").find("li").addClass("show")
+            });
+            var c = $thumbnails.children("li.active").index(),
+                d = $thumbnails.children("li:eq(" + c + ")"),
+                e = d.position().left,
+                f = d.width(),
+                g = -e + 2 * f;
+            if (a > 768) {
+                $thumbnails.width(b * num_carousel_items + .05 * a * num_carousel_items), $thumbnails.css("left", g + "px");
+                var h = a > 768 ? .42555555555556 * a : 327;
+                $main_stage.find(".item img, .item").height(h), $main_stage.find(".item").width($(window).width())
+            } else $main_stage.find(".item").width(768);
+            mainstage_loaded = 1;
+
+//  custom
+            $main_stage.height($(window).height() - $thumbnails.height());
+        }
+
+        function select_carousel_item(a, b, c) {
+            if (is_animating_carousel !== !0) {
+                is_animating_carousel = !0;
+                var d, e, f = $thumbnails.find("li.active").index(),
+                    g = a,
+                    h = $main_stage_carousel.find("li.item.active").find(".main-stage-feature-image-container"),
+                    i = (h.parent().data("index"), b);
+                if ("next" === c) {
+                    d = i + 1;
+                    d > num_carousel_items - 1 && (d = 0);
+                    e = d + 1;
+                    e > num_carousel_items - 1 && (e = 0);
+                } else {
+                    d = i - 1;
+                    0 > d && (d = num_carousel_items - 1);
+                    e = d - 1;
+                    0 > e && (e = num_carousel_items - 1);
+                }
+                load_main_stage_image(d);
+                load_main_stage_image(e);
+
+                var j, k, l, m;
+                if ("next" === c && a >= num_carousel_items - 2) j = $carousel_inner.find("li.item").first(), j.clone().appendTo($carousel_inner), k = $thumbnails.find("li").first(), $thumbnails.width($thumbnails.width() + 2 * k.width()), k.clone().appendTo($thumbnails), a >= num_carousel_items - 1 && (l = $carousel_inner.find("li.item:eq(1)"), l.clone().appendTo($carousel_inner), m = $thumbnails.find("li:eq(1)"), $thumbnails.width($thumbnails.width() + 2 * m.width()), m.clone().appendTo($thumbnails));
+                else if ("prev" === c && 2 >= a) {
+                    j = $carousel_inner.find("li.item").last(), j.clone().prependTo($carousel_inner), k = $thumbnails.find("li").last(), $thumbnails.width($thumbnails.width() + 2 * k.width()), k.clone().prependTo($thumbnails);
+                    var n = a + (f - a + 1);
+                    if (g++, 1 > a) {
+                        l = $carousel_inner.find("li.item:eq(" + (num_carousel_items - 1) + ")"), l.clone().prependTo($carousel_inner), m = $thumbnails.find("li:eq(" + (num_carousel_items - 1) + ")"), $thumbnails.width($thumbnails.width() + 2 * m.width()), m.clone().prependTo($thumbnails), g++;
+                        var o = f - a - 1;
+                        n += o
+                    }
+                    var p = $thumbnails.find("li:eq(" + n + ")");
+                    $thumbnails.css("left", -p.position().left + 2 * p.width() + "px")
+                }
+                var q = $thumbnails.find("li:eq(" + g + ")"),
+                    r = q.position().left,
+                    s = q.width(),
+                    t = -r + 2 * s;
+                $thumbnails.find("li.active").removeClass("active");
+                q.addClass("active");
+                $thumbnails.animate({
+                    left: t + "px"
+                }, 500, function () {
+                    "undefined" != typeof k && ("next" === c && (r = $fox.is_defined(m) ? $thumbnails.find("li:eq(" + (q.index() - 2) + ")").position().left : q.prev().position().left), t = -r + 2 * s, k.remove(), $fox.is_defined(m) && m.remove(), $thumbnails.css("left", t + "px"), $fox.is_defined(j) && j.remove(), $fox.is_defined(l) && l.remove(), thumbnails_bind())
+                });
+                var u;
+                if ("next" === c) {
+                    u = $thumbnails.find('li[data-index="' + q.data("index") + '"]').index();
+                    $main_stage_carousel.carousel(u);
+                } else if ("prev" === c) {
+                    u = $thumbnails.find('li[data-index="' + q.data("index") + '"]').index();
+                    $main_stage_carousel.carousel(u);
+                }
+            }
+        }
+
+        function thumbnails_bind() {
+            $thumbnails.find("li").off("click").on("click", function () {
+                var a = $(this).index(),
+                    b = $(this).data("index"),
+                    c = $thumbnails.find("li.active").index(),
+                    d = a > c ? "next" : "prev",
+                    e = $(this).data("filmname"),
+                    f = $("#main-stage").height();
+                a !== c && ($(document).scrollTop() > f / 2.2 && $("html, body").delay(300).animate({
+                    scrollTop: 0
+                }, 700), select_carousel_item(a, b, d));
+            })
+        }
 
 
         plugin.settings = {};
 
+        plugin.format = function (source, params) {
+            $.each(params, function (i, n) {
+                source = source.replace(new RegExp("\\{" + i + "\\}", "g"), function () {
+                    return n;
+                });
+            });
+            return source;
+        };
+
         plugin.init = function () {
             plugin.settings = $.extend({}, defaults, options);
+            var minNum = 5, msg;
+            if (_.isEmpty(slides)) {
+                generatedHTML = '<div class="slider-warning">' + plugin.settings.noSlidesMsg + '</div>';
+                $(element).html(generatedHTML);
+            } else if (slides.length < minNum) {
+                msg = plugin.format(plugin.settings.minSlidesMsg, [minNum - slides.length]);
+                generatedHTML = '<div class="slider-warning">' + msg + '</div>';
+                $(element).html(generatedHTML);
+            } else {
+                generatedHTML = tplMain(slides);
+                $(element).html(generatedHTML);
+                swiper_init();
 
-            generatedHTML = tplMain(slides);
-            $(element).html(generatedHTML);
-            swiper_init();
+                setTimeout(function () {
+                    adjust_carousel_size();
+                }, 1500);
+                $(window).resize(function() {
+                    adjust_carousel_size();
+                });
+            }
         };
 
         plugin.init();
