@@ -31,15 +31,11 @@
         $(document).ready(function () {
         });
 
-        console.log('Gallery frontend touch');
-
         Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
             console.log('STYLE_PARAMS_CHANGE', style);
         });
 
         Wix.getExternalId(function (id) {
-            console.log('getExternalId: ', id);
-
             if (_.isEmpty(id)) {
                 $('#main_stage_carousel').wixVideoGallery([], {});
             } else {

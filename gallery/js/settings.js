@@ -72,10 +72,8 @@
          */
         that.collectionProcessing = function (promise) {
             $('.tab-content').addClass('processing');
-            console.log('processing...');
 
             return promise.always(function() {
-                console.log('finished ...');
                 $('.tab-content').removeClass('processing');
             });
         };
@@ -92,8 +90,6 @@
 
                 that.makeEditable(id);
             });
-
-            console.log('btnApply: ', $('.btnApply'));
 
             $('.btnApply').on('click', function () {
                 that.saveSelectedItem();
@@ -119,7 +115,6 @@
                     });
                 } else {
                     $cll.get(id).then(function (loadedCollection) {
-                        console.log('just loaded collection', loadedCollection);
                         collection = loadedCollection;
 
                         that.bindInterfaceEvents();
@@ -261,7 +256,6 @@
 
             if (collection.items.length) {
                 $('.edit-form').show();
-                console.log('show form');
             } else {
                 console.log('hide form');
                 $('.edit-form').hide();
@@ -274,20 +268,20 @@
             if (_.isUndefined(id)) id = collection.items[0].id;
 
             ind = that.getItemIndexByID(id);
-            console.log('found index by ID: ', ind);
 
             if (_.isUndefined(collection.items[ind])) return;
 
             selectedItem = collection.items[ind];
             pubProp = selectedItem.publicProperties;
 
-            $('.inputWrap.title input').val(pubProp.title).focus();
-            $('.inputWrap.description input').val(pubProp.sub_title);
-            $('.inputWrap.mDescription input').val(pubProp.small_sub_title);
 
-            $('.inputWrap.buttonName input').val(pubProp.button_caption);
-            $('.inputWrap.videoUrl input').val(pubProp.first_button_href);
-            $('.inputWrap.externalUrl input').val(pubProp.second_button_href);
+            Wix.UI.set('title', pubProp.title);
+            Wix.UI.set('desc', pubProp.sub_title);
+            Wix.UI.set('mDesc', pubProp.small_sub_title);
+            Wix.UI.set('bName', pubProp.button_caption);
+            Wix.UI.set('vUrl', pubProp.first_button_href);
+            Wix.UI.set('eUrl', pubProp.second_button_href);
+            $('.inputWrap.title input').focus();
             $('.wrapAdmin .right .image').html('').html('<div class="wrap-slide-prev"><span>Click to Replace Image</span><img id="slide-preview" src="' + pubProp.src_small_img + '"></div');
             $slideContainer.find('.item').removeClass('adm-active-item');
             $slideContainer.find('[data-wix-item-id="'+id+'"]').addClass('adm-active-item');
@@ -303,7 +297,6 @@
                         proc2 = image.fill().w(321).h(200);
                         selectedItem.publicProperties.src_big_img = proc1.toUrl();
                         selectedItem.publicProperties.src_small_img = proc2.toUrl();
-                        console.log(selectedItem.publicProperties);
                         that.saveSelectedItem();
                         that.makeEditable(id);
                     }
