@@ -113,13 +113,32 @@
                                      wix-options="{ value: 'Heading-XL'}"></div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="label col-xs-3">Description font:</div>
                             <div class="col-xs-6">
                                 <div wix-param="DescriptionTextColor" wix-ctrl="ColorPicker"
                                      wix-options="{startWithColor:'color-1'}"></div>
-                                <div wix-param="DescriptionFontSize" wix-ctrl="FontStylePicker"></div>
+                                <div wix-param="DescriptionFontSize" wix-ctrl="FontStylePicker"
+                                     wix-options="{ value: 'Heading-S'}"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="label col-xs-3">Thumbnail title font:</div>
+                            <div class="col-xs-6">
+                                <div wix-param="thumbTitleTextColor" wix-ctrl="ColorPicker"
+                                     wix-options="{startWithColor:'color-1'}"></div>
+                                <div wix-param="thumbTitleFontSize" wix-ctrl="FontStylePicker"
+                                     wix-options="{ value: 'Heading-S'}"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-3">Thumbnail description font:</div>
+                            <div class="col-xs-6">
+                                <div wix-param="thumbDescriptionTextColor" wix-ctrl="ColorPicker"
+                                     wix-options="{startWithColor:'color-1'}"></div>
+                                <div wix-param="thumbDescriptionFontSize" wix-ctrl="FontStylePicker"
+                                     wix-options="{ value: 'Heading-S'}"></div>
                             </div>
                         </div>
 
@@ -134,6 +153,13 @@
                                      wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
                                 <div wix-param="SpinnerShadow" wix-ctrl="Spinner"
                                      wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <br/>
+                            <div class="col-xs-6 col-xs-offset-3">
+                                <button class="btnApplySettings uilib-btn">Apply</button>
                             </div>
                         </div>
                     </div>

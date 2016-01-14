@@ -99,6 +99,18 @@
                 that.removeSlide();
             });
 
+            $('.btnApplySettings').on('click', function() {
+                Wix.Settings.refreshApp();
+            });
+
+            $('.newImage').click(function () {
+                that.addSlide();
+            });
+
+            Wix.UI.onChange('autoPlay', function(value, key) {
+                that.setParameter(key, value);
+            });
+
             $cll.on(['any'], that.collectionProcessing);
             $cll.Collection.on(['any'], that.collectionProcessing);
             $cll.ItemsList.on(['any'], that.collectionProcessing);
@@ -316,15 +328,6 @@
 
         Wix.UI.initialize({});
         Wix.UI.set('autoPlay', gMan.getParameter('autoPlay', 4));
-
-        $('.newImage').click(function () {
-            gMan.addSlide();
-        });
-
-        Wix.UI.onChange('autoPlay', function(value, key){
-            gMan.setParameter(key, value);
-            console.log('just got value', gMan.getParameter(key));
-        });
 
         gMan.init(function (col) {
         });

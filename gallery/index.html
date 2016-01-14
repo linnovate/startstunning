@@ -98,18 +98,30 @@
 
 </script>
 <style wix-style ng-non-bindable>
+
       #main-stage .film-info h1 {
         color: {{style.titleTextColor color-1}};
         {{style.titleFontSize Heading-XL}};
-        text-shadow: 0px 0px 0px #fff;
-        text-shadow: {{style.SpinnerShadowRL}}px {{style.SpinnerShadowTB}}px {{style.SpinnerShadow}}px {{style.startWithColor color-5}} !important;
       }
-      #thumbnails li h4,
-      ul.videos .details span {
+      #main-stage .film-info h2 {
         color: {{style.DescriptionTextColor color-1}};
         {{style.DescriptionFontSize Heading-S}};
-        text-shadow: 0px 0px 0px #fff;
-        text-shadow: {{style.SpinnerShadowRL}}px {{style.SpinnerShadowTB}}px {{style.SpinnerShadow}}px {{style.startWithColor color-5}} !important;
+      }
+
+      #thumbnails li h4 {
+        color: {{style.thumbTitleTextColor color-1}};
+        {{style.thumbTitleFontSize Heading-S}};
+      }
+      ul.videos .details span {
+        color: {{style.thumbDescriptionTextColor color-1}};
+        {{style.thumbDescriptionFontSize Heading-S}};
+      }
+
+      #main-stage .film-info h1,
+      #main-stage .film-info h2,
+      #thumbnails li h4,
+      ul.videos .details span {
+        text-shadow: {{style.SpinnerShadowRL 0}}px {{style.SpinnerShadowTB 0}}px {{style.SpinnerShadow 0}}px {{style.TextShadowColor color-5}};
       }
 </style>
 </html>
