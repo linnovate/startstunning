@@ -2,6 +2,7 @@
 
     $.wixVideoGallery = function (element, slides, options) {
         var defaults = {
+                autoPlay: 4,
                 minSlidesMsg: 'Very close to start, add {0} more...',
                 noSlidesMsgAdmin: 'Double click to start populating this gallery...',
                 noSlidesMsg: 'You need to add some content...',
@@ -132,14 +133,19 @@
                     $("#main-stage .carousel-inner, .carousel-control").addClass("show"), load_hidden_carousel_images()
                 });
 
-                timerId = setInterval(function () {
-                    (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
+                var sliderInterval = plugin.settings.autoPlay * 1000;
 
-                }, 7e3), $("#main-stage, #main-stage-menu").click(function () {
-                    pause_auto = 1, clearInterval(timerId)
-                }), $(window).blur(function () {
-                    pause_auto = 1, clearInterval(timerId)
-                });
+                if (sliderInterval != 0) {
+                    timerId = setInterval(function () {
+                        (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
+
+                    }, sliderInterval), $("#main-stage, #main-stage-menu").click(function () {
+                        pause_auto = 1, clearInterval(timerId)
+                    }), $(window).blur(function () {
+                        pause_auto = 1, clearInterval(timerId)
+                    });
+                }
+
             };
 
         function load_main_stage_image(a) {

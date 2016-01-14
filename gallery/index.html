@@ -34,7 +34,7 @@
         console.log('Gallery frontend touch');
 
         Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
-            console.log('STYLE_PARAMS_CHANGE');
+            console.log('STYLE_PARAMS_CHANGE', style);
         });
 
         Wix.getExternalId(function (id) {
@@ -56,8 +56,13 @@
 
                     slides = convertCollectionToSlides(collection);
 //                console.log(slides);
+                    var autoPlay = 4;
+                    if (!_.isUndefined(Wix.Styles.getStyleParams().fonts['autoPlay']))
+                        autoPlay = Wix.Styles.getStyleParams().fonts['autoPlay'];
 
-                    $('#main_stage_carousel').wixVideoGallery(slides, {});
+                    $('#main_stage_carousel').wixVideoGallery(slides, {
+                        autoPlay: autoPlay
+                    });
 
                     // next/prev by keyboard arrows
                     $("body").keydown(function (event) {

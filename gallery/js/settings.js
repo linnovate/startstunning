@@ -20,6 +20,19 @@
             return collection;
         };
 
+        that.getParameter = function (key, def) {
+            if (!_.isUndefined(Wix.Styles.getStyleParams().fonts[key]))
+                return Wix.Styles.getStyleParams().fonts[key];
+            else return def;
+        };
+
+        that.setParameter = function (key, value) {
+            Wix.Styles.setFontParam(key, {
+                    value: value
+                }
+            );
+        };
+
         that.setCollectionId = function (guid, success) {
             Wix.Settings.setExternalId(guid, success(guid), function () {
                 console.error('Can not save guid with setExternalId');
@@ -309,9 +322,15 @@
         $('.imgs').html(generagedHTML);
 
         Wix.UI.initialize({});
+        Wix.UI.set('autoPlay', gMan.getParameter('autoPlay', 4));
 
         $('.newImage').click(function () {
             gMan.addSlide();
+        });
+
+        Wix.UI.onChange('autoPlay', function(value, key){
+            gMan.setParameter(key, value);
+            console.log('just got value', gMan.getParameter(key));
         });
 
         gMan.init(function (col) {

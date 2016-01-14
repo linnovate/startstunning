@@ -92,16 +92,20 @@
             </div>
             <div data-tab="tab1" class="tab-pane">
                 <div class="app-settings">
-                    <!--<div class="container">
+                    <div class="container">
                         <div class="row">
-                            <div class="label col-xs-3 col-md-3">Auto apply setting (sec):</div>
-                            <div wix-model="title" wix-ctrl="Input"
-                                 class="inputWrap title col-xs-6 col-md-6"
-                                 wix-options="{placeholder: ''}"></div>
+                            <div class="label col-xs-3">Auto play, sec:</div>
+                            <div class="col-xs-5">
+                                <div wix-model="autoPlay" wix-ctrl="Spinner"
+                                     class="inputWrap autoPlay"
+                                     wix-options="{minValue:0, maxValue:60, size: 'medium'}"></div>
+                            </div>
                         </div>
 
+                        <div class="row"><h4>Text style</h4></div>
+
                         <div class="row">
-                            <div class="label col-xs-3">Title Font:</div>
+                            <div class="label col-xs-3">Title font:</div>
                             <div class="col-xs-6">
                                 <div wix-param="titleTextColor" wix-ctrl="ColorPicker"
                                      wix-options="{startWithColor:'color-1'}"></div>
@@ -109,40 +113,31 @@
                                      wix-options="{ value: 'Heading-XL'}"></div>
                             </div>
                         </div>
-                    </div>-->
 
-                    <h4>Text style</h4>
+                        <div class="row">
+                            <div class="label col-xs-3">Description font:</div>
+                            <div class="col-xs-6">
+                                <div wix-param="DescriptionTextColor" wix-ctrl="ColorPicker"
+                                     wix-options="{startWithColor:'color-1'}"></div>
+                                <div wix-param="DescriptionFontSize" wix-ctrl="FontStylePicker"></div>
+                            </div>
+                        </div>
 
-                    <ul>
-                        <!--<li wix-label="Gallery Margin:" class="container2">
-                            <div class="margin-control" wix-param="SpinnerMargin" wix-ctrl="Spinner"
-                                 wix-options="{ startWithMargin:5, minValue:0, maxValue:90 }"></div>
-                        </li>-->
+                        <div class="row">
+                            <div class="label col-xs-3">Text shadow:</div>
+                            <div class="col-xs-6">
+                                <div wix-param="TextShadowColor" wix-ctrl="ColorPicker"
+                                     wix-options="{startWithColor: 'color-3'}"></div>
+                                <div wix-param="SpinnerShadowRL" wix-ctrl="Spinner"
+                                     wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                                <div wix-param="SpinnerShadowTB" wix-ctrl="Spinner"
+                                     wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                                <div wix-param="SpinnerShadow" wix-ctrl="Spinner"
+                                     wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <li wix-label="Title Font: " class="container2">
-                            <div wix-param="titleTextColor" wix-ctrl="ColorPicker"
-                                 wix-options="{startWithColor:'color-1'}"></div>
-                            <div wix-param="titleFontSize" wix-ctrl="FontStylePicker"
-                                 wix-options="{ value: 'Heading-XL'}"></div>
-                        </li>
-
-                        <li wix-label="Description Font:" class="container2">
-                            <div wix-param="DescriptionTextColor" wix-ctrl="ColorPicker"
-                                 wix-options="{startWithColor:'color-1'}"></div>
-                            <div wix-param="DescriptionFontSize" wix-ctrl="FontStylePicker"></div>
-                        </li>
-
-                        <li wix-label="Text Shadow:" class="container2">
-                            <div wix-param="TextShadowColor" wix-ctrl="ColorPicker"
-                                 wix-options="{startWithColor: 'color-3'}"></div>
-                            <div wix-param="SpinnerShadowRL" wix-ctrl="Spinner"
-                                 wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
-                            <div wix-param="SpinnerShadowTB" wix-ctrl="Spinner"
-                                 wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
-                            <div wix-param="SpinnerShadow" wix-ctrl="Spinner"
-                                 wix-options="{ startWithMargin:0, minValue:0, maxValue:90 }"></div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
