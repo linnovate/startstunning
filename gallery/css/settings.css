@@ -71,6 +71,7 @@
     color: #2e2e2e;
     display: inline-block;
     text-align: left;
+    line-height: 2em;
 }
 .wrapAdmin .right .row{
     padding: 0 10px;
@@ -126,4 +127,17 @@ body .box-like-drop-content {
 }
 .uilib-color-box, .uilib-spinner.large, .uilib-spinner.default{
     display: inline-block;
+}
+
+.app-settings .label {
+    color: #000;
+    line-height: 2em;
+    font-size: 12px;
+    text-align: left;
+}
+.app-settings input[type=text] {
+    width: 100%;
+}
+.app-settings .row {
+    margin-bottom: 15px;
 }

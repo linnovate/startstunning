@@ -428,16 +428,14 @@ ol, ul {
   max-height: 321px;
 }
 ul.videos .details {
-  padding: 15px 20px;
+  padding: 15px;
   position: absolute;
   bottom: 0;
   color: #FFFFFF;
-  height: 68px;
   width: 100%;
 }
 ul.videos .details span {
-  font-size: 14px;
-  padding-bottom: 6px;
+  font-size: 20px;
   display: block;
 }
 #thumbnails li h4 {
