@@ -91,6 +91,8 @@
                     '<div style="clear:both"></div>' +
                     '</section>';
 
+                output = '<div class="slider-wrap">'+output+'</div><div class="load-overlay"></div>';
+
                 return output;
             },
 
@@ -131,7 +133,6 @@
                 });
 
                 timerId = setInterval(function () {
-//    0 === pause_auto &&
                     (next_index = $thumbnails.find("li.active").next().index(), next_data_index = $thumbnails.find("li.active").next().data("index"), data_next = $("#main_stage_carousel .active").next().attr("data-filmname"), select_carousel_item(next_index, next_data_index, "next"))
 
                 }, 7e3), $("#main-stage, #main-stage-menu").click(function () {
@@ -282,12 +283,14 @@
                 $(element).html(generatedHTML);
             } else {
                 generatedHTML = tplMain(slides);
-                $(element).html(generatedHTML);
+                $(element).html(generatedHTML).addClass('slider-loading');
                 swiper_init();
 
-                setTimeout(function () {
+                $(element).imagesLoaded( function() {
                     adjust_carousel_size();
-                }, 1500);
+                    $(element).removeClass('slider-loading');
+                });
+
                 $(window).resize(function() {
                     adjust_carousel_size();
                 });

@@ -6,6 +6,7 @@
     <title></title>
     <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.61.0/js/wix.min.js"></script>
     <script src="/gallery/js/jquery-2.1.4.min.js"></script>
+    <script src="/gallery/js/imagesloaded.pkgd.min.js"></script>
     <script src="/gallery/js/lodash.min.js"></script>
     <script src="/gallery/js/simple-collections.js"></script>
     <script src="/gallery/js/jquery.fancybox.pack.js"></script>
@@ -26,76 +27,73 @@
 
 </body>
 <script>
-    console.log('Gallery frontend touch');
-
-    Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
-        console.log('STYLE_PARAMS_CHANGE');
-    });
-
-    Wix.addEventListener(Wix.Events.COMPONENT_DELETED, function(e) {
-//        console.log("COMPONENT_DELETED! ", e);
-    });
-
-    /*Wix.Data.Public.get('boraSettings', { scope: 'APP' }, function(result){
-        console.log('no way!!!!', result);
-    });*/
-
-
-    Wix.getExternalId(function (id) {
-        console.log('getExternalId: ', id);
-
-        if (_.isEmpty(id)) {
-            $('#main_stage_carousel').wixVideoGallery([], {});
-        } else {
-            $.get('//collections.wixstatic.com/collections/' + id + '.json', function (obj) {
-                var
-                        collection = obj.collection,
-                        slides;
-
-//                console.log('colletion', collection);
-                if (!collection || !collection.items.length) {
-                    $('#main_stage_carousel').wixVideoGallery([], {});
-                    return;
-                }
-
-                slides = convertCollectionToSlides(collection);
-//                console.log(slides);
-
-                $('#main_stage_carousel').wixVideoGallery(slides, {});
-
-                // next/prev by keyboard arrows
-                $("body").keydown(function (event) {
-                    if (event.which == 37 || event.which == 40) {
-                        $('.left.carousel-control').click();
-                    }
-                    if (event.which == 39 || event.which == 38) {
-                        $('.right.carousel-control').click();
-                    }
-                });
-
-                $(".fancybox").fancybox({
-                    helpers: {
-                        media: true
-                    },
-                    youtube: {
-                        autoplay: 1
-                    }
-                });
-            });
-        }
-
-    });
-
-    function convertCollectionToSlides(collection) {
-        var slides = [], slide;
-
-        _.each(collection.items, function (item, i) {
-            slide = _.assign({id: item.id}, item.public_properties);
-            slides.push(slide);
+    (function ($) {
+        $(document).ready(function () {
         });
 
-        return slides;
-    }
+        console.log('Gallery frontend touch');
+
+        Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
+            console.log('STYLE_PARAMS_CHANGE');
+        });
+
+        Wix.getExternalId(function (id) {
+            console.log('getExternalId: ', id);
+
+            if (_.isEmpty(id)) {
+                $('#main_stage_carousel').wixVideoGallery([], {});
+            } else {
+                $.get('//collections.wixstatic.com/collections/' + id + '.json', function (obj) {
+                    var
+                            collection = obj.collection,
+                            slides;
+
+//                console.log('colletion', collection);
+                    if (!collection || !collection.items.length) {
+                        $('#main_stage_carousel').wixVideoGallery([], {});
+                        return;
+                    }
+
+                    slides = convertCollectionToSlides(collection);
+//                console.log(slides);
+
+                    $('#main_stage_carousel').wixVideoGallery(slides, {});
+
+                    // next/prev by keyboard arrows
+                    $("body").keydown(function (event) {
+                        if (event.which == 37 || event.which == 40) {
+                            $('.left.carousel-control').click();
+                        }
+                        if (event.which == 39 || event.which == 38) {
+                            $('.right.carousel-control').click();
+                        }
+                    });
+
+                    $(".fancybox").fancybox({
+                        helpers: {
+                            media: true
+                        },
+                        youtube: {
+                            autoplay: 1
+                        }
+                    });
+                });
+            }
+
+        });
+
+        function convertCollectionToSlides(collection) {
+            var slides = [], slide;
+
+            _.each(collection.items, function (item, i) {
+                slide = _.assign({id: item.id}, item.public_properties);
+                slides.push(slide);
+            });
+
+            return slides;
+        }
+
+    })(jQuery);
 
 </script>
 <style wix-style ng-non-bindable>

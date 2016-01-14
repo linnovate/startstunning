@@ -312,31 +312,9 @@
 
         $('.newImage').click(function () {
             gMan.addSlide();
-
-
-            //console.log('going to getCollectionId: ');
-            /*gMan.getCollectionId(function (id) {
-             console.log('we got value: ', id);
-             });*/
-            /*console.log('going to setCollectionId');
-             gMan.setCollectionId('bb133804-47a9-40e8-955f-6c50149467ee');*/
         });
 
         gMan.init(function (col) {
-            /*console.log('goint to refresh APP');
-            Wix.Settings.refreshApp();*/
-
-            /*Wix.Data.Public.set('boraSettings',
-                'wow!!!',
-                { scope: 'APP' },
-                function (success) {
-                    console.log(success);
-                }
-
-            );*/
-
-            //console.log('wow, here is saved or loaded collection: ', col);
-            //console.log('wow, here is saved or loaded collection: ', gMan.getCollection());
         });
     }
 
