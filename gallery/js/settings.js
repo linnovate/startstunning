@@ -155,29 +155,6 @@
             return slides;
         };
 
-        that.enumerateCollectionSort = function () {
-            $slideContainer.find('.item').each(function (i) {
-                var
-                    id = $(this).data('wix-item-id'),
-                    //order = Math.round(i * 100) / 1000,
-                    order = i * 10,
-                    foundIndex;
-
-                if (!_.isUndefined(id)) {
-
-                    foundIndex = that.getItemIndexByID(id);
-                    if (!_.isUndefined(collection.items[foundIndex])) {
-                        collection.items[foundIndex].sortOrder = order;
-                    }
-                }
-            });
-            that.saveCollection(function (success) {
-                console.log('saved after sort', collection);
-            }, function (error) {
-                console.error('error after sort and trying to save', error);
-            });
-        };
-
         that.renderSlides = function () {
             var slides, slideTpl, newSlideHTML = '';
 
@@ -207,7 +184,7 @@
                     movedId = $movedItem.find('.item').data('wix-item-id');
                     movedIndex = that.getItemIndexByID(movedId);
                     movedItem = collection.items[movedIndex];
-                    //console.log('movedId: %d, movedIndex: %d, movedTitle', movedId, movedIndex, movedItem.publicProperties.title);
+                    //console.log('movedId: %d, movedIndex: %d, movedTitle', movedId, movedIndex, movedItem.publicProperties.title);у
 
                     if ($movedItem.index() != itemsCount - 1) {
                         rightId = $movedItem.next().find('.item').data('wix-item-id');
