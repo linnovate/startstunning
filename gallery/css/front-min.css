@@ -965,3 +965,10 @@ body {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+.item-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}

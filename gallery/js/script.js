@@ -31,6 +31,8 @@
                 i == 2 ? act = ' active' : act = '';
                 return '' +
                     '<li class="item' + act + '" data-wix-id="' + c.id + '" data-index="' + i + '">' +
+                    '<div class="item-overlay">' +
+                    '</div>' +
                     '<div style="background-image: url(' + c.src_big_img + ');" class="main-stage-feature-image-container semi-initial">' +
                     '<img src="' + c.src_big_img + '" alt="">' +
                     '</div>' +
@@ -46,6 +48,8 @@
                 i == 2 ? act = ' active' : act = '';
                 return '' +
                     '<li class="show' + act + '" data-wix-id="' + c.id + '" data-index="' + i + '">' +
+                    '<div class="item-overlay">' +
+                    '</div>' +
                     '<img src="' + c.src_small_img + '" alt="">' +
                     '<div class="details">' +
                     '<h4>' + c.title + '</h4>' +
