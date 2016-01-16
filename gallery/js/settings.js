@@ -164,8 +164,6 @@
                     foundIndex;
 
                 if (!_.isUndefined(id)) {
-                    console.log('id: %s', id);
-                    console.log('order:', order);
 
                     foundIndex = that.getItemIndexByID(id);
                     if (!_.isUndefined(collection.items[foundIndex])) {
@@ -189,7 +187,42 @@
             newSlideHTML = slideTpl({items: slides});
             $slideContainer.html(newSlideHTML).sortable({
                 update: function( event, ui ) {
-                    that.enumerateCollectionSort();
+                    var
+                        movedIndex,
+                        $movedItem,
+                        rightIndex,
+                        leftIndex,
+                        movedId,
+                        rightId,
+                        leftId,
+                        movedItem,
+                        rightItem,
+                        leftItem,
+                        itemsCount;
+
+                    itemsCount = collection.items.length;
+                    $movedItem = $(ui.item);
+                    if (!$movedItem.length) return;
+
+                    movedId = $movedItem.find('.item').data('wix-item-id');
+                    movedIndex = that.getItemIndexByID(movedId);
+                    movedItem = collection.items[movedIndex];
+                    //console.log('movedId: %d, movedIndex: %d, movedTitle', movedId, movedIndex, movedItem.publicProperties.title);
+
+                    if ($movedItem.index() != itemsCount - 1) {
+                        rightId = $movedItem.next().find('.item').data('wix-item-id');
+                        rightIndex = that.getItemIndexByID(rightId);
+                        rightItem = collection.items[rightIndex];
+                        //console.log('rightId: %d, rightIndex: %d, rightTitle', rightId, rightIndex, rightItem.publicProperties.title);
+                        movedItem.moveBefore(rightItem);
+                    } else {
+                        leftId = $movedItem.prev().find('.item').data('wix-item-id');
+                        leftIndex = that.getItemIndexByID(leftId);
+                        leftItem = collection.items[leftIndex];
+                        //console.log('leftId: %d, leftIndex: %d, leftTitle', leftId, leftIndex, leftItem.publicProperties.title);
+                        movedItem.moveAfter(leftItem);
+                    }
+
                 }
             });
         };
