@@ -792,7 +792,7 @@ ul.videos li {
 
 .fancybox-lock .fancybox-overlay {
     overflow: auto;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 /* Title helper */
