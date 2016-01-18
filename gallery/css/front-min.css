@@ -407,16 +407,15 @@ ol, ul {
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden;
-  padding-bottom: 3%;
 }
 #thumbnails {
   position: relative;
   float: left;
   width: 5000px;
-  margin-bottom: -35px;
 }
 #main-stage-menu #thumbnails li {
   margin-top: 5px;
+  margin-bottom: -5px;
   cursor: pointer;
   -webkit-transition: margin-top 100ms ease;
   -moz-transition: margin-top 100ms ease;

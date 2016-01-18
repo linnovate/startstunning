@@ -81,7 +81,7 @@
                     '<span class="chevron"></span>' +
                     '</a>' +
                     '</section>' +
-                    '<section id="main-stage-menu" style="padding-bottom: 30px; background-image: none;">' +
+                    '<section id="main-stage-menu" style="background-image: none;">' +
                     '<ul id="thumbnails" class="videos">';
 
                 var smallLi = '';
@@ -180,7 +180,6 @@
                 b = (a - thumbMarginRight * 4) / 5;
             $thumbnails.find("li").width(b).queue(function () {
                 $("#main-stage-menu").css({
-                    paddingBottom: "30px",
                     backgroundImage: "none"
                 }), $("#thumbnails").find("li").addClass("show")
             });
