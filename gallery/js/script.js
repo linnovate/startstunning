@@ -16,7 +16,8 @@
             mainstage_loaded = 0,
             next_index, next_data_index, pause_auto = 0,
             timerId = 0,
-            data_next, data_prev, data_this, fandango, movietickets,
+            data_next, data_prev,
+            thumbMarginRight = 5,
 
             tplBigLi = function (c, i) {
                 var btn = '';
@@ -176,7 +177,7 @@
 
         function adjust_carousel_size() {
             var a = $(window).width(),
-                b = a / 5;
+                b = (a - thumbMarginRight * 4) / 5;
             $thumbnails.find("li").width(b).queue(function () {
                 $("#main-stage-menu").css({
                     paddingBottom: "30px",
@@ -187,9 +188,11 @@
                 d = $thumbnails.children("li:eq(" + c + ")"),
                 e = d.position().left,
                 f = d.width(),
-                g = -e + 2 * f;
+                g = -e + 2 * f + (thumbMarginRight * 2),
+                g = 0; // looks better
+
             if (a > 768) {
-                $thumbnails.width(b * num_carousel_items + .05 * a * num_carousel_items), $thumbnails.css("left", g + "px");
+                $thumbnails.width(b * num_carousel_items + .05 * a * num_carousel_items), $thumbnails.css("left", 0 + "px");
                 var h = a > 768 ? .42555555555556 * a : 327;
                 $main_stage.find(".item img, .item").height(h), $main_stage.find(".item").width($(window).width())
             } else $main_stage.find(".item").width(768);
@@ -230,19 +233,28 @@
                         var o = f - a - 1;
                         n += o
                     }
-                    var p = $thumbnails.find("li:eq(" + n + ")");
-                    $thumbnails.css("left", -p.position().left + 2 * p.width() + "px")
+                    var p = $thumbnails.find("li:eq(" + n + ")"),
+                        tt = -p.position().left + 2 * p.width() + (thumbMarginRight * 2);
+                    $thumbnails.css("left", tt + "px")
                 }
                 var q = $thumbnails.find("li:eq(" + g + ")"),
                     r = q.position().left,
                     s = q.width(),
-                    t = -r + 2 * s;
+                    t = -r + 2 * s + (thumbMarginRight * 2);
+                t > 0 && t <= 2 ? t = 0 : t;
                 $thumbnails.find("li.active").removeClass("active");
                 q.addClass("active");
                 $thumbnails.animate({
                     left: t + "px"
                 }, 500, function () {
-                    "undefined" != typeof k && ("next" === c && (r = $fox.is_defined(m) ? $thumbnails.find("li:eq(" + (q.index() - 2) + ")").position().left : q.prev().position().left), t = -r + 2 * s, k.remove(), $fox.is_defined(m) && m.remove(), $thumbnails.css("left", t + "px"), $fox.is_defined(j) && j.remove(), $fox.is_defined(l) && l.remove(), thumbnails_bind())
+
+                    "undefined" != typeof k && ("next" === c && (r = $fox.is_defined(m) ? $thumbnails.find("li:eq(" + (q.index() - 2) + ")").position().left : q.prev().position().left),
+                        t = -r + 2 * s + (thumbMarginRight * 2), t > 0 && t <= 2 ? t = 0 : t,
+                        k.remove(),
+                    $fox.is_defined(m) && m.remove(),
+                        $thumbnails.css("left", t + "px"),
+                    $fox.is_defined(j) && j.remove(),
+                    $fox.is_defined(l) && l.remove(), thumbnails_bind())
                 });
                 var u;
                 if ("next" === c) {
