@@ -307,7 +307,7 @@
                 $(element).html(generatedHTML).addClass('slider-loading');
                 swiper_init();
 
-                $(element).imagesLoaded( function() {
+                $(element).find('#thumbnails').imagesLoaded( function() {
                     adjust_carousel_size();
                     $(element).removeClass('slider-loading');
                 });
