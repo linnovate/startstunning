@@ -19,3 +19,6 @@ handlers:
   - url: /adgen/(.+)
     static_files: adgen/\1
     upload: adgen/(.*)
+
+  - url: /adgen/wixBase64Save.php
+    script: adgen/wixBase64Save.php
