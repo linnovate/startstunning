@@ -537,11 +537,9 @@ String.prototype.capitalize = function() {
                         plugin.saveToServer(function (result) {
                             console.log(result);
 
-                            plugin.popupWindow(result.url, '', canvas.width, canvas.height);
+                            plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', canvas.width, canvas.height);
                             plugin.hideProcessing();
                         });
-
-                        //window.open(gif, '_blank', 'toolbar=0,location=0,menubar=0, width='+canvas.width+', height='+canvas.height);
                     });
 
                 });
@@ -558,7 +556,7 @@ String.prototype.capitalize = function() {
                             console.log(result);
                             console.log(src);
 
-                            plugin.popupWindow(result.url, '', width, height);
+                            plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', width, height);
                             plugin.hideProcessing();
                         });
                     })
@@ -566,6 +564,11 @@ String.prototype.capitalize = function() {
 
             }
 
+        };
+
+        plugin.getOriginalUrl = function (file_url) {
+            var base = '//media.wixapps.net/';
+            return base + file_url.slice(0, -4);
         };
 
         plugin.saveToServer = function (complete) {
