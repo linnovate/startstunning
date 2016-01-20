@@ -30,7 +30,7 @@ body {
 }
 
 canvas:hover {
-    cursor: pointer;
+    cursor: default;
 }
 
 html, body {
@@ -85,7 +85,7 @@ html, body {
     background-size: cover;
     border: 1px solid #c0c0c0;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .square:hover {
@@ -204,6 +204,8 @@ input[type="text"], select {
     height: 334px;
     background-color: #f2f2f2;
     overflow: hidden;
+    background-size: cover;
+    position: relative;
 }
 
 .container {
@@ -235,4 +237,61 @@ input[type="text"], select {
 
 .meme-col {
     margin-bottom: 20px;
+}
+.meme-animated canvas {
+    width: 100%;
+}
+
+.jsgif {
+    position: relative;
+}
+
+.meme-text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-family: impact;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.meme-text-line {
+
+}
+
+.meme-text div {
+    line-height: 1em;
+}
+
+.strokeme {
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.meme-ad img {
+    visibility: hidden;
+}
+
+.loader.processing {
+    position: absolute;
+    background: url('/adgen/i/loader.gif') center center no-repeat rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10;
+}
+.meme-ad {
+    cursor: default;
 }

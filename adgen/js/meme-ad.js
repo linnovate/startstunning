@@ -189,8 +189,7 @@ String.prototype.capitalize = function() {
                         caption: name
                     }, adData);
 
-                    $('.meme-ad').wixAdMeme({
-                        width: 334
+                    $('.meme-wrap').wixAdPreview({
                     });
 
                     $('.start').hide();
@@ -423,6 +422,224 @@ String.prototype.capitalize = function() {
 
         return this.each(function() {
             var plugin = new $.wixAdMeme(this, options);
+        });
+    };
+
+    // wixAdPreview
+    $.wixAdPreview = function(element, options) {
+        var defaults = {
+                text: '',
+                fontSize: '35px',
+                fontFamily: 'impact',
+                numWorkers: 8
+            },
+            plugin = this,
+            $element = $(element),
+            element = element,
+            canvas,
+            frames = [],
+            $memeAd,
+            superGif,
+            imgGif,
+            wixImg;
+
+        plugin.settings = {};
+
+        plugin.getFrames = function() {
+            if (_.isEmpty(frames)) {
+                for (var i = 0; i < superGif.get_length(); i++) {
+                    superGif.move_to(i);
+                    frames.push(canvas.toDataURL());
+                }
+            }
+
+            return frames;
+        };
+
+        plugin.getCaptionStamp = function() {
+            var lines = plugin.settings.text.split('\n'),
+                $cont = $('<div class="meme-text strokeme"></div>');
+            _.each(lines, function (line) {
+                $cont.append($('<div></div>').text(line));
+            });
+            return $cont;
+        };
+
+        plugin.assembleGif = function(complete) {
+            var params = _.extend(
+                {
+                    images: plugin.getFrames(),
+                    gifWidth: canvas.width,
+                    gifHeight: canvas.height
+                },
+                plugin.settings
+            );
+            if (_.isEmpty(imgGif)) {
+                gifshot.createGIF(params, function (obj) {
+                    if (!obj.error) {
+                        imgGif = obj.image;
+                        complete(obj.image);
+                    } else console.error('error while gif assembling: ', obj.error);
+                });
+            } else {
+                complete(imgGif);
+            }
+        };
+
+        plugin.showProcessing = function() {
+            $element.find('.loader').addClass('processing');
+        };
+
+        plugin.hideProcessing = function() {
+            $element.find('.loader').removeClass('processing');
+        };
+
+        plugin.init = function() {
+            plugin.settings = $.extend({}, defaults, options);
+            $memeAd = $element.find('.meme-ad');
+
+            if (!plugin.settings.text.length) {
+                plugin.settings.text = $memeAd.data('wix-ad-text') + '\n' + $memeAd.data('wix-ad-slogan');
+                plugin.settings.text = plugin.settings.text.toUpperCase();
+            }
+
+            if ($memeAd.hasClass('meme-animated')) {
+                console.log('found animated');
+                superGif = new SuperGif({
+                    gif: $memeAd.find('img')[0],
+                    progressbar_height : 4,
+                    progressbar_background_color: 'transparent',
+                    progressbar_foreground_color: '#3e5c99',
+                    auto_play: 0,
+                    rubbable: 0
+                });
+
+                superGif.load(function () {
+                    console.log('oh hey, now the gif is loaded');
+
+                    canvas = superGif.get_canvas();
+
+                    $(canvas).after(plugin.getCaptionStamp());
+
+                    $('canvas, .meme-text', $element)
+                        .mouseover(function() {
+                            superGif.play();
+                        })
+                        .mouseout(function() {
+                            superGif.pause();
+                        });
+                });
+
+                $element.find('.btn-fb, .btn-tw').on('click', function () {
+                    console.log('assembling started...');
+                    plugin.showProcessing();
+                    plugin.assembleGif(function (gif) {
+                        plugin.saveToServer(function (result) {
+                            console.log(result);
+
+                            plugin.popupWindow(result.url, '', canvas.width, canvas.height);
+                            plugin.hideProcessing();
+                        });
+
+                        //window.open(gif, '_blank', 'toolbar=0,location=0,menubar=0, width='+canvas.width+', height='+canvas.height);
+                    });
+
+                });
+            } else {
+                $memeAd.css('background-image', 'url("'+$memeAd.data('wix-ad-src')+'")')
+                    .append(plugin.getCaptionStamp());
+
+
+                $element.find('.btn-fb, .btn-tw').on('click', function () {
+                    console.log('static processing started...');
+
+                    plugin.createStaticMeme(function (src, width, height) {
+                        plugin.saveToServer(function (result) {
+                            console.log(result);
+                            console.log(src);
+
+                            plugin.popupWindow(result.url, '', width, height);
+                            plugin.hideProcessing();
+                        });
+                    })
+                });
+
+            }
+
+        };
+
+        plugin.saveToServer = function (complete) {
+            if (_.isEmpty(wixImg)) {
+                $.ajax({
+                    type: "POST",
+                    url: "/adgen/wixBase64Save.php",
+                    dataType: 'json',
+                    data: { base64: imgGif }
+                })
+                .done(function(result) {
+                    wixImg = result;
+                    complete(wixImg);
+                });
+            } else {
+                complete(wixImg);
+            }
+        };
+
+        plugin.createStaticMeme = function (complete) {
+            var $img = $memeAd.find('img'),
+                imgWidth = $img.width(),
+                imgHeight = $img.height(),
+                params = _.extend({
+                    images: [$img.attr('src')],
+                    gifWidth: imgWidth,
+                    gifHeight: imgHeight
+                }, plugin.settings);
+
+            plugin.showProcessing();
+            if (_.isEmpty(imgGif)) {
+                gifshot.createGIF(params, function (obj) {
+                    if (!obj.error) {
+                        console.log('static processing finished');
+                        imgGif = obj.image;
+                        complete(imgGif, imgWidth, imgHeight);
+                    } else console.error('error while gif assembling: ', obj.error);
+                });
+            } else {
+                complete(imgGif, imgWidth, imgHeight);
+                plugin.hideProcessing();
+            }
+        };
+
+        plugin.popupWindow = function (url, title, w, h) {
+            // Fixes dual-screen position                         Most browsers      Firefox
+            var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+            var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+            width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+            var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+            var top = ((height / 2) - (h / 2)) + dualScreenTop;
+            var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+            // Puts focus on the newWindow
+            if (window.focus) {
+                newWindow.focus();
+            }
+        };
+
+        plugin.init();
+
+    };
+
+    $.fn.wixAdPreview = function(options) {
+        if (!this.length){
+            console.error('Can not find a container "%s"', this.selector);
+            return this;
+        }
+
+        return this.each(function() {
+            var plugin = new $.wixAdPreview(this, options);
         });
     };
 

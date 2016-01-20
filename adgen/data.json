@@ -2,134 +2,174 @@
   "sport": [
     {
       "url": "/adgen/img/gif/1s.jpg",
-      "gif": "/adgen/img/gif/1.gif"
+      "gif": "/adgen/img/gif/1.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/3s.jpg",
-      "gif": "/adgen/img/gif/3.gif"
+      "gif": "/adgen/img/gif/3.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/4s.jpg",
-      "gif": "/adgen/img/gif/4.gif"
+      "gif": "/adgen/img/gif/4.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/5s.jpg",
-      "gif": "/adgen/img/gif/5.gif"
+      "gif": "/adgen/img/gif/5.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/6s.jpg",
-      "gif": "/adgen/img/gif/6.gif"
+      "gif": "/adgen/img/gif/6.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/7s.jpg",
-      "gif": "/adgen/img/gif/7.gif"
+      "gif": "/adgen/img/gif/7.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/8s.jpg",
-      "gif": "/adgen/img/gif/8.gif"
+      "gif": "/adgen/img/gif/8.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/9s.jpg",
-      "gif": "/adgen/img/gif/9.gif"
+      "gif": "/adgen/img/gif/9.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
       "url": "/adgen/img/gif/10s.jpg",
-      "gif": "/adgen/img/gif/10.gif"
+      "gif": "/adgen/img/gif/10.gif",
+      "slogan": "Vivamus magna justo"
     },
     {
-      "url": "/adgen/img/1.jpg"
+      "url": "/adgen/img/1.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/2.jpg"
+      "url": "/adgen/img/2.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/3.jpg"
+      "url": "/adgen/img/3.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/4.jpg"
+      "url": "/adgen/img/4.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/5.jpg"
+      "url": "/adgen/img/5.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/6.jpg"
+      "url": "/adgen/img/6.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/7.jpg"
+      "url": "/adgen/img/7.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/8.jpg"
+      "url": "/adgen/img/8.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/9.jpg"
+      "url": "/adgen/img/9.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/10.jpg"
+      "url": "/adgen/img/10.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/11.jpg"
+      "url": "/adgen/img/11.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/12.jpg"
+      "url": "/adgen/img/12.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/13.jpg"
+      "url": "/adgen/img/13.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/14.jpg"
+      "url": "/adgen/img/14.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/15.jpg"
+      "url": "/adgen/img/15.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/16.jpg"
+      "url": "/adgen/img/16.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/17.jpg"
+      "url": "/adgen/img/17.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/18.jpg"
+      "url": "/adgen/img/18.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/19.jpg"
+      "url": "/adgen/img/19.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/20.jpg"
+      "url": "/adgen/img/20.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/21.jpg"
+      "url": "/adgen/img/21.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/22.jpg"
+      "url": "/adgen/img/22.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/23.jpg"
+      "url": "/adgen/img/23.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/24.jpg"
+      "url": "/adgen/img/24.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/25.jpg"
+      "url": "/adgen/img/25.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/26.jpg"
+      "url": "/adgen/img/26.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/27.jpg"
+      "url": "/adgen/img/27.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/28.jpg"
+      "url": "/adgen/img/28.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/29.jpg"
+      "url": "/adgen/img/29.jpg",
+      "slogan": "Quisque velit nisi"
     },
     {
-      "url": "/adgen/img/30.jpg"
+      "url": "/adgen/img/30.jpg",
+      "slogan": "Quisque velit nisi"
     }
   ],
   "community": [
     {
       "url": "/adgen/img/gif/2s.jpg",
+      "slogan": "Donec rutrum congue",
       "gif": "/adgen/img/gif/2.gif"
     }
   ]
