@@ -1,24 +1,19 @@
-application: start-stunning
+application: stunning-adgen
 version: 1
 runtime: php55
 api_version: 1
+default_expiration: 0s
 
 handlers:
-  - url: /gallery
-    static_files: gallery/index.html
-    upload: gallery/index.html
+- url: /adgen
+  static_files: adgen/index.html
+  upload: adgen/index.html
 
-  - url: /gallery/(.+)
-    static_files: gallery/\1
-    upload: gallery/(.*)
+# Serve php scripts.
+- url: /adgen/(.+\.php)$
+  script: /adgen/\1
 
-  - url: /adgen
-    static_files: adgen/index.html
-    upload: adgen/index.html
-
-  - url: /adgen/(.+)
-    static_files: adgen/\1
-    upload: adgen/(.*)
-
-  - url: /adgen/wixBase64Save.php
-    script: adgen/wixBase64Save.php
+# Serve static files
+- url: /adgen/(.*\.(gif|png|jpg|css|js|html))$
+  static_files: adgen/\1
+  upload: adgen/.*\.(gif|png|jpg|css|js|html)$
