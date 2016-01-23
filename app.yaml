@@ -14,6 +14,6 @@ handlers:
   script: /adgen/\1
 
 # Serve static files
-- url: /adgen/(.*\.(gif|png|jpg|css|js|html))$
+- url: /adgen/(.*\.(gif|png|jpg|css|js|html|json|ttf|woff))$
   static_files: adgen/\1
-  upload: adgen/.*\.(gif|png|jpg|css|js|html)$
+  upload: adgen/.*\.(gif|png|jpg|css|js|html|json|ttf|woff)$

@@ -1,7 +1,36 @@
+<?php 
+    $fbAppId = '553739484792475';
+
+    function generateSocialNetworkMetas() {
+        $aid = $_GET['case'];
+        if (empty($aid)) return;
+        $aid = mb_convert_encoding($aid, 'UTF-8', 'UTF-8');
+        $aid = htmlentities($aid, ENT_QUOTES, 'UTF-8');
+
+        $meta = '';
+        $wixBase = 'https://media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/';
+
+        $imgUrl = $wixBase . $aid . '/file'.'?cache='.rand(1, 100000);
+        $meta .= '<meta property="og:url" content="'.$imgUrl.'">';
+        $meta .= '<meta property="og:image" content="'.$imgUrl.'">';
+
+        return $meta;
+    }
+
+    $meta = generateSocialNetworkMetas();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta property="fb:app_id" content="<?php echo $fbAppId ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wix StartStunning">
+    <meta property="og:title" content="Get Your Own Star & Promote Your Business!">
+    <meta property="og:description" content="Just in time for the Big Game! Create your own ad using cute puppies and kittens, majestic horses, cheeky lizards & more. When they're the star, the world pays attention.">
+    <?php echo $meta; ?>
     <title>Wix Ad Generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link href="//static.parastorage.com/services/wix-public/1.163.0/css/Helvetica/fontFace.css" rel="stylesheet">
@@ -15,6 +44,25 @@
     <script src="/adgen/js/libgif.js"></script>
 </head>
 <body>
+
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '<?php echo $fbAppId ?>',
+            xfbml      : true,
+            version    : 'v2.5'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+</script>
 
 <div class="overflow start">
     <div class="wrap">
@@ -64,7 +112,7 @@
 
     $(document).ready(function () {
         adData.init(function () {
-            $('.col-left').wixFillPictures({
+            /*$('.col-left').wixFillPictures({
                 count: 16
             }, this);
 
@@ -72,20 +120,20 @@
                 count: 24
             }, this);
 
-            $('.form').wixAdForm({}, this);
+            $('.form').wixAdForm({}, this);*/
 
-            var adId = getQueryVariable('case'),
-                imgUrl = wixBase + adId + '/file';
+            /*var adId = getQueryVariable('case'),
+             imgUrl = wixBase + adId + '/file';
 
-            if (adId) {
-                $('head').append($('<meta>').attr('property', 'og:url').attr('content', '//'+location.host));
-                $('head').append($('<meta>').attr('property', 'og:title').attr('content', 'Get Your Own Star & Promote Your Business!'));
-                $('head').append($('<meta>').attr('property', 'og:description').attr('content', 'Description! Get Your Own Star & Promote Your Business!'));
-                $('head').append($('<meta>').attr('property', 'og:image').attr('content', imgUrl+'.gif'));
-            }
+             if (adId) {
+             $('head').append($('<meta>').attr('property', 'og:url').attr('content', '//'+location.host));
+             $('head').append($('<meta>').attr('property', 'og:title').attr('content', 'Get Your Own Star & Promote Your Business!'));
+             $('head').append($('<meta>').attr('property', 'og:description').attr('content', 'Description! Get Your Own Star & Promote Your Business!'));
+             $('head').append($('<meta>').attr('property', 'og:image').attr('content', imgUrl+'.gif'));
+             }
 
-
-            /*$('.share .container').wixAdShare({
+             */
+            $('.share .container').wixAdShare({
                 count: 9,
                 category: 'sport',
                 caption: 'bora bora'
@@ -95,7 +143,7 @@
             });
 
             $('.start').hide();
-            $('.share').show();*/
+            $('.share').show();
         });
 
     });
