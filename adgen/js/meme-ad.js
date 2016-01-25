@@ -21,6 +21,7 @@ String.prototype.capitalize = function() {
     $.wixAdData = function () {
         var component = this;
 
+        component.categories = [];
         component.itemsData = {};
         component.popData;
         component.randomMain;
@@ -41,15 +42,14 @@ String.prototype.capitalize = function() {
             if (_.isUndefined(component.popData)) {
                 component.popData = [];
 
-                _.each(component.itemsData, function(set, category) {
-                    component.popData = component.popData.concat(set);
+                _.each(component.itemsData, function(items) {
+                    component.popData = component.popData.concat(items);
                 });
                 component.popData = _.shuffle(component.popData);
                 component.randomMain = _.sample(component.popData);
             }
 
-            if (component.popData.length >= count)
-                return component.popData.splice(0, count);
+            return component.popData.splice(0, count);
         };
 
         component.queryEl = function(category, count) {
@@ -69,7 +69,8 @@ String.prototype.capitalize = function() {
 
         component.init = function (success) {
             $.getJSON('/adgen/data.json').done(function (data) {
-                component.itemsData = data;
+                component.categories = data.categories;
+                component.itemsData = data.items;
                 success.call(component);
             });
         };
@@ -92,6 +93,7 @@ String.prototype.capitalize = function() {
             plugin.settings = $.extend({}, defaults, options);
             render = _.template($('script.tpl-picture-grid').html());
             var myData = adData.popEl(plugin.settings.count);
+            console.log('myData: ', myData);
             generatedHTML = render({ data: myData });
 
             $(element).html(generatedHTML);
@@ -100,10 +102,10 @@ String.prototype.capitalize = function() {
                 var img = $(this).data('wix-gif');
                 if (!img) return;
 
-                $(this).css('background-image', 'url('+img+')');
+                $(this).css('background-image', 'url("'+img+'")');
             }, function () {
                 var img = $(this).data('wix-url');
-                $(this).css('background-image', 'url('+img+')');
+                $(this).css('background-image', 'url("'+img+'")');
             }).click(function () {
                 var img = $(this).data('wix-gif') ? $(this).data('wix-gif') : $(this).data('wix-url');
                 $('.image-frame img').attr('src', img);
@@ -566,7 +568,7 @@ String.prototype.capitalize = function() {
                     plugin.assembleGif(function (gif) {
                         plugin.saveToServer(gif, function (result) {
                             console.log(result);
-                            plugin.share(result.file_name);
+                            //plugin.share(result.file_name);
                              plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
                             plugin.hideProcessing();
                         });

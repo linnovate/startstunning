@@ -90,7 +90,7 @@
                     count: 24
                 }, this);
 
-                $('.form').wixAdForm({}, this);
+                // $('.form').wixAdForm({}, this);
 
                 /*$('.share .container').wixAdShare({
                     count: 9,
@@ -126,8 +126,8 @@
     <!--templates-->
     <script type="text/template" class="tpl-picture-grid">
         <% _.each(data, function(item) { %>
-        <div class="square" style="background-image: url(<%- item.url %>);"
-             data-wix-gif="<%- item.gif %>" data-wix-url="<%- item.url %>">
+        <div class="square" style="background-image: url('<%- item.jpgNoLogo %>');"
+             data-wix-gif="<%- item.gifNoLogo %>" data-wix-url="<%- item.jpgNoLogo %>">
         </div>
         <% }); %>
     </script>
