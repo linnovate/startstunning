@@ -494,6 +494,36 @@ String.prototype.capitalize = function() {
             $element.find('.loader').removeClass('processing');
         };
 
+        plugin.base64toBlob = function (base64Data, contentType) {
+            contentType=contentType || '';
+            var sliceSize=1024;
+            var byteCharacters=window.atob(base64Data);
+            var bytesLength=byteCharacters.length;
+            var slicesCount=Math.ceil(bytesLength / sliceSize);
+            var byteArrays=new Array(slicesCount);
+
+            for(var sliceIndex=0; sliceIndex<slicesCount; ++sliceIndex) {
+                var begin=sliceIndex * sliceSize;
+                var end=Math.min(begin + sliceSize, bytesLength);
+
+                var bytes=new Array(end - begin);
+                for(var offset=begin, i=0; offset<end; ++i, ++offset) {
+                    bytes[i]=byteCharacters[offset].charCodeAt(0);
+                }
+                byteArrays[sliceIndex]=new Uint8Array(bytes);
+            }
+            return new Blob(byteArrays, { type: contentType });
+        };
+
+        plugin.share = function (file_id) {
+            FB.ui({
+              method: 'share',
+              href: location.origin+'/adgen?case='+file_id,
+            }, function(response) {
+                console.log('FB response: ', response);
+            });
+        };
+
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
             $memeAd = $element.find('.meme-ad');
@@ -534,10 +564,10 @@ String.prototype.capitalize = function() {
                     console.log('assembling started...');
                     plugin.showProcessing();
                     plugin.assembleGif(function (gif) {
-                        plugin.saveToServer(function (result) {
+                        plugin.saveToServer(gif, function (result) {
                             console.log(result);
-
-                            plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', canvas.width, canvas.height);
+                            plugin.share(result.file_name);
+                            // plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', canvas.width, canvas.height);
                             plugin.hideProcessing();
                         });
                     });
@@ -551,12 +581,13 @@ String.prototype.capitalize = function() {
                 $element.find('.btn-fb, .btn-tw').on('click', function () {
                     console.log('static processing started...');
 
-                    plugin.createStaticMeme(function (src, width, height) {
-                        plugin.saveToServer(function (result) {
-                            console.log(result);
-                            console.log(src);
+                    var $btnClick = $(this);
 
-                            plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', width, height);
+                    plugin.createStaticMeme(function (src, width, height) {
+                        plugin.saveToServer(src, function (result) {
+                            console.log(result);
+                            plugin.share(result.file_name);
+                            // plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', width, height);
                             plugin.hideProcessing();
                         });
                     })
@@ -571,17 +602,37 @@ String.prototype.capitalize = function() {
             return base + file_url.slice(0, -4);
         };
 
-        plugin.saveToServer = function (complete) {
+        plugin.saveToServer = function (fileString, complete) {
             if (_.isEmpty(wixImg)) {
                 $.ajax({
                     type: "POST",
-                    url: "/adgen/wixBase64Save.php",
-                    dataType: 'json',
-                    data: { base64: imgGif }
+                    url: "/adgen/proxy.php",
+                    dataType: 'json'
                 })
                 .done(function(result) {
-                    wixImg = result;
-                    complete(wixImg);
+                    // prepare form data
+                    var base64 = fileString.split(',')[1],
+                        formData = new FormData();
+                    // JavaScript file-like object
+                    formData.append('media_type', 'picture');
+                    formData.append('file', plugin.base64toBlob(base64, 'image/gif'), 'filename.gif');
+
+                    $.ajax({
+                        type: "POST",
+                        url: result.upload_url,
+                        async: false,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+                        headers: result.access
+                    })
+                    .done(function(result) {
+                        if (result.length) {
+                            wixImg = result[0];
+                            complete(wixImg);
+                        }
+                    });
                 });
             } else {
                 complete(wixImg);

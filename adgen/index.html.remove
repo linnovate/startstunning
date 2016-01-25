@@ -64,7 +64,7 @@
 
     $(document).ready(function () {
         adData.init(function () {
-            $('.col-left').wixFillPictures({
+            /*$('.col-left').wixFillPictures({
                 count: 16
             }, this);
 
@@ -72,20 +72,9 @@
                 count: 24
             }, this);
 
-            $('.form').wixAdForm({}, this);
+            $('.form').wixAdForm({}, this);*/
 
-            var adId = getQueryVariable('case'),
-                imgUrl = wixBase + adId + '/file';
-
-            if (adId) {
-                $('head').append($('<meta>').attr('property', 'og:url').attr('content', '//'+location.host));
-                $('head').append($('<meta>').attr('property', 'og:title').attr('content', 'Get Your Own Star & Promote Your Business!'));
-                $('head').append($('<meta>').attr('property', 'og:description').attr('content', 'Description! Get Your Own Star & Promote Your Business!'));
-                $('head').append($('<meta>').attr('property', 'og:image').attr('content', imgUrl+'.gif'));
-            }
-
-
-            /*$('.share .container').wixAdShare({
+            $('.share .container').wixAdShare({
                 count: 9,
                 category: 'sport',
                 caption: 'bora bora'
@@ -95,7 +84,7 @@
             });
 
             $('.start').hide();
-            $('.share').show();*/
+            $('.share').show();
         });
 
     });

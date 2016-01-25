@@ -6,8 +6,7 @@ default_expiration: 0s
 
 handlers:
 - url: /adgen
-  static_files: adgen/index.html
-  upload: adgen/index.html
+  script: adgen/index.php
 
 # Serve php scripts.
 - url: /adgen/(.+\.php)$

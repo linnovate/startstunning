@@ -60,7 +60,7 @@ class WixClient {
 		if ($meta) return new WixVideo($meta->file_url, self::VIDEO_SERVICE_HOST, $this);
 	}
 
-	private function uploadFile($file_path, $url_endpoint, $media_type) {
+	public function uploadFile($file_path, $url_endpoint, $media_type) {
 		if (!file_exists($file_path) || !is_file($file_path)) {
 			error_log("WixClient->uploadFile, file: $file_path does not exist");
 			return;
@@ -80,7 +80,7 @@ class WixClient {
 		else return;
 	}
 
-	private function getUploadUrl($url_endpoint) {
+	public function getUploadUrl($url_endpoint) {
 		$headers = $this->getAuth()->getAuthorizationHeader();
 		$answer = WixHttpUtils::curl($url_endpoint, $headers);
 
