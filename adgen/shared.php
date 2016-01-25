@@ -1,5 +1,6 @@
 <?php 
     $fbAppId = '553739484792475';
+    // $fbAppId = '554825444683879';
 
     $aid = $_GET['case'];
     if (empty($aid)) return;
@@ -9,9 +10,11 @@
     $meta = '';
     $wixBase = 'https://media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/';
 
-    $imgUrl = $wixBase . $aid . '/file';
-    $meta .= '<meta property="og:url" content="'.$imgUrl.'">';
-    $meta .= '<meta property="og:image" content="'.$imgUrl.'">';
+    $imgUrl = $wixBase . $aid . '/file.gif';
+    $meta = array();
+    $meta['og:url'] = $imgUrl;
+    $meta['og:image'] = $imgUrl;
+    
     /*$meta .= '<meta property="og:type" content="video.other">';
     $meta .= '<meta property="og:image:width" content="400">';
     $meta .= '<meta property="og:image:height" content="400">';*/
@@ -21,12 +24,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta property="fb:app_id" content="<?php echo $fbAppId ?>">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Wix StartStunning">
-    <meta property="og:title" content="Get Your Own Star & Promote Your Business!">
-    <meta property="og:description" content="Just in time for the Big Game! Create your own ad using cute puppies and kittens, majestic horses, cheeky lizards & more. When they're the star, the world pays attention.">
-    <?php echo $meta; ?>
+    <meta property="fb:app_id" content="<?php echo $fbAppId ?>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Wix StartStunning"/>
+    <meta property="og:title" content="Get Your Own Star & Promote Your Business!"/>
+    <meta property="og:description" content="Just in time for the Big Game! Create your own ad using cute puppies and kittens, majestic horses, cheeky lizards & more. When they're the star, the world pays attention."/>
+    <?php foreach ($meta as $key => $value): ?>
+    <meta property="<?php echo $key; ?>" content="<?php echo $value; ?>"/>
+    <?php endforeach ?>
     <title>Create your own cool ad with the Wix generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link href="//static.parastorage.com/services/wix-public/1.163.0/css/Helvetica/fontFace.css" rel="stylesheet">

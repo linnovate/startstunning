@@ -567,7 +567,7 @@ String.prototype.capitalize = function() {
                         plugin.saveToServer(gif, function (result) {
                             console.log(result);
                             plugin.share(result.file_name);
-                            // plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', canvas.width, canvas.height);
+                             plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
                             plugin.hideProcessing();
                         });
                     });
@@ -587,7 +587,7 @@ String.prototype.capitalize = function() {
                         plugin.saveToServer(src, function (result) {
                             console.log(result);
                             plugin.share(result.file_name);
-                            // plugin.popupWindow(plugin.getOriginalUrl(result.file_url), '', width, height);
+                             plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
                             plugin.hideProcessing();
                         });
                     })
@@ -597,9 +597,8 @@ String.prototype.capitalize = function() {
 
         };
 
-        plugin.getOriginalUrl = function (file_url) {
-            var base = '//media.wixapps.net/';
-            return base + file_url.slice(0, -4);
+        plugin.getShareUrl = function (file_id) {
+            return location.origin+'/adgen?case='+file_id;
         };
 
         plugin.saveToServer = function (fileString, complete) {
