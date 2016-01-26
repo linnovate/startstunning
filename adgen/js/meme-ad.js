@@ -65,8 +65,6 @@ String.prototype.capitalize = function() {
                 })
             });
 
-            console.log(res);
-
             return res.slice(0, count);
         };
 
@@ -101,7 +99,6 @@ String.prototype.capitalize = function() {
             plugin.settings = $.extend({}, defaults, options);
             render = _.template($('script.tpl-picture-grid').html());
             var myData = adData.popEl(plugin.settings.count);
-            console.log('myData: ', myData);
             generatedHTML = render({ data: myData });
 
             $(element).html(generatedHTML);
@@ -572,7 +569,7 @@ String.prototype.capitalize = function() {
                         });
                 });
 
-                $element.find('.btn-fb, .btn-tw').on('click', function () {
+                $element.find('.btn-fb').on('click', function () {
                     console.log('assembling started...');
                     plugin.showProcessing();
                     plugin.assembleGif(function (gif) {
@@ -583,7 +580,18 @@ String.prototype.capitalize = function() {
                             plugin.hideProcessing();
                         });
                     });
+                });
 
+                $element.find('.btn-tw').on('click', function () {
+                    console.log('assembling started...');
+                    plugin.showProcessing();
+                    plugin.assembleGif(function (gif) {
+                        plugin.saveToServer(gif, function (result) {
+                            console.log(result);
+                            plugin.popupWindow('https://twitter.com/intent/tweet?url='+plugin.getShareUrl(result.file_name), '', 800, 800);
+                            plugin.hideProcessing();
+                        });
+                    });
                 });
             } else {
                 $memeAd.css('background-image', 'url("'+$memeAd.data('wix-ad-src')+'")')

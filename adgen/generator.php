@@ -1,6 +1,5 @@
 <?php 
     $fbAppId = '553739484792475';
-    // $fbAppId = '554825444683879';
 ?>
 
 <!DOCTYPE html>
@@ -11,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link href="//static.parastorage.com/services/wix-public/1.163.0/css/Helvetica/fontFace.css" rel="stylesheet">
     <link href="/adgen/css/style.css" rel="stylesheet" type="text/css">
-    <script src="/adgen/js/underscore-min.js"></script>
     <script src="/adgen/js/jquery-2.1.4.min.js"></script>
     <script src="/adgen/js/meme-ad.js"></script>
+    <script src="/adgen/js/underscore-min.js"></script>
 </head>
 <body>
     <script type="text/javascript">
@@ -74,53 +73,54 @@
     <div id="heightStage" style="display: none;"></div>
 
     <script>
-        var wixSelTypes = [],
-            wixSelBusinessName = '',
-            wixSelCategory = '',
-            adData = new $.wixAdData(),
-            wixBase = '//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/';
+        (function($) {
+            var wixSelTypes = [],
+                wixSelBusinessName = '',
+                wixSelCategory = '',
+                adData,
+                wixBase = '//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/';
 
-        $(document).ready(function () {
-            adData.init(function () {
-                $('.col-left').wixFillPictures({
-                    count: 16
-                }, this);
+            adData = new $.wixAdData();
+            
+            $(document).ready(function () {
+                adData.init(function () {
+                    $('.col-left').wixFillPictures({
+                        count: 16
+                    }, this);
 
-                $('.col-right').wixFillPictures({
-                    count: 24
-                }, this);
+                    $('.col-right').wixFillPictures({
+                        count: 24
+                    }, this);
 
-                $('.form').wixAdForm({}, this);
+                    $('.form').wixAdForm({}, this);
 
-                /*$('.share .container').wixAdShare({
-                    count: 9,
-                    category: 'Fashion',
-                    caption: 'bora rocks'
-                }, this);
+                    /*$('.share .container').wixAdShare({
+                        count: 9,
+                        category: 'Fashion',
+                        caption: 'bora rocks'
+                    }, this);
 
-                $('.meme-wrap').wixAdPreview({
+                    $('.meme-wrap').wixAdPreview({
+                    });
+
+                    $('.start').hide();
+                    $('.share').show();*/
                 });
 
-                $('.start').hide();
-                $('.share').show();*/
             });
 
-        });
-
-        function getQueryVariable(variable) {
-            var query = window.location.search.substring(1);
-            var vars = query.split('&');
-            for (var i = 0; i < vars.length; i++) {
-                var pair = vars[i].split('=');
-                if (decodeURIComponent(pair[0]) == variable) {
-                    return decodeURIComponent(pair[1]);
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split('&');
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split('=');
+                    if (decodeURIComponent(pair[0]) == variable) {
+                        return decodeURIComponent(pair[1]);
+                    }
                 }
             }
-        }
 
-        function showImage(src) {
-            window.open(src, '_blank', 'toolbar=0,location=0,menubar=0');
-        }
+        })(jQuery);
     </script>
 
     <!--templates-->

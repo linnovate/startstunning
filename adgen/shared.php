@@ -14,10 +14,12 @@
     $meta = array();
     $meta['og:url'] = $imgUrl;
     $meta['og:image'] = $imgUrl;
-    
-    /*$meta .= '<meta property="og:type" content="video.other">';
-    $meta .= '<meta property="og:image:width" content="400">';
-    $meta .= '<meta property="og:image:height" content="400">';*/
+    $meta['og:image:width'] = 400;
+    $meta['og:image:height'] = 400;
+
+    $meta['twitter:image'] = $imgUrl;
+    $meta['twitter:url'] =  $imgUrl;
+    $meta['twitter:card'] = 'summary_large_image';
 ?>
 
 <!DOCTYPE html>
