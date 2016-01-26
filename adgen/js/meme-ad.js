@@ -575,11 +575,15 @@ String.prototype.capitalize = function() {
                     plugin.assembleGif(function (gif) {
                         plugin.saveToServer(gif, function (result) {
                             console.log(result);
-                            plugin.share(result.file_name);
-                            //plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
-                            plugin.hideProcessing();
+                            plugin.fbPreCache(plugin.getShareUrl(result.file_name), function(){
+                                setTimeout(function() {
+                                    plugin.share(result.file_name);
+                                    plugin.hideProcessing();
+                                }, 2000);
+                            });
                         });
                     });
+
                 });
 
                 $element.find('.btn-tw').on('click', function () {
@@ -619,6 +623,20 @@ String.prototype.capitalize = function() {
 
         plugin.getShareUrl = function (file_id) {
             return location.origin+'/adgen?case='+file_id;
+        };
+
+        plugin.fbPreCache = function (url, complete) {
+            $.ajax({
+                type: "POST",
+                url: "https://graph.facebook.com",
+                data: {
+                    id: url,
+                    scrape: true
+                }
+            })
+            .done(function(result) {
+                complete();
+            });
         };
 
         plugin.saveToServer = function (fileString, complete) {
