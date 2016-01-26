@@ -1,7 +1,6 @@
-<?php 
+<?php
     $fbAppId = '553739484792475';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,11 +76,8 @@
             var wixSelTypes = [],
                 wixSelBusinessName = '',
                 wixSelCategory = '',
-                adData,
+                adData = new $.wixAdData(),
                 wixBase = '//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/';
-
-            adData = new $.wixAdData();
-            
             $(document).ready(function () {
                 adData.init(function () {
                     $('.col-left').wixFillPictures({
@@ -94,7 +90,9 @@
 
                     $('.form').wixAdForm({}, this);
 
-                    /*$('.share .container').wixAdShare({
+                    ///////
+                    /*
+                    $('.share .container').wixAdShare({
                         count: 9,
                         category: 'Fashion',
                         caption: 'bora rocks'
@@ -104,7 +102,8 @@
                     });
 
                     $('.start').hide();
-                    $('.share').show();*/
+                    $('.share').show();
+                    */
                 });
 
             });
@@ -131,7 +130,6 @@
         </div>
         <% }); %>
     </script>
-
 
     <script type="text/template" class="tpl-form">
         <div class="row">
