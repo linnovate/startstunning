@@ -27,13 +27,7 @@ String.prototype.capitalize = function() {
         component.randomMain;
 
         component.getCategories = function() {
-            var res = {};
-
-            _.each(component.itemsData, function (set, category) {
-                res[category] = category;
-            });
-
-            return res;
+            return component.categories;
         };
 
         component.popEl = function(count) {
@@ -55,9 +49,23 @@ String.prototype.capitalize = function() {
         component.queryEl = function(category, count) {
             var res = [];
 
-            if (!_.isUndefined(component.itemsData[category])) {
-                res = _.shuffle(component.itemsData[category]);
-            }
+            console.log(category);
+
+            _.each(component.itemsData, function (item) {
+                _.each(item.meta, function (meta) {
+                    if (meta.category == category) {
+                        res.push({
+                            slogan: meta.slogan,
+                            gifNologo: item.gifNoLogo,
+                            gifLogo: item.gifLogo,
+                            jpgNoLogo: item.jpgNoLogo,
+                            jpgLogo: item.jpgLogo
+                        });
+                    }
+                })
+            });
+
+            console.log(res);
 
             return res.slice(0, count);
         };
@@ -537,9 +545,10 @@ String.prototype.capitalize = function() {
 
             if ($memeAd.hasClass('meme-animated')) {
                 console.log('found animated');
+                plugin.showProcessing();
                 superGif = new SuperGif({
                     gif: $memeAd.find('img')[0],
-                    progressbar_height : 4,
+                    progressbar_height : 10,
                     progressbar_background_color: 'transparent',
                     progressbar_foreground_color: '#3e5c99',
                     auto_play: 0,
@@ -548,6 +557,7 @@ String.prototype.capitalize = function() {
 
                 superGif.load(function () {
                     console.log('oh hey, now the gif is loaded');
+                    plugin.hideProcessing();
 
                     canvas = superGif.get_canvas();
 
@@ -568,8 +578,8 @@ String.prototype.capitalize = function() {
                     plugin.assembleGif(function (gif) {
                         plugin.saveToServer(gif, function (result) {
                             console.log(result);
-                            //plugin.share(result.file_name);
-                             plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
+                            plugin.share(result.file_name);
+                            //plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
                             plugin.hideProcessing();
                         });
                     });
@@ -589,7 +599,7 @@ String.prototype.capitalize = function() {
                         plugin.saveToServer(src, function (result) {
                             console.log(result);
                             plugin.share(result.file_name);
-                             plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
+                            //plugin.popupWindow(plugin.getShareUrl(result.file_name), '', 800, 800);
                             plugin.hideProcessing();
                         });
                     })

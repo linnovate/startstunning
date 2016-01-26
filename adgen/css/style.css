@@ -196,12 +196,11 @@ input[type="text"], select {
     height: 399px;
     overflow: hidden;
     margin: 0 auto;
-    border-radius: 5px;
     position: relative;
 }
 
 .meme-ad {
-    height: 330px;
+    height: 331px;
     background-color: #f2f2f2;
     overflow: hidden;
     background-size: cover;
@@ -216,17 +215,19 @@ input[type="text"], select {
     position: absolute;
     bottom: 0;
     width: 50%;
-    height: 69px;
+    height: 68px;
     background-image: url(/adgen/i/sn_btn.png);
     cursor: pointer;
 }
 .btn-fb {
     left: 0;
     background-position: 0 100%;
+    border-bottom-left-radius: 5px;
 }
 .btn-tw {
     right: 0;
     background-position: 100% 0;
+    border-bottom-right-radius: 5px;
 }
 .btn-tw:hover {
     background-position: 100% 100%;
@@ -240,10 +241,13 @@ input[type="text"], select {
 }
 .meme-animated canvas {
     width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .jsgif {
     position: relative;
+    height: 100%;
 }
 
 .meme-text {
@@ -291,6 +295,7 @@ input[type="text"], select {
     height: 100%;
     top: 0;
     z-index: 10;
+    border-radius: 5px;
 }
 .meme-ad {
     cursor: default;

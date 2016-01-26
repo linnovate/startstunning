@@ -90,12 +90,12 @@
                     count: 24
                 }, this);
 
-                // $('.form').wixAdForm({}, this);
+                $('.form').wixAdForm({}, this);
 
                 /*$('.share .container').wixAdShare({
                     count: 9,
-                    category: 'sport',
-                    caption: 'bora bora'
+                    category: 'Fashion',
+                    caption: 'bora rocks'
                 }, this);
 
                 $('.meme-wrap').wixAdPreview({
@@ -164,15 +164,9 @@
             <div class="meme-col col-md-4">
                 <div class="meme-wrap">
                     <div class="loader"></div>
-                    <% if (item.gif) { %>
-                        <div class="meme-ad meme-animated" data-wix-ad-src="<%- item.gif %>" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
-                            <img rel:animated_src="<%- item.gif %>">
-                        </div>
-                    <% } else { %>
-                        <div class="meme-ad" data-wix-ad-src="<%- item.url %>" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
-                            <img src="<%- item.url %>">
-                        </div>
-                    <% } %>
+                    <div class="meme-ad meme-animated" data-wix-ad-src="<%- item.gifLogo %>" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
+                        <img rel:animated_src="<%- item.gifLogo %>">
+                    </div>
                     <span class="btn-fb"></span>
                     <span class="btn-tw"></span>
                 </div>

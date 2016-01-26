@@ -1,176 +1,2216 @@
 {
-  "sport": [
-    {
-      "url": "/adgen/img/gif/1s.jpg",
-      "gif": "/adgen/img/gif/1.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/3s.jpg",
-      "gif": "/adgen/img/gif/3.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/4s.jpg",
-      "gif": "/adgen/img/gif/4.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/5s.jpg",
-      "gif": "/adgen/img/gif/5.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/6s.jpg",
-      "gif": "/adgen/img/gif/6.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/7s.jpg",
-      "gif": "/adgen/img/gif/7.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/8s.jpg",
-      "gif": "/adgen/img/gif/8.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/9s.jpg",
-      "gif": "/adgen/img/gif/9.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "url": "/adgen/img/gif/10s.jpg",
-      "gif": "/adgen/img/gif/10.gif",
-      "slogan": "Vivamus magna justo"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-Bunnies.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-DogOffice.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-DogPink.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-DogRun.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-DogStand.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-Duckling.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-GoatChew.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-MeerkatA.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-MeerkatUptight.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-MonkeyRoll.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-OwlDis.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "gif": "/adgen/img/gif/FSA-SealSpin.gif",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/13.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/14.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/15.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/16.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/17.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/18.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/19.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/20.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/21.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/22.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/23.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/24.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/25.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/26.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/27.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/28.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/29.jpg",
-      "slogan": "Quisque velit nisi"
-    },
-    {
-      "url": "/adgen/img/30.jpg",
-      "slogan": "Quisque velit nisi"
-    }
+  "categories": [
+    "Accommodation",
+    "Fashion",
+    "Restaurant",
+    "Consulting & coaching",
+    "Music",
+    "Photography",
+    "Services & Maintaince",
+    "Shop + Store",
+    "Sport",
+    "Technology"
   ],
-  "community": [
+  "items": [
     {
-      "url": "/adgen/img/gif/2s.jpg",
-      "slogan": "Donec rutrum congue",
-      "gif": "/adgen/img/gif/2.gif"
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_01_horse_laugh.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_01_horse_laugh.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_01_horse_laugh.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_01_horse_laugh.jpg",
+      "meta": [
+        {
+          "category": "Fashion",
+          "slogan": "SHUT DOWN THE NEIGH SAYERS, YOU LOOK GREAT!"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Table manners optional"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "You talk. We'll listen"
+        },
+        {
+          "category": "Music",
+          "slogan": "Catch us live! We couldn't lip sync if we tried"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Capturing your perfect smile"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "SO GOOD, YOU'LL WANT TO BLAB TO ALL YOUR FRIENDS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_02_bear.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_02_bear.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_02_bear.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_02_bear.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "Bye friends, it's vacation time"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Giving you that supermodel attitude"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "GOODBYE FAST FOOD MEALS"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Don't worry, we got you"
+        },
+        {
+          "category": "Music",
+          "slogan": "Belt it like you mean it"
+        },
+        {
+          "category": "Photography",
+          "slogan": "CAPTURE YOUR PERSONALITY"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Don't worry, we got you"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "YOU WON'T BELIEVE OUR DEALS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Bye bye couch potato"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_03_Goat.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_03_Goat.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_03_Goat.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_03_Goat.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "We promise you'll be entertained"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "MAKING ANYONE LOOK GOOD"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Nom Nom Nom"
+        },
+        {
+          "category": "Music",
+          "slogan": "SO GOOD, WE'LL MAKE YOUR EARS TWITCH"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL GET YOUR GOOD SIDE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "SO GOOD, WE'LL MAKE YOUR EARS TWITCH"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_04_Panda.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_04_Panda.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_04_Panda.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_04_Panda.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "You won't be bored"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "You'll mesmorize 'em"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Our veggie options just can't be beat"
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC FOR ANY MOOD"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Props Provided "
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "ALL SIZES AVAILABLE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_05_Penguin.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_05_Penguin.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_05_Penguin.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_05_Penguin.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "Roll up to vacation like..."
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Run that runway"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Get it before it's gone"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "HELPING YOU REACH THE FINISH LINE"
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC YOU CAN RUN TO"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE ALSO DO ACTION SHOTS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "WE'LL SHOW UP ANYWHERE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Get it before it's gone"
+        },
+        {
+          "category": "Sport",
+          "slogan": "NEVER WORKOUT ALONE AGAIN"
+        },
+        {
+          "category": "Technology",
+          "slogan": "Get it before it's gone"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_06_Dog-courage.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_06_Dog-courage.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_06_Dog-courage.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_06_Dog-courage.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "SPACE TO BE YOURSELF"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "GRUB SO GOOD YOU'LL HOWL"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Victory feels great"
+        },
+        {
+          "category": "Music",
+          "slogan": "Hitting the high notes every single time"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Capturing the moments that matter"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "YOU CALL, WE COME."
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "DEALS SO GOOD YOU'LL HOWL"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Be a champion"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_07_Small_monkey.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_07_Small_monkey.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_07_Small_monkey.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_07_Small_monkey.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "YUP, YOU SAW THAT RIGHT"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "IT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "You won't believe your eyes"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "You won't believe your eyes"
+        },
+        {
+          "category": "Music",
+          "slogan": "When the beat drops"
+        },
+        {
+          "category": "Photography",
+          "slogan": "People will stare"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Safety inspected every time"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Don't strain yourself, buy 'em all"
+        },
+        {
+          "category": "Sport",
+          "slogan": "NO NEED TO BE SCARED"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_08_Monkey_nose.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_08_Monkey_nose.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_08_Monkey_nose.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_08_Monkey_nose.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "OUR BREAKFAST BUFFET CAN'T BE BEAT"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Nom Nom Nom"
+        },
+        {
+          "category": "Music",
+          "slogan": "Karaoke your heart out "
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL FIND YOUR GOOD ANGLE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_09_Flamingo.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_09_Flamingo.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_09_Flamingo.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_09_Flamingo.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "For when life's got you spinning"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "We Stock all Colors "
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Dessert? You won't be able to back away from it"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "For when life's got you spinning"
+        },
+        {
+          "category": "Music",
+          "slogan": "We even got the new moves"
+        },
+        {
+          "category": "Photography",
+          "slogan": "We'll always get your good side"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Our service will have you walking on water"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Our goods will have you walking on water"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WE RUN CIRLCES AROUND THE COMPETITION"
+        },
+        {
+          "category": "Technology",
+          "slogan": "For when tech's got your head spinning"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_10_Puffin.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_10_Puffin.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_10_Puffin.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_10_Puffin.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "WE'RE READY FOR YA"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Your own personal runway"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "WE'RE READY FOR YA"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "THERE FOR YOU, EVERY STEP OF THE WAY"
+        },
+        {
+          "category": "Music",
+          "slogan": "We even got the new moves"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Always camera ready"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "READY FOR ANY CHALLENGE"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WE'LL GET YOU MOVING"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_11_Monkey_jump.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_11_Monkey_jump.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_11_Monkey_jump.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_11_Monkey_jump.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "That vacation feeling"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Cuz everyone deserves a good outfit day "
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "The dinner bell has rung "
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Getting a life upgrade"
+        },
+        {
+          "category": "Music",
+          "slogan": "We even got the new moves"
+        },
+        {
+          "category": "Photography",
+          "slogan": "We can capture action shots"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "FAIR RATES, NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Makes you do the happy dance"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Makes you do the happy dance"
+        },
+        {
+          "category": "Technology",
+          "slogan": "Makes you do the happy dance"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_12_Crab.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_12_Crab.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_12_Crab.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_12_Crab.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "HERMITS WELCOME"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Giving you that fierce attitude"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "OUR MENU WILL EXCITE YOU"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'LL HELP YOU GET OUT OF YOUR SHELL"
+        },
+        {
+          "category": "Music",
+          "slogan": "YOU WON'T STOP MOVING"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL HELP YOU GET OUT OF YOUR SHELL"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "NEVER SHELL OUT MORE THAN YOU NEED TO"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "NEVER SHELL OUT MORE THAN YOU NEED TO"
+        },
+        {
+          "category": "Sport",
+          "slogan": "YOU WON'T STOP MOVING"
+        },
+        {
+          "category": "Technology",
+          "slogan": "NEVER SHELL OUT MORE THAN YOU NEED TO"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_13_Dog_drinking.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_13_Dog_drinking.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_13_Dog_drinking.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_13_Dog_drinking.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "WATERFRONT PROPERTIES AVAILABLE"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "MAKE 'EM THIRSTY"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "EVEN OUR WATER TASTES BETTER"
+        },
+        {
+          "category": "Sport",
+          "slogan": "THERE WILL BE WATER BREAKS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_14_Cow_brown.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_14_Cow_brown.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_14_Cow_brown.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_14_Cow_brown.jpg",
+      "meta": [
+        {
+          "category": "Fashion",
+          "slogan": "SO FETCH"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Food so good, you'll chew it twice"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "BUMMED? WE'LL COACH YOU THROUGH IT"
+        },
+        {
+          "category": "Music",
+          "slogan": "Mood altering music"
+        },
+        {
+          "category": "Photography",
+          "slogan": "SO FETCH"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "GREAT SERVICE, NO BULL. "
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "SO FETCH"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_15_hourse_bit.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_15_hourse_bit.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_15_hourse_bit.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_15_hourse_bit.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "COMFORT THAT'LL MAKE YOU SMILE"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "SHUT DOWN THE NEIGH SAYERS, YOU LOOK GREAT!"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "You talk. We'll listen."
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "HELPING YOU SHUT DOWN THE NEIGH SAYERS"
+        },
+        {
+          "category": "Music",
+          "slogan": "HITTING ALL THE HIGH NOTES"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE CAN MAKE ANYONE LOOK GOOD"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "DON'T PANIC- WE'LL BE THERE IN A JIFFY"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "NEVER SHELL OUT MORE THAN YOU NEED TO"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_16_Panda_big.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_16_Panda_big.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_16_Panda_big.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_16_Panda_big.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "FEEL AT HOME"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "EXPRESS YOUR STYLE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Nom Nom Nom"
+        },
+        {
+          "category": "Music",
+          "slogan": "Music for all your moods"
+        },
+        {
+          "category": "Photography",
+          "slogan": "We'll get your good side"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "SO MUCH TO SEE, YOU'LL NEVER BE BORED"
+        },
+        {
+          "category": "Sport",
+          "slogan": "YOU'LL NEVER BE BORED"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_17_Albatrosses.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_17_Albatrosses.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_17_Albatrosses.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_17_Albatrosses.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "Not to worry, we'll never schedule a double booking!"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "YOU'LL LOVE LOOKING IN THE MIRROR "
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Great for a date!"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'LL COACH YOU THROUGH IT"
+        },
+        {
+          "category": "Music",
+          "slogan": "Duets To Die For"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Bring a buddy"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "YOU'LL WANT TWO OF EVERYTHING"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Bring a buddy"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_18_Stingray.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_18_Stingray.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_18_Stingray.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_18_Stingray.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "That vacation feeling"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "As seen on the red carpet"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Eat more. In the water you weigh nothing. "
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'LL GET YOUR HEAD WELL ABOVE WATER"
+        },
+        {
+          "category": "Music",
+          "slogan": "Gets you in the groove"
+        },
+        {
+          "category": "Photography",
+          "slogan": "We can capture action shots"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "EXTREME PHOTOSHOOTS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Catch me if you can"
+        },
+        {
+          "category": "Technology",
+          "slogan": "TECH THAT'S ABOVE THE REST"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_19_Bird_water.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_19_Bird_water.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_19_Bird_water.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_19_Bird_water.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "ROOM TO BE YOURSELF"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Create your own runway"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "HELPING YOU MOVE FORWARD"
+        },
+        {
+          "category": "Music",
+          "slogan": "We even got the new moves"
+        },
+        {
+          "category": "Photography",
+          "slogan": "CAPTURING EVERY MOVE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "SERVICE SO GOOD YOU'LL DANCE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "DEALS SO GOOD YOU'LL START DANCING"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Isn't it time you replaced those old skates?"
+        },
+        {
+          "category": "Technology",
+          "slogan": "Scratch resistant software"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_20_Dog_running.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_20_Dog_running.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_20_Dog_running.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_20_Dog_running.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "Plenty of space for your gang to roam"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "Threads you can move in"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "TREAT!"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "FEEL LIKE YOURSELF AGAIN!"
+        },
+        {
+          "category": "Music",
+          "slogan": "WE GOT YOUR NEW THEME SONG"
+        },
+        {
+          "category": "Photography",
+          "slogan": "We can capture action shots"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Run, Don't Walk!"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "RUN, DON'T WALK"
+        },
+        {
+          "category": "Sport",
+          "slogan": "RUN, DON'T WALK"
+        },
+        {
+          "category": "Technology",
+          "slogan": "RUN TO THE FUTURE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_21_Dog_standing.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_21_Dog_standing.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_21_Dog_standing.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_21_Dog_standing.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "That vacation feeling"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "STRUT YOUR STUFF"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Did you say food time?"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Start feeling GOOD"
+        },
+        {
+          "category": "Music",
+          "slogan": "We even got the new moves"
+        },
+        {
+          "category": "Photography",
+          "slogan": "CAPTURING EVERY MOVE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "SERVICE SO GOOD YOU'LL DANCE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "DEALS SO GOOD YOU'LL START DANCING"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Start feeling GOOD"
+        },
+        {
+          "category": "Technology",
+          "slogan": "STEP INTO THE FUTURE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_22_Seal.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_22_Seal.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_22_Seal.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_22_Seal.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "ROOM TO BE AS WEIRD AS YOU WANNA BE"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "BE THE TRENDSETTER"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Eat more. In the water you weigh nothing"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "HELPING YOU MOVE FORWARD"
+        },
+        {
+          "category": "Music",
+          "slogan": "YOU WON'T STOP MOVING"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL GET ALL YOUR GOOD SIDES"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "WE'LL NEVER GIVE YOU THE RUN AROUND"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Makes you want to twirl"
+        },
+        {
+          "category": "Sport",
+          "slogan": "We'll keep you movin'"
+        },
+        {
+          "category": "Technology",
+          "slogan": "WE RUN CIRLCES AROUND THE COMPETITION"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_23_Meerkat_uptight.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_23_Meerkat_uptight.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_23_Meerkat_uptight.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_23_Meerkat_uptight.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "THE SEARCH STOPS HERE"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "PEOPLE WILL STARE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "THE SEARCH STOPS HERE"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Looking for purpose  Found."
+        },
+        {
+          "category": "Music",
+          "slogan": "TUNES THAT'LL MAKE YOU MOVE"
+        },
+        {
+          "category": "Photography",
+          "slogan": "iT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "TRIPLE CHECKED FOR SECURITY, EVERY TIME. "
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "OUR SELECTION WILL OVERWHELM YOU"
+        },
+        {
+          "category": "Sport",
+          "slogan": "blink and you'll miss us"
+        },
+        {
+          "category": "Technology",
+          "slogan": "YOU SEE THAT? IT WAS THE FUTURE!"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_24_Ducklings_on_grass.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_24_Ducklings_on_grass.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_24_Ducklings_on_grass.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_24_Ducklings_on_grass.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "You deserve some \"me\" time"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "LOOK BETTER THAN EVERYONE."
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "YOU WON'T WANT TO SHARE."
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Talk to someone new"
+        },
+        {
+          "category": "Music",
+          "slogan": "CHICKS DIG IT"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Cuz you deserve the spotlight "
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "BY YOUR SIDE WHEN YOU NEED US"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "CHICKS DIG IT"
+        },
+        {
+          "category": "Sport",
+          "slogan": "GROUP OR SOLO SESSIONS AVAILABLE"
+        },
+        {
+          "category": "Technology",
+          "slogan": "TECH SO GOOD, THE COMPETITION GAVE UP"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_25_Meerkat_watching.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_25_Meerkat_watching.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_25_Meerkat_watching.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_25_Meerkat_watching.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "THE SEARCH STOPS HERE"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "MAKE A STATEMENT"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "I'll have what he's having"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "FOR WHEN YOU'RE FEELING LOST"
+        },
+        {
+          "category": "Music",
+          "slogan": "TUNES THAT'LL MAKE YOU MOVE"
+        },
+        {
+          "category": "Photography",
+          "slogan": "CATCHING ALL YOUR ANGLES "
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "OUR SELECTION WILL OVERWHELM YOU"
+        },
+        {
+          "category": "Sport",
+          "slogan": "blink and you'll miss us"
+        },
+        {
+          "category": "Technology",
+          "slogan": "YOU SEE THAT? IT WAS THE FUTURE!"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_26_Ducking.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_26_Ducking.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_26_Ducking.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_26_Ducking.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Music",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        },
+        {
+          "category": "Technology",
+          "slogan": "WE'RE THAT DUCKING GOOD"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_27_Goat_chew.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_27_Goat_chew.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_27_Goat_chew.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_27_Goat_chew.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "COUCH POTATOES WELCOME"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "EXPRESS YOUR UNIQUE STYLE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "SAVOR EVERY BITE"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'RE ALL EARS."
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC THAT MAKES YOUR WHOLE BODY MOVE"
+        },
+        {
+          "category": "Photography",
+          "slogan": "SIT BACK, WE'VE GOT THIS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "SIT BACK, WE'VE GOT THIS"
+        },
+        {
+          "category": "Technology",
+          "slogan": "SIT BACK, WE'VE GOT THIS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_28_Dog_pink.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_28_Dog_pink.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_28_Dog_pink.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_28_Dog_pink.jpg",
+      "meta": [
+        {
+          "category": "Fashion",
+          "slogan": "CHI WOW-WOW YOUR FRIENDS"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "drooooool"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "GET THE CONFIDENCE OF A GIANT"
+        },
+        {
+          "category": "Photography",
+          "slogan": "CHI WOW-WOW YOUR FRIENDS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "CHI WOW-WOW YOUR FRIENDS"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "CHI WOW-WOW YOUR FRIENDS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "CHI WOW-WOW YOUR FRIENDS"
+        },
+        {
+          "category": "Technology",
+          "slogan": "CHI WOW-WOW YOUR FRIENDS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_29_Dog_office.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_29_Dog_office.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_29_Dog_office.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_29_Dog_office.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "FREE WIFI"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "GO AHEAD, SHOP ONLINE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "OUR WIFI'S ON, BUT OUR WAITERS ARE BETTER COMPANY"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "ONLINE SESSIONS AVAILABLE"
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC AVAILABLE ONLINE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "GO AHEAD, SHOP ONLINE"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WAY MORE FUN THAN YOUR FACEBOOK FEED"
+        },
+        {
+          "category": "Technology",
+          "slogan": "TRUST US, WE'RE EXPERTS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_30_Monkey_roll.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_30_Monkey_roll.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_30_Monkey_roll.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_30_Monkey_roll.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "GO AHEAD, MAKE A MESS"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "BRING OUT YOUR WILD SIDE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "OUR APPS ARE THAT GOOD"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "GIVING YOU REASON TO CELEBRATE"
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC THAT'LL MAKE YOU WILD"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL GET ALL YOUR SIDES"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "DON'T PANIC, WE CAN BE THERE IN A JIFFY"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "GIVING YOU REASON TO CELEBRATE"
+        },
+        {
+          "category": "Sport",
+          "slogan": "EXTREME SPORTS"
+        },
+        {
+          "category": "Technology",
+          "slogan": "We're that good"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_31_Squirrel.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_31_Squirrel.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_31_Squirrel.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_31_Squirrel.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "YOU'LL GO NUTS OVER OUR ROOMS"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "STYLE THAT'LL MAKE YOU GO NUTS"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Eat it quick or you’ll have to share"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE COVER EVERY DETAIL"
+        },
+        {
+          "category": "Music",
+          "slogan": "YOU'LL GO NUTS!"
+        },
+        {
+          "category": "Photography",
+          "slogan": "YOU'LL GO NUTS!"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "YOU'LL GO NUTS!"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "YOU'LL GO NUTS OVER OUR OFFERS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "YOU'LL GO NUTS!"
+        },
+        {
+          "category": "Technology",
+          "slogan": "YOU'LL GO NUTS OVER OUR OFFERS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_32_Cat_looking.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_32_Cat_looking.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_32_Cat_looking.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_32_Cat_looking.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "THE PURRFECT GETAWAY"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "IT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "YOU'LL ORDER BOTH."
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'LL HELP YOU MAKE THE HARD DECISIONS"
+        },
+        {
+          "category": "Music",
+          "slogan": "YOU'LL BE HEAD BOPPIN'"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WORK THAT CAMERA"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "WATCH US GET THE JOB DONE FAST"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "OUR SELECTION WILL OVERWHELM YOU"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_33_Owl_looking.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_33_Owl_looking.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_33_Owl_looking.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_33_Owl_looking.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "YOU'LL NEVER NAP BETTER"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "YES, YOU CAN TOTALLY PULL THAT OFF"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "FOOD-COMA INDUCING"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "WE'LL WAKE UP THE BEAST INSIDE OF YOU"
+        },
+        {
+          "category": "Music",
+          "slogan": "OUR TUNES ALWAYS MATCH THE MOOD"
+        },
+        {
+          "category": "Photography",
+          "slogan": "NEVER BE CAMERA SHY AGAIN "
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "RELAX, WE'VE GOT THIS"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "SHOP SO FAST YOU'LL EVEN GET A NAP IN"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WE'LL WAKE YOU RIGHT UP"
+        },
+        {
+          "category": "Technology",
+          "slogan": "LEAVE THAT OLD TECH FOR THE BIRDS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_34_Bunnies.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_34_Bunnies.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_34_Bunnies.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_34_Bunnies.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "SUITES SO SPACIOUS YOU'LL BRING ALL YOUR BUDS"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "EVERYONE WILL WANT TO STEAL YOUR STYLE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "YOU WON'T WANT TO SHARE."
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "GROUP SESSIONS AVAILABLE "
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC FOR THE WHOLE CREW"
+        },
+        {
+          "category": "Photography",
+          "slogan": "FAMILY PHOTOGRAPHY ON FLEEK"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "SOMETHING FOR EVERYONE"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WE'LL GET YOU HOPPING"
+        },
+        {
+          "category": "Technology",
+          "slogan": "SOMETHING FOR EVERYONE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_35_Swan.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_35_Swan.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_35_Swan.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_35_Swan.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "ROOM TO SPREAD OUT"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "YOUR SECRET TO LOOKING FLY"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "ROOM TO  SPREAD OUT"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "SPREAD YOUR WINGS AND FLY"
+        },
+        {
+          "category": "Music",
+          "slogan": "BRING YOUR BEST DANCE MOVES"
+        },
+        {
+          "category": "Photography",
+          "slogan": "STRIKE A POSE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "RELAX! WE'VE GOT THIS"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "YOU'LL BE DOING A HAPPY DANCE"
+        },
+        {
+          "category": "Sport",
+          "slogan": "YOU'LL BE A SWAN IN NO TIME"
+        },
+        {
+          "category": "Technology",
+          "slogan": "OTHER TECH IS FOR THE BIRDS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_36_Hippo.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_36_Hippo.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_36_Hippo.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_36_Hippo.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "FEEL AT HOME"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "WE'LL MAKE YOU LOOK HIP"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "COME HUNGRY AS A HIPPO"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "NO MORE ROLLING OVER "
+        },
+        {
+          "category": "Music",
+          "slogan": "TUNES YOU'LL WANT TO GET HIP TO"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL CAPTURE YOUR ESSENCE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "ALL THE HIPPEST ITEMS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "WE'LL GET YOU MOVING"
+        },
+        {
+          "category": "Technology",
+          "slogan": "THE HIPPEST TECH OUT THERE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_37_Dog_digging.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_37_Dog_digging.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_37_Dog_digging.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_37_Dog_digging.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "BEST DIGS IN TOWN"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "YOU'LL DIG OUR STYLE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "YOU'LL DIG OUR SPECIALS "
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "YOU'LL DIG US"
+        },
+        {
+          "category": "Music",
+          "slogan": "YOU'LL DIG OUR SOUND"
+        },
+        {
+          "category": "Photography",
+          "slogan": "YOU'LL DIG OUR STILLS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "YOU'LL DIG OUR SERVICE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "YOU'LL DIG OUR SPECIALS "
+        },
+        {
+          "category": "Sport",
+          "slogan": "CHICKS DIG IT"
+        },
+        {
+          "category": "Technology",
+          "slogan": "CHICKS DIG IT"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_38_Racoons.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_38_Racoons.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_38_Racoons.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_38_Racoons.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "A great couples getaway"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "PEOPLE WILL STARE "
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "THE PERFECT PLACE FOR A DATE"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "you'll never feel alone"
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC TO GET YOU IN THE MOOD"
+        },
+        {
+          "category": "Photography",
+          "slogan": "our couples portraits just can't be beat!"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Two for one specials "
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_39_Ducks_tow.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_39_Ducks_tow.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_39_Ducks_tow.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_39_Ducks_tow.jpg",
+      "meta": [
+        {
+          "category": "Fashion",
+          "slogan": "IT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "EVEN OUR WATER TASTES BETTER"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "We'll get through this together"
+        },
+        {
+          "category": "Music",
+          "slogan": "WE'VE GOT GROUPIES"
+        },
+        {
+          "category": "Photography",
+          "slogan": "FAMILY PHOTOSHOOTS ON FLEEK"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Two for one specials "
+        },
+        {
+          "category": "Sport",
+          "slogan": "GROUP SESSIONS AVAILABLE "
+        },
+        {
+          "category": "Technology",
+          "slogan": "OTHER TECH IS FOR THE BIRDS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_40_Ducks_three.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_40_Ducks_three.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_40_Ducks_three.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_40_Ducks_three.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "FAMILY FRIENDLY"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "YOU'LL BE A REAL TRENDSETTER "
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "EVEN OUR WATER TASTES BETTER"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "We'll get through this together"
+        },
+        {
+          "category": "Music",
+          "slogan": "you'll want to sing along"
+        },
+        {
+          "category": "Photography",
+          "slogan": "Great for groups too!"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "A team you can count on"
+        },
+        {
+          "category": "Sport",
+          "slogan": "GROUP SESSIONS AVAILABLE "
+        },
+        {
+          "category": "Technology",
+          "slogan": "A team you can count on"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_41_Ostrich.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_41_Ostrich.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_41_Ostrich.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_41_Ostrich.jpg",
+      "meta": [
+        {
+          "category": "Fashion",
+          "slogan": "PEOPLE WILL STARE "
+        },
+        {
+          "category": "Music",
+          "slogan": "music you can move to"
+        },
+        {
+          "category": "Photography",
+          "slogan": "STRIKE A POSE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "PEOPLE WILL STARE "
+        },
+        {
+          "category": "Technology",
+          "slogan": "OTHER TECH IS FOR THE BIRDS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_42_Otters.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_42_Otters.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_42_Otters.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_42_Otters.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "ROOM FOR THE WHOLE CREW"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "comfortable fashion"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "DINE IN COMFORT"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "ANSWERING LIFE'S TOUGHEST QUESTIONS"
+        },
+        {
+          "category": "Music",
+          "slogan": "beats you can feel"
+        },
+        {
+          "category": "Photography",
+          "slogan": "STRESS-FREE PHOTOSHOOTS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "STRESS FREE SERVICE"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_43_Elephant.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_43_Elephant.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_43_Elephant.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_43_Elephant.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "Wash your worries away"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "style for all sizes"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "EVEN OUR WATER TASTES BETTER"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Wash your worries away"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Wash your worries away"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_44_Monkey_dancing.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_44_Monkey_dancing.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_44_Monkey_dancing.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_44_Monkey_dancing.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "GREAT SELFIE LIGHTING"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "YOU'LL BE TAKING TONS OF SELFIES"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Music",
+          "slogan": "sick beats"
+        },
+        {
+          "category": "Photography",
+          "slogan": "we'll get real close"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Great service, no monkey business"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Great results, no monkey business"
+        },
+        {
+          "category": "Technology",
+          "slogan": "your answer to, 'what's this button do'"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_45_Monkey_smile.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_45_Monkey_smile.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_45_Monkey_smile.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_45_Monkey_smile.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "you won't be bored"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "embrace your inner diva"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "wait 'til you see our desserts"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Music",
+          "slogan": "We hit all the high notes"
+        },
+        {
+          "category": "Photography",
+          "slogan": "NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Great service, no monkey business"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "NO MONKEY BUSINESS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Great results, no monkey business"
+        },
+        {
+          "category": "Technology",
+          "slogan": "Great service, no monkey business"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_46_Otter.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_46_Otter.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_46_Otter.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_46_Otter.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "Wash your worries away"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "style for any personality"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "Eat more. In the water you weigh nothing. "
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "we'll help you find your way"
+        },
+        {
+          "category": "Music",
+          "slogan": "tunes for laying low"
+        },
+        {
+          "category": "Photography",
+          "slogan": "YOU CHOOSE THE LOCATION, WE'LL BRING THE CAMERA"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "Wash your worries away"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "Wash your worries away"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Wash your worries away"
+        },
+        {
+          "category": "Technology",
+          "slogan": "water resistant "
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_47_Frog.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_47_Frog.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_47_Frog.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_47_Frog.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "we'll keep you amused, we promise"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "wild styles available"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "YOU'LL NEVER LEAVE HUNGRY"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "Time to turn from frog to prince"
+        },
+        {
+          "category": "Music",
+          "slogan": "SING ALONG, WE SUPPORT YOU"
+        },
+        {
+          "category": "Photography",
+          "slogan": "SERIOUS PHOTOSHOOTS"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "great service, no bull (frog)"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "great goods, no bull (frog)"
+        },
+        {
+          "category": "Sport",
+          "slogan": "Time to turn from frog to prince"
+        },
+        {
+          "category": "Technology",
+          "slogan": "great service, no bull (frog)"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_48_Meerkat_fast.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_48_Meerkat_fast.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_48_Meerkat_fast.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_48_Meerkat_fast.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "the best accomodation you can find"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "IT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "SO MUCH TO CHOOSE FROM"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "for when you're feeling lost"
+        },
+        {
+          "category": "Music",
+          "slogan": "THE SOUND YOU'VE BEEN SEARCHING FOR"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL GET EVERY ANGLE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "THE SERVICE YOU'VE BEEN SEARCHING FOR"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "THE STUFF YOU'VE BEEN SEARCHING FOR"
+        },
+        {
+          "category": "Technology",
+          "slogan": "THE TECH YOU'VE BEEN SEARCHING FOR"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_49_Cat_roll.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_49_Cat_roll.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_49_Cat_roll.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_49_Cat_roll.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "THE PUUURFECT GETAWAY"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "PUUURFECTION EVERY TIME"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "FINGER LICKING GOODNESS"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "for when you need a lift"
+        },
+        {
+          "category": "Music",
+          "slogan": "music for any mood"
+        },
+        {
+          "category": "Photography",
+          "slogan": "PICTURE PUUURFECT"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "PUUURFECT SERVICE EVERY TIME"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "PUUURFECT GIFT OPTIONS"
+        },
+        {
+          "category": "Sport",
+          "slogan": "IT'S PUUURFECTION"
+        },
+        {
+          "category": "Technology",
+          "slogan": "CAN YOU SAY PUUURFECTION"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_50_meerkat_confused.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_50_meerkat_confused.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_50_meerkat_confused.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_50_meerkat_confused.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "the best accomodation you can find"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "IT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "NO MORE FOOD FOMO"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "for when you're feeling lost"
+        },
+        {
+          "category": "Music",
+          "slogan": "MUSIC SO GOOD IT'LL MAKE YOU NERVOUS"
+        },
+        {
+          "category": "Photography",
+          "slogan": "we'll get all your angles"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "NO NEED TO WORRY - WE'RE ON IT"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "you'll find what you're looking for"
+        },
+        {
+          "category": "Sport",
+          "slogan": "IT'LL MAKE 'EM DO A DOUBLE TAKE"
+        },
+        {
+          "category": "Technology",
+          "slogan": "TECH THAT MAKES THE COMPETITION NERVOUS"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_51_Camel.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_51_Camel.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_51_Camel.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_51_Camel.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "FEEL EXOTIC"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "style for all sizes"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "THE CURE FOR YOUR HUMP DAY BLUES"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "for when you're feeling stuck"
+        },
+        {
+          "category": "Music",
+          "slogan": "the cure for your hump day blues"
+        },
+        {
+          "category": "Photography",
+          "slogan": "WE'LL GET YOUR GOOD SIDE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "NO JOB TOO BIG"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "the cure for your hump day blues"
+        },
+        {
+          "category": "Sport",
+          "slogan": "the cure for your hump day blues"
+        }
+      ]
+    },
+    {
+      "gifNoLogo": "/adgen/img/no-logo/gif/A_52_Dog_car.gif",
+      "gifLogo": "/adgen/img/logo/gif/B_52_Dog_car.gif",
+      "jpgNoLogo": "/adgen/img/no-logo/jpg/A_52_Dog_car.jpg",
+      "jpgLogo": "/adgen/img/logo/jpg/B_52_Dog_car.jpg",
+      "meta": [
+        {
+          "category": "Accommodation",
+          "slogan": "THAT VACATION FEELING"
+        },
+        {
+          "category": "Fashion",
+          "slogan": "style that will make you smile"
+        },
+        {
+          "category": "Restaurant",
+          "slogan": "DINNER DEALS THAT'LL MAKE YOU SMILE"
+        },
+        {
+          "category": "Consulting & coaching",
+          "slogan": "YOU'VE NEVER FELT THIS FREE"
+        },
+        {
+          "category": "Music",
+          "slogan": "TUNES TO MAKE YOUR COMMUTE AWESOME"
+        },
+        {
+          "category": "Photography",
+          "slogan": "SAY CHEESE"
+        },
+        {
+          "category": "Services & Maintaince",
+          "slogan": "SERVICE WITH A SMILE"
+        },
+        {
+          "category": "Shop + Store",
+          "slogan": "LEAVE A HAPPY CUSTOMER"
+        },
+        {
+          "category": "Sport",
+          "slogan": "FEEL GOOD ABOUT YOURSELF"
+        },
+        {
+          "category": "Technology",
+          "slogan": "LEAVE A HAPPY CUSTOMER"
+        }
+      ]
     }
   ]
 }
