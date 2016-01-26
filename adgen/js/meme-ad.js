@@ -1,18 +1,47 @@
-Array.range = function(n) {
+Array.range = function (n) {
     // Array.range(5) --> [0,1,2,3,4]
-    return Array.apply(null,Array(n)).map(function(x, i) { return i})
+    return Array.apply(null, Array(n)).map(function (x, i) {
+        return i;
+    });
 };
+
 Object.defineProperty(Array.prototype, 'chunk', {
-    value: function(n) {
+    value: function value(n) {
+        var _this = this;
         // ACTUAL CODE FOR CHUNKING ARRAY:
-        return Array.range(Math.ceil(this.length/n)).map(function(x, i){ return this.slice(i*n,i*n+n)});
+        return Array.range(Math.ceil(this.length / n)).map(function (x, i) {
+            return _this.slice(i * n, i * n + n);
+        });
     }
 });
+
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
 (function($) {
+    /*
+    Array.range = function(n) {
+        // Array.range(5) --> [0,1,2,3,4]
+        return Array.apply(            null,Array(n)).map(function(x, i) { return i})
+    };
+    Object.defineProperty(Array.prototype, 'chunk', {
+        value: function(n) {
+            // ACTUAL CODE FOR CHUNKING ARRAY:
+            return Array.range(
+                Math.ceil(this.length/n)).map(
+                    function(x, i){
+                        console.log(this);
+                        return this.slice(i*n,i*n+n)
+                    }
+                );
+            }
+    });
+    String.prototype.capitalize = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    };
+    */
+
     //var baseURL = 'http://server/wix/startstunning/adgen';
     var baseURL = location.href;
 
