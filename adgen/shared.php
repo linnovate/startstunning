@@ -88,6 +88,21 @@
             font-size: 14px;
         }
 
+        .view img {
+            width: 100%;
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                font: 30px/40px "HelveticaNeueW01-Thin";
+                padding: 0 10px;
+                margin: 0 auto 15px;
+            }
+            .start-adgen {
+                padding-bottom: 25px;
+            }
+        }
+
     </style>
 
 <script type="text/javascript">
@@ -111,9 +126,11 @@
 
 <div class="container">
     <div class="center">
-        <h1>Cute, right? Create your own cool ad with the Wix generator</h1>
-        <div class="start-adgen"><a href="/adgen">Click Here</a></div>
-        <div class="view"><img src="<?php echo $imgUrl; ?>" alt=""></div>
+        <div class="row">
+            <h1>Cute, right? Create your own cool ad with the Wix generator</h1>
+            <div class="start-adgen"><a href="/adgen">Click Here</a></div>
+            <div class="view"><img src="<?php echo $imgUrl; ?>" alt=""></div>
+        </div>
     </div>
 </div>
 
