@@ -24,6 +24,26 @@
     url("/adgen/Fonts/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
 }
 
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("/adgen/Fonts/SourceSansPro-SemiboldIt.eot?#iefix");
+    src: url("/adgen/Fonts/SourceSansPro-SemiboldIt.eot?#iefix") format("eot"),
+    url("/adgen/Fonts/SourceSansPro-SemiboldIt.woff") format("woff"),
+    url("/adgen/Fonts/SourceSansPro-SemiboldIt.ttf") format("truetype"),
+    url("/adgen/Fonts/SourceSansPro-SemiboldIt.svg") format("svg");
+}
+
+@font-face {
+    font-family: 'SourceSansPro2';
+    src: url('/adgen/Fonts/SourceSansPro-SemiboldIt.eot');
+    src: url('/adgen/Fonts/SourceSansPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),
+    url('/adgen/Fonts/SourceSansPro-SemiboldIt.woff') format('woff'),
+    url('/adgen/Fonts/SourceSansPro-SemiboldIt.ttf') format('truetype'),
+    url('/adgen/Fonts/SourceSansPro-SemiboldIt.svg#SourceSansPro-SemiboldIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: transparent;
     font-family: "HelveticaNeueW01-45Ligh";
@@ -252,14 +272,13 @@ input[type="text"], select {
 
 .meme-text {
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 0;
     color: #fff;
     width: 100%;
     text-align: center;
-    font-size: 25px;
-    font-family: impact;
     cursor: default;
+    padding: 24px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -268,12 +287,16 @@ input[type="text"], select {
     user-select: none;
 }
 
-.meme-text-line {
-
+.text-headline {
+    font-family: impact;
+    font-size: 24px;
+    margin-bottom: 5px;
 }
-
-.meme-text div {
-    line-height: 1em;
+.text-slogan {
+    font-family: "Source Sans Pro";
+    font-size: 21px;
+    font-style: italic;
+    line-height: 28px;
 }
 
 .strokeme {

@@ -1133,28 +1133,60 @@ AnimatedGIF = function (utils, frameWorkerCode, NeuQuant, GifWriter) {
     'setRepeat': function (r) {
       this.repeat = r;
     },
+    wrapWixText: function (ctx, text, x, y, maxWidth, lineHeight) {
+      var words = text.split(' ');
+      var line = '';
+
+      for(var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + ' ';
+        var metrics = ctx.measureText(testLine);
+        var testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+          ctx.strokeText(line, x, y);
+          ctx.fillText(line, x, y);
+          line = words[n] + ' ';
+          y += lineHeight;
+        }
+        else {
+          line = testLine;
+        }
+      }
+      ctx.strokeText(line, x, y);
+      ctx.fillText(line, x, y);
+    },
+    writeWixText: function (ctx, text, width, height, fontSizeHeadPX, fontSizeSloganPX) {
+      var textSplit = text.split('\n'),
+          textHeight = parseInt(fontSizeHeadPX),
+          lineHeight = textHeight * 1.1,
+          x,
+          y,
+          maxWidth;
+      x = width/2;
+
+      y = height - textHeight - 24;
+      maxWidth = width - 48;
+      //ctx.font = 'italic '+fontSizeSloganPX+'px sans-serif';
+      //ctx.font = 'italic '+fontSizeSloganPX+'px "Open Sans"';
+      //ctx.font = 'italic '+fontSizeSloganPX+'px "Open Sans Condensed"';
+      ctx.font = 'italic '+fontSizeSloganPX+'px "Source Sans Pro"';
+
+      this.wrapWixText(ctx, textSplit[1], x, y, maxWidth, lineHeight);
+      y = y - 24 - textHeight / 2;
+      ctx.font = fontSizeHeadPX+'px impact';
+      this.wrapWixText(ctx, textSplit[0], x, y, maxWidth, lineHeight);
+    },
     'addFrame': function (element, gifshotOptions) {
       gifshotOptions = utils.isObject(gifshotOptions) ? gifshotOptions : {};
       var self = this, ctx = self.ctx, options = self.options, width = options.gifWidth, height = options.gifHeight, gifHeight = gifshotOptions.gifHeight, gifWidth = gifshotOptions.gifWidth, text = gifshotOptions.text, fontWeight = gifshotOptions.fontWeight, fontSize = utils.getFontSize(gifshotOptions), fontFamily = gifshotOptions.fontFamily, fontColor = gifshotOptions.fontColor, textAlign = gifshotOptions.textAlign, textBaseline = gifshotOptions.textBaseline, textXCoordinate = gifshotOptions.textXCoordinate ? gifshotOptions.textXCoordinate : textAlign === 'left' ? 1 : textAlign === 'right' ? width : width / 2, textYCoordinate = gifshotOptions.textYCoordinate ? gifshotOptions.textYCoordinate : textBaseline === 'top' ? 1 : textBaseline === 'center' ? height / 2 : height, font = fontWeight + ' ' + fontSize + ' ' + fontFamily, imageData;
       try {
         ctx.drawImage(element, 0, 0, width, height);
         if (text) {
-          ctx.font = font;
           ctx.fillStyle = fontColor;
           ctx.strokeStyle = 'black';
           ctx.textAlign = textAlign;
           ctx.textBaseline = textBaseline;
-          var textSplit = text.split('\n'),
-              textHeight = parseInt(fontSize),
-              lineHeight = textHeight * 1.1,
-              newtextYCoordinate;
-
-          textSplit = textSplit.reverse();
-          textSplit.forEach(function(item, i) {
-            newtextYCoordinate = textYCoordinate - i * lineHeight;
-            ctx.fillText(item, textXCoordinate, newtextYCoordinate);
-            ctx.strokeText(item, textXCoordinate, newtextYCoordinate);
-          });
+          ctx.lineWidth  = 2;
+          self.writeWixText(ctx, text, width, height, 26, 23);
         }
         imageData = ctx.getImageData(0, 0, width, height);
         self.addFrameImageData(imageData);

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link href="//static.parastorage.com/services/wix-public/1.163.0/css/Helvetica/fontFace.css" rel="stylesheet">
     <link href="/adgen/css/style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <script src="/adgen/js/jquery-2.1.4.min.js"></script>
     <script src="/adgen/js/meme-ad.js"></script>
     <script src="/adgen/js/underscore-min.js"></script>
@@ -32,6 +33,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+
 
     <div class="overflow start">
         <div class="wrap">
@@ -81,7 +84,6 @@
                 wixBase = '//media.wixapps.net/wix-a091529b-0151-4768-a83e-4cb899c90de2/images/';
 
             adData = new $.wixAdData();
-            
             $(document).ready(function () {
                 adData.init(function () {
                     $('.col-left').wixFillPictures({
@@ -167,6 +169,9 @@
                     <div class="meme-ad meme-animated" data-wix-ad-src="<%- item.gifLogo %>" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
                         <img rel:animated_src="<%- item.gifLogo %>">
                     </div>
+                    <!--<div class="meme-ad" data-wix-ad-src="/adgen/img/no-logo/jpg/A_02_bear.jpg" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
+                        <img src="/adgen/img/no-logo/jpg/A_02_bear.jpg">
+                    </div>-->
                     <span class="btn-fb"></span>
                     <span class="btn-tw"></span>
                 </div>
