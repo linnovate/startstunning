@@ -501,15 +501,16 @@ String.prototype.capitalize = function() {
         };
 
         plugin.assembleGif = function(complete) {
-            var params = _.extend(
-                {
-                    images: plugin.getFrames(),
-                    gifWidth: canvas.width,
-                    gifHeight: canvas.height
-                },
-                plugin.settings
-            );
             if (_.isEmpty(imgGif)) {
+                var params = _.extend(
+                    {
+                        images: plugin.getFrames(),
+                        gifWidth: canvas.width,
+                        gifHeight: canvas.height
+                    },
+                    plugin.settings
+                );
+
                 gifshot.createGIF(params, function (obj) {
                     if (!obj.error) {
                         imgGif = obj.image;
@@ -550,12 +551,49 @@ String.prototype.capitalize = function() {
             return new Blob(byteArrays, { type: contentType });
         };
 
-        plugin.share = function (file_id) {
-            FB.ui({
-              method: 'share',
-              href: location.origin+'/adgen?case='+file_id,
-            }, function(response) {
-                console.log('FB response: ', response);
+        plugin.share = function (file_id, socialType) {
+            switch (socialType) {
+                case 'fb':
+                    FB.ui({
+                        method: 'share',
+                        href: location.origin+'/adgen?case='+file_id,
+                    }, function(response) {
+                        console.log('FB response: ', response);
+                    });
+                    break;
+
+                case 'tw':
+                    plugin.popupWindow('https://twitter.com/intent/tweet?url='+plugin.getShareUrl(file_id), '', 800, 800);
+                    break;
+            }
+        };
+
+        plugin.getReadyForShare = function(socialType, complete) {
+            plugin.showProcessing();
+
+            plugin.assembleGif(function (gif) {
+                plugin.saveToServer(gif, function (result, fromCache) {
+                    switch (socialType) {
+                        case 'fb':
+                            if (!fromCache) {
+                                plugin.fbPreCache(plugin.getShareUrl(result.file_name), function() {
+                                    complete(result.file_name);
+                                    setTimeout(function() {
+                                        plugin.hideProcessing();
+                                    }, 3000);
+                                });
+                            } else {
+                                plugin.hideProcessing();
+                                complete(result.file_name);
+                            }
+                            break;
+
+                        case 'tw':
+                            plugin.hideProcessing();
+                            complete(result.file_name);
+                            break;
+                    }
+                });
             });
         };
 
@@ -599,39 +637,26 @@ String.prototype.capitalize = function() {
 
                 $element.find('.btn-fb').on('click', function () {
                     console.log('assembling started...');
-                    plugin.showProcessing();
-                    plugin.assembleGif(function (gif) {
-                        plugin.saveToServer(gif, function (result, fromCache) {
-                            console.log(result);
-                            if (!fromCache) {
-                                plugin.fbPreCache(plugin.getShareUrl(result.file_name), function() {
-                                    setTimeout(function() {
-                                        plugin.share(result.file_name);
-                                        plugin.hideProcessing();
-                                    }, 3000);
-                                });
-                            } else {
-                                plugin.share(result.file_name);
-                                plugin.hideProcessing();
-                            }
+
+                    var socialType = 'fb';
+                    plugin.getReadyForShare(socialType, function (file_id) {
+                        $element.find('.btn-result').addClass(socialType).on('click', function () {
+                            plugin.share(file_id, socialType);
                         });
                     });
-
                 });
 
                 $element.find('.btn-tw').on('click', function () {
                     console.log('assembling started...');
-                    plugin.showProcessing();
-                    plugin.assembleGif(function (gif) {
-                        plugin.saveToServer(gif, function (result) {
-                            console.log(result);
-                            plugin.popupWindow('https://twitter.com/intent/tweet?url='+plugin.getShareUrl(result.file_name), '', 800, 800);
-                            plugin.hideProcessing();
+                    var socialType = 'tw';
+                    plugin.getReadyForShare(socialType, function (file_id) {
+                        $element.find('.btn-result').addClass(socialType).on('click', function () {
+                            plugin.share(file_id, socialType);
                         });
                     });
                 });
             } else {
-                $memeAd.css('background-image', 'url("'+$memeAd.data('wix-ad-src')+'")')
+                /*$memeAd.css('background-image', 'url("'+$memeAd.data('wix-ad-src')+'")')
                     .append(plugin.getCaptionStamp());
 
 
@@ -648,8 +673,7 @@ String.prototype.capitalize = function() {
                             plugin.hideProcessing();
                         });
                     })
-                });
-
+                });*/
             }
 
         };
