@@ -26,13 +26,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta property="fb:app_id" content="<?php echo $fbAppId ?>"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="Wix StartStunning"/>
-    <meta property="og:title" content="Get Your Own Star & Promote Your Business!"/>
-    <meta property="og:description" content="Just in time for the Big Game! Create your own ad using cute puppies and kittens, majestic horses, cheeky lizards & more. When they're the star, the world pays attention."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="fb:app_id" content="<?php echo $fbAppId ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wix StartStunning">
+    <meta property="og:title" content="Get Your Own Star & Promote Your Business!">
+    <meta property="og:description" content="Just in time for the Big Game! Create your own ad using cute puppies and kittens, majestic horses, cheeky lizards & more. When they're the star, the world pays attention.">
     <?php foreach ($meta as $key => $value): ?>
-    <meta property="<?php echo $key; ?>" content="<?php echo $value; ?>"/>
+    <meta property="<?php echo $key; ?>" content="<?php echo $value; ?>">
     <?php endforeach ?>
     <title>Create your own cool ad with the Wix generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
