@@ -37,7 +37,7 @@
 
     <div class="overflow start">
         <div class="wrap">
-            <div class="col-left flex col">
+            <div class="col-left flex col first">
             </div>
 
             <div class="col-center col">
@@ -137,20 +137,20 @@
 
     <script type="text/template" class="tpl-form">
         <div class="row">
-            <div class="col-xs-6"><input type="text" id="business-name" placeholder="Your Business Name"></div>
-            <div class="col-xs-6 form-first-step">
+            <div class="col-xs-10 col-sm-6"><input type="text" id="business-name" placeholder="Your Business Name"></div>
+            <div class="col-xs-2 col-sm-6 form-first-step form-buttom">
                 <button class="btn btn-flat-orange step-1" id="btn-goto-ads" disabled>GO</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-10 col-sm-6">
                 <select id="ad-category" class="hide">
                     <% _.each(data, function(catName) { %>
                     <option value="<%- catName %>"><%- catName.capitalize() %></option>
                     <% }); %>
                 </select>
             </div>
-            <div class="col-xs-6 form-second-step"></div>
+            <div class="col-xs-2 col-sm-6 form-second-step form-buttom"></div>
         </div>
 
         <div class="image-frame">
