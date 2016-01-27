@@ -1268,7 +1268,9 @@ existingImages = function (obj) {
     } else if (utils.isString(currentImage)) {
       tempImage = document.createElement('img');
       if (options.crossOrigin) {
-        tempImage.crossOrigin = options.crossOrigin;
+        if (currentImage.indexOf('data:image/') !== 0) {
+          tempImage.crossOrigin = options.crossOrigin;
+        }
       }
       tempImage.onerror = function (e) {
         if (loadedImages.length > index) {
@@ -1285,6 +1287,16 @@ existingImages = function (obj) {
         };
       }(tempImage));
       tempImage.src = currentImage;
+      if (options.crossOrigin) {
+        if (currentImage.indexOf('data:image/') !== 0) {
+          tempImage.crossOrigin = options.crossOrigin;
+        }
+      }
+      if (options.crossOrigin) {
+        if (currentImage.indexOf('data:image/') !== 0) {
+          tempImage.crossOrigin = options.crossOrigin;
+        }
+      }
       utils.setCSSAttr(tempImage, {
         'position': 'fixed',
         'opacity': '0'
