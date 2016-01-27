@@ -601,14 +601,19 @@ String.prototype.capitalize = function() {
                     console.log('assembling started...');
                     plugin.showProcessing();
                     plugin.assembleGif(function (gif) {
-                        plugin.saveToServer(gif, function (result) {
+                        plugin.saveToServer(gif, function (result, fromCache) {
                             console.log(result);
-                            plugin.fbPreCache(plugin.getShareUrl(result.file_name), function(){
-                                setTimeout(function() {
-                                    plugin.share(result.file_name);
-                                    plugin.hideProcessing();
-                                }, 2000);
-                            });
+                            if (!fromCache) {
+                                plugin.fbPreCache(plugin.getShareUrl(result.file_name), function() {
+                                    setTimeout(function() {
+                                        plugin.share(result.file_name);
+                                        plugin.hideProcessing();
+                                    }, 3000);
+                                });
+                            } else {
+                                plugin.share(result.file_name);
+                                plugin.hideProcessing();
+                            }
                         });
                     });
 
@@ -695,12 +700,12 @@ String.prototype.capitalize = function() {
                     .done(function(result) {
                         if (result.length) {
                             wixImg = result[0];
-                            complete(wixImg);
+                            complete(wixImg, false);
                         }
                     });
                 });
             } else {
-                complete(wixImg);
+                complete(wixImg, true);
             }
         };
 
