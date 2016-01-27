@@ -249,6 +249,22 @@ input[type="text"], select {
     background-position: 100% 0;
     border-bottom-right-radius: 5px;
 }
+.btn-result.tw {
+    position: absolute;
+    background-position: 2px -3px;
+}
+.btn-result.fb {
+    position: absolute;
+    background-position: 2px -69px;
+}
+.btn-result {
+    bottom: 0;
+    width: 100%;
+    height: 68px;
+    background-image: url(/adgen/i/fb_tw_share.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
 .btn-tw:hover {
     background-position: 100% 100%;
 }

@@ -93,10 +93,8 @@
                     }, this);
 
                     $('.form').wixAdForm({}, this);
-
-                    ///////
-                    /*
-                    $('.share .container').wixAdShare({
+                    
+                    /*$('.share .container').wixAdShare({
                         count: 9,
                         category: 'Fashion',
                         caption: 'bora rocks'
@@ -106,8 +104,8 @@
                     });
 
                     $('.start').hide();
-                    $('.share').show();
-                    */
+                    $('.share').show();*/
+                    
                 });
 
             });
@@ -174,6 +172,7 @@
                     </div>-->
                     <span class="btn-fb"></span>
                     <span class="btn-tw"></span>
+                    <span class="btn-result"></span>
                 </div>
             </div>
             <% }); %>
