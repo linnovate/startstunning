@@ -466,8 +466,9 @@ String.prototype.capitalize = function() {
         plugin.getCaptionStamp = function() {
             var lines = plugin.settings.text.split('\n'),
                 $cont = $('<div class="meme-text strokeme"></div>');
-            _.each(lines, function (line) {
-                $cont.append($('<div></div>').text(line));
+            _.each(lines, function (line, i) {
+                var cls = i == 0 ? 'text-headline' : 'text-slogan';
+                $cont.append($('<div></div>').addClass(cls).text(line));
             });
             return $cont;
         };
