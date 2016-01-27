@@ -1292,11 +1292,6 @@ existingImages = function (obj) {
           tempImage.crossOrigin = options.crossOrigin;
         }
       }
-      if (options.crossOrigin) {
-        if (currentImage.indexOf('data:image/') !== 0) {
-          tempImage.crossOrigin = options.crossOrigin;
-        }
-      }
       utils.setCSSAttr(tempImage, {
         'position': 'fixed',
         'opacity': '0'
