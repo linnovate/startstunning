@@ -112,7 +112,8 @@ String.prototype.capitalize = function() {
     // wixAdPicker
     $.wixFillPictures = function(element, options, adData) {
         var defaults = {
-                count: 16
+                count: 16,
+                triggerFirst: false
             },
             $element = $(element),
             element = element,
@@ -122,6 +123,9 @@ String.prototype.capitalize = function() {
 
         plugin.settings = {};
 
+        plugin.loaded = function() {
+            console.log('img loaded');
+        };
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
             render = _.template($('script.tpl-picture-grid').html());
@@ -130,20 +134,48 @@ String.prototype.capitalize = function() {
 
             $(element).html(generatedHTML);
 
-            $element.find('div').hover(function () {
-                var img = $(this).data('wix-gif');
-                if (!img) return;
+            if (plugin.settings.triggerFirst) {
+                setTimeout(function () {
+                    $element.find('.square').eq(0).click();
+                }, 500);
+            }
 
-                $(this).css('background-image', 'url("'+img+'")');
+            $element.find('div').hover(function () {
+                var $div = $(this),
+                    gifSrc = $div.data('wix-gif'),
+                    $loader = $div.find('.gif_loading');
+
+                if (!gifSrc) return;
+
+                if (!$div.data('image')) {
+                    $loader.show();
+
+                    var image = new Image();
+                    image.src = gifSrc;
+
+                    image.onload = function () {
+                        $div.css('background-image', 'url("'+gifSrc+'")');
+                        $loader.hide();
+                    };
+
+                    $div.data('image', image);
+                } else {
+                    $div.css('background-image', 'url("'+gifSrc+'")');
+                }
+
+
             }, function () {
-                var img = $(this).data('wix-url');
-                $(this).css('background-image', 'url("'+img+'")');
+                var src = $(this).data('wix-url');
+                if (!src) return;
+
+                $(this).css('background-image', 'url("'+src+'")');
             }).click(function () {
-                var img = $(this).data('wix-gif') ? $(this).data('wix-gif') : $(this).data('wix-url');
-                $('.image-frame img').attr('src', img);
+                var src = $(this).data('wix-gif') ? $(this).data('wix-gif') : $(this).data('wix-url');
+                $('.image-frame img').attr('src', src);
                 $('.square').removeClass('active');
                 $(this).addClass('active');
             });
+
         };
 
         plugin.init();

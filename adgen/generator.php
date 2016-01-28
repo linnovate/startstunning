@@ -90,7 +90,8 @@
                     }, this);
 
                     $('.col-right').wixFillPictures({
-                        count: 24
+                        count: 24,
+                        triggerFirst: true
                     }, this);
 
                     $('.form').wixAdForm({}, this);
@@ -124,12 +125,12 @@
 
         })(jQuery);
     </script>
-
     <!--templates-->
     <script type="text/template" class="tpl-picture-grid">
         <% _.each(data, function(item) { %>
         <div class="square" style="background-image: url('<%- item.jpgNoLogo %>');"
              data-wix-gif="<%- item.gifNoLogo %>" data-wix-url="<%- item.jpgNoLogo %>">
+             <div class="gif_loading"></div>
         </div>
         <% }); %>
     </script>
