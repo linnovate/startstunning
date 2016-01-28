@@ -219,7 +219,8 @@ input[type="text"], select {
 }
 
 .meme-wrap {
-    width: 334px;
+    width: 100%;
+    max-width: 334px;
     height: 399px;
     overflow: hidden;
     margin: 0 auto;
