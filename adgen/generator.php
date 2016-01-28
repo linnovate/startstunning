@@ -65,11 +65,15 @@
 
     </div>
 
-    <div class="share" style="display: none">
+    <div class="share" style="display: none;">
         <h1 class="share-header">Share on Facebook & Twitter!</h1>
 
         <div class="container">
+            <div class="share-items">
 
+            </div>
+
+            <div class="adgen-back"><a class="btn-blue">≪ Back</a></div>
         </div>
     </div>
 
@@ -96,7 +100,7 @@
 
                     $('.form').wixAdForm({}, this);
                     
-                    /*$('.share .container').wixAdShare({
+/*                    $('.share .share-items').wixAdShare({
                         count: 9,
                         category: 'Fashion',
                         caption: 'bora rocks'
@@ -137,20 +141,20 @@
 
     <script type="text/template" class="tpl-form">
         <div class="row">
-            <div class="col-xs-10 col-sm-6"><input type="text" id="business-name" placeholder="Your Business Name"></div>
-            <div class="col-xs-2 col-sm-6 form-first-step form-buttom">
+            <div class="col-xs-12 col-sm-10"><input type="text" id="business-name" placeholder="Your Business Name"></div>
+            <div class="col-xs-12 col-sm-2 form-first-step form-buttom">
                 <button class="btn btn-flat-orange step-1" id="btn-goto-ads" disabled>GO</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-10 col-sm-6">
+            <div class="col-xs-12 col-sm-10">
                 <select id="ad-category" class="hide">
                     <% _.each(data, function(catName) { %>
                     <option value="<%- catName %>"><%- catName.capitalize() %></option>
                     <% }); %>
                 </select>
             </div>
-            <div class="col-xs-2 col-sm-6 form-second-step form-buttom"></div>
+            <div class="col-xs-12 col-sm-2 form-second-step form-buttom"></div>
         </div>
 
         <div class="image-frame">
@@ -166,7 +170,7 @@
             <div class="meme-col col-md-4">
                 <div class="meme-wrap">
                     <div class="loader"></div>
-                    <div class="meme-ad meme-animated" data-wix-ad-src="<%- item.gifLogo %>" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
+                    <div class="meme-ad meme-animated" data-wix-ad-src="<%- item.gifLogo %>" data-wix-ad-jpg="<%- item.jpgLogo %>" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">
                         <img rel:animated_src="<%- item.gifLogo %>">
                     </div>
                     <!--<div class="meme-ad" data-wix-ad-src="/adgen/img/no-logo/jpg/A_02_bear.jpg" data-wix-ad-text="<%- caption %>" data-wix-ad-slogan="<%- item.slogan %>">

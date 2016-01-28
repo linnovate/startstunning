@@ -178,7 +178,7 @@ html, body {
 }
 
 .image-frame {
-    margin-top: 35px;
+    margin: 35px 0;
 }
 
 input[type="text"], select {
@@ -186,14 +186,19 @@ input[type="text"], select {
     width: 100%;
     padding: 13px 10px;
     height: 46px;
+    margin-bottom: 20px;
 }
 
 #btn-goto-ads {
     padding: 12px 25px;
     background-color: #ed9845;
     color: #fff;
-    margin-left: -20px;
+    width: 100%;
     border-radius: 0;
+}
+.form-first-step,
+.form-second-step {
+    padding-left: 0;
 }
 
 .active {
@@ -203,7 +208,7 @@ input[type="text"], select {
 
 .share-header {
     background-color: #3e5c99;
-    padding: 50px 0;
+    padding: 50px 20px;
     text-align: center;
 }
 
@@ -224,9 +229,12 @@ input[type="text"], select {
 .meme-ad {
     height: 331px;
     background-color: #f2f2f2;
-    overflow: hidden;
     background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
     position: relative;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 .container {
@@ -296,7 +304,7 @@ input[type="text"], select {
     width: 100%;
     text-align: center;
     cursor: default;
-    padding: 24px;
+    padding: 20px 20px 14px 20px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -351,9 +359,27 @@ input[type="text"], select {
     }
 }
 
+.share {
+    overflow: hidden;
+}
+
 @media (max-width: 767px) {
+    .form-first-step,
+    .form-second-step {
+        padding-left: 15px;
+    }
+    .meme-col {
+         padding: 0;
+    }
+    .container {
+        margin-top: 0;
+    }
+    .share h1 {
+        font: 25px/25px "HelveticaNeueW01-Thin";
+    }
+
     .form-buttom{
-        padding-right: 0;
+        padding-right: 15px;
     }
     #btn-goto-ads {
         width: 100%;
@@ -361,7 +387,7 @@ input[type="text"], select {
         padding: 0;
         background-color: #ed9845;
         color: #fff;
-        margin-left: -15px;
+        margin-left: 0;
         border-radius: 0;
     }
     .content{
@@ -425,7 +451,7 @@ input[type="text"], select {
         width: 100%;
         text-align: center;
         cursor: default;
-        padding: 0px 18px 58px 18px;
+        padding: 0px 18px 18px 18px;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -435,10 +461,13 @@ input[type="text"], select {
     }
     .meme-wrap {
         width: 100%;
-        height: 361px;
+        height: 362px;
         overflow: hidden;
         margin: 0 auto;
         position: relative;
+    }
+    .meme-ad {
+        height: 294px;
     }
 }
 
@@ -461,4 +490,24 @@ input[type="text"], select {
     display: none;
     background-color: rgba(0,0,0,.9);
     border-radius: 50%;
+}
+
+.share-items {
+    padding-bottom: 10px;
+}
+
+.adgen-back {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.btn-blue {
+    text-decoration: none !important;
+    color: #fff !important;
+    background-color: #459fed;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 22px;
+    display: inline-block;
+    cursor: pointer;
 }

@@ -20,27 +20,6 @@ String.prototype.capitalize = function() {
 };
 
 (function($) {
-    /*
-    Array.range = function(n) {
-        // Array.range(5) --> [0,1,2,3,4]
-        return Array.apply(            null,Array(n)).map(function(x, i) { return i})
-    };
-    Object.defineProperty(Array.prototype, 'chunk', {
-        value: function(n) {
-            // ACTUAL CODE FOR CHUNKING ARRAY:
-            return Array.range(
-                Math.ceil(this.length/n)).map(
-                    function(x, i){
-                        console.log(this);
-                        return this.slice(i*n,i*n+n)
-                    }
-                );
-            }
-    });
-    String.prototype.capitalize = function() {
-        return this.charAt(0).toUpperCase() + this.slice(1);
-    };
-    */
 
     //var baseURL = 'http://server/wix/startstunning/adgen';
     var baseURL = location.href;
@@ -154,8 +133,10 @@ String.prototype.capitalize = function() {
                     image.src = gifSrc;
 
                     image.onload = function () {
-                        $div.css('background-image', 'url("'+gifSrc+'")');
                         $loader.hide();
+
+                        if ($div.parent().find(':hover').length)
+                            $div.css('background-image', 'url("'+gifSrc+'")');
                     };
 
                     $div.data('image', image);
@@ -249,7 +230,7 @@ String.prototype.capitalize = function() {
                     $fieldCategory.focus();
                     plugin.openSelect($fieldCategory);
                 } else if ($(this).hasClass('step-2')) {
-                    $('.share .container').wixAdShare({
+                    $('.share .share-items').wixAdShare({
                         count: 9,
                         category: category,
                         caption: name
@@ -261,7 +242,6 @@ String.prototype.capitalize = function() {
                     $('.start').hide();
                     $('.share').show();
                 }
-
             });
 
             $fieldCategory.on('change', function () {
@@ -311,6 +291,11 @@ String.prototype.capitalize = function() {
 
         plugin.settings = {};
 
+        plugin.backToStart = function() {
+            $('.start').show();
+            $('.share').hide();
+        };
+
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
             render = _.template($('script.tpl-share-items').html());
@@ -323,6 +308,10 @@ String.prototype.capitalize = function() {
             });
 
             $(element).html(generatedHTML);
+
+            $('.adgen-back a').on('click', function wixAdShowAds() {
+                plugin.backToStart();
+            });
         };
 
         plugin.init();
@@ -507,6 +496,8 @@ String.prototype.capitalize = function() {
             $memeAd,
             superGif,
             imgGif,
+            srcGif,
+            srcJpg,
             wixImg;
 
         plugin.settings = {};
@@ -603,28 +594,42 @@ String.prototype.capitalize = function() {
         plugin.getReadyForShare = function(socialType, complete) {
             plugin.showProcessing();
 
-            plugin.assembleGif(function (gif) {
-                plugin.saveToServer(gif, function (result, fromCache) {
-                    switch (socialType) {
-                        case 'fb':
-                            if (!fromCache) {
-                                plugin.fbPreCache(plugin.getShareUrl(result.file_name), function() {
+            superGif = new SuperGif({
+                gif: $memeAd.find('img')[0],
+                progressbar_height : 10,
+                progressbar_background_color: 'transparent',
+                progressbar_foreground_color: '#3e5c99',
+                auto_play: 0,
+                rubbable: 0
+            });
+
+            superGif.load(function () {
+                canvas = superGif.get_canvas();
+                $(canvas).after(plugin.getCaptionStamp());
+
+                plugin.assembleGif(function (gif) {
+                    plugin.saveToServer(gif, function (result, fromCache) {
+                        switch (socialType) {
+                            case 'fb':
+                                if (!fromCache) {
+                                    plugin.fbPreCache(plugin.getShareUrl(result.file_name), function() {
+                                        complete(result.file_name);
+                                        setTimeout(function() {
+                                            plugin.hideProcessing();
+                                        }, 3000);
+                                    });
+                                } else {
+                                    plugin.hideProcessing();
                                     complete(result.file_name);
-                                    setTimeout(function() {
-                                        plugin.hideProcessing();
-                                    }, 3000);
-                                });
-                            } else {
+                                }
+                                break;
+
+                            case 'tw':
                                 plugin.hideProcessing();
                                 complete(result.file_name);
-                            }
-                            break;
-
-                        case 'tw':
-                            plugin.hideProcessing();
-                            complete(result.file_name);
-                            break;
-                    }
+                                break;
+                        }
+                    });
                 });
             });
         };
@@ -632,6 +637,8 @@ String.prototype.capitalize = function() {
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
             $memeAd = $element.find('.meme-ad');
+            srcJpg = $memeAd.data('wix-ad-jpg');
+            srcGif = $memeAd.data('wix-ad-src');
 
             if (!plugin.settings.text.length) {
                 plugin.settings.text = $memeAd.data('wix-ad-text') + '\n' + $memeAd.data('wix-ad-slogan');
@@ -640,31 +647,33 @@ String.prototype.capitalize = function() {
 
             if ($memeAd.hasClass('meme-animated')) {
                 console.log('found animated');
-                plugin.showProcessing();
-                superGif = new SuperGif({
-                    gif: $memeAd.find('img')[0],
-                    progressbar_height : 10,
-                    progressbar_background_color: 'transparent',
-                    progressbar_foreground_color: '#3e5c99',
-                    auto_play: 0,
-                    rubbable: 0
-                });
+                $memeAd.css('background-image', 'url("'+srcJpg+'")')
+                 .append(plugin.getCaptionStamp());
 
-                superGif.load(function () {
-                    console.log('oh hey, now the gif is loaded');
-                    plugin.hideProcessing();
 
-                    canvas = superGif.get_canvas();
+                $memeAd.hover(function () {
+                    if (!srcGif) return;
 
-                    $(canvas).after(plugin.getCaptionStamp());
+                    if (!$memeAd.data('image')) {
+                        plugin.showProcessing();
 
-                    $('canvas, .meme-text', $element)
-                        .mouseover(function() {
-                            superGif.play();
-                        })
-                        .mouseout(function() {
-                            superGif.pause();
-                        });
+                        var image = new Image();
+                        image.src = srcGif;
+
+                        image.onload = function () {
+                            plugin.hideProcessing();
+
+                            if ($memeAd.parent().parent().find(':hover').length)
+                                $memeAd.css('background-image', 'url("'+srcGif+'")');
+                        };
+
+                        $memeAd.data('image', image);
+                    } else {
+                        $memeAd.css('background-image', 'url("'+srcGif+'")');
+                    }
+
+                }, function () {
+                    $memeAd.css('background-image', 'url("'+srcJpg+'")');
                 });
 
                 $element.find('.btn-fb').on('click', function () {

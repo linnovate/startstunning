@@ -94,8 +94,8 @@
 
         @media (max-width: 767px) {
             h1 {
-                font: 30px/40px "HelveticaNeueW01-Thin";
-                padding: 0 10px;
+                font: 30px/32px "HelveticaNeueW01-Thin";
+                padding: 10px;
                 margin: 0 auto 15px;
             }
             .start-adgen {
